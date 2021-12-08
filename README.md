@@ -16,3 +16,5 @@ https://www.mexx.com.ar/ tiene un detallado desplegable del menu principal.
 https://compragamer.com/ pensamos que es genial tener un carrusel de marcas para la muestra de componente de pc, como la de esta pagina.
 https://dealerpc.com.ar/ presentacion del producto sencilla
 https://www.mercadolibre.com.ar/ el logeo  de mercado libre tiene validacion, que es algo que queremos para nuestra pagina.
+
+Link a trello: https://trello.com/b/SRsrqmWR/proyecto-e-commerce 
