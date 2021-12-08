@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    background-color: yellow;
+}
+
+.banner{
+    display: flex;
+
+}
+.bannerimg{
+    width: 100vw;
+}
+
+.imgproducto{
+    width: 90vw;
+}
+
+.foto{
+    display: block;
+    margin: auto;
+}
+.carrusel{
+    width: 90vw;
+    margin: auto;
+    border: solid 1px red;
+}
+
+/*.producto-foto-icono-texto div{
+    border: solid 1px green;
+}*/
+
+.producto-foto-icono-texto{
+    margin-bottom: 20px;
+}
+
+.icono{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border:solid 3px red;
+    font-size: 22px;
+    color: red;
+    text-align: center;
+    padding-top: 14px;
+display: block;
+position: absolute;
+top:-30px;
+right: 20px;
+
+
+}
+
+.texto-icono{
+    padding-left: 15px;
+    border-top: solid 5px blue;
+    position: relative;
+}
+
+.preciodescuento{
+    display: flex;
+    align-items: baseline;
+}
+
+.precio{
+    font-size: 1.8em;
+    position: relative;
+    width: 30%;
+}
+.descuento{
+    font-size: 1.6em;
+    color: darkorange;
+    font-weight: bolder;
+    position: relative;
+    width: 70%;
+}
+.descripcion{
+    font-size: 1.6em;
+    font-weight: bolder;
+    color: darkslategrey;
+}
+
+
+@media (min-width: 1000px){
+    .carrusel{
+        display: flex;
+        width: 100vw;
+        flex-wrap: wrap;
+    }
+    .producto-foto-icono-texto{
+        width: 25%;
+    }
+
+    .imgproducto{
+        width: 100%;
+    }
+    .precio,.descuento,.descripcion{
+        font-size: 1em;
+    }
+
+   
+}
+

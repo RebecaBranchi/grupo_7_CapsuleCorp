@@ -14,3 +14,5 @@ app.get("/", (req, res)=>{
     res.sendFile(path.resolve(__dirname,'./views/home.html'))
 })
 
+//npm i -D nodemon para instalar nodemon
+//npx nodemon app.js   para ejecutar
