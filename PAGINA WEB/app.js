@@ -11,7 +11,14 @@ app.listen(3050, ()=>{
 }); 
 
 app.get("/", (req, res)=>{
-    res.sendFile(path.resolve(__dirname,'./views/home.html'))
+    res.sendFile(path.resolve(__dirname,'./views/index.html'))
+})
+app.get("/login", (req, res)=>{
+    res.sendFile(path.resolve(__dirname,'./views/login.html'))
+})
+
+app.get("/productDetail", (req, res)=>{
+    res.sendFile(path.resolve(__dirname,'./views/productDetail.html'))
 })
 
 //npm i -D nodemon para instalar nodemon
