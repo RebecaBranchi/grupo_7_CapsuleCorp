@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +11,69 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>LOGIN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto:ital,wght@0,300;0,900;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Road+Rage&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@800&display=swap" rel="stylesheet">
+    <title>Home</title>
 </head>
 <body>
 <header>
-<div> logo barra de busqueda compra con tarjeta </div>
-<div>  listas desordenadas derecha lista desordenada izquierda</div>
+    <div class="promociones">
+        <h2>PROMOCIONES</h2>
+    </div>
+    <div>
+        <div class="logo">
+            <a href="#" class="burger-menu">
+                <i class="fas fa-bars"></i>
+                <img src="/img/consolanintendo.jpg" alt="" width="200px">
+                <i class="fas fa-cart-plus"></i>
+        </div>
+
+        <div>
+
+            <select name="marcas" id="">
+
+                <option value="intel">intel</option>
+                <option value="asus">asus</option>
+
+            </select>
+            <div>
+                <label for="busqueda"> </label>
+                <input type="text" name="busqueda" placeholder="Bucar">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <nav class="main-navbar">
+            <ul class="left-navbar">
+                <li><a href="/ofertas">Ofertas</a></li>
+                <li><a href="/tiendasoficiales">Tiendas Oficiales</a></li>
+                <li><a href="/vender">Vender</a></li>
+                <li><a href="/productDetail">Producto</a></li>
+                <li><a href="/ayuda">Ayuda</a></li>
+            </ul>
+            <ul class="right-navbar">
+                <li><a href="/creatucuenta">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
+                <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+                <li><a href="/miscompras">Mis compras <i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+        </nav>
+
+
+    </div>
 </header>
 <div class="banner">
     <img src="./img/banner.jpg" alt="" class="bannerimg">
@@ -53,6 +111,43 @@
 
 
 <footer>
+    <nav class="nav-footer">
+        <div class="contenedorfooter">
+            <div>
+                <div class="iconofooter">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h4 class="titulosseleccion">Pagá con tarjeta o en efectivo</h4>
+                <p class="parrafo"> Capsule Corp Cash, tenés cuotas sin
+                    interés con tarjeta o efectivo en puntos de
+                    de pago. ¡Y siempre es seguro!</p>
+            </div>
+            <div>
+                <div class="iconofooter">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h4 class="titulosseleccion">Envío gratis desde $ 2.500</h4>
+                <p class="parrafo">por estar registrad@ en Capsule Corp
+                    tenés envíos gratis en miles de productos. Es
+                    beneficio de Corpuntos.
+                    No te gusta? ¡Devolvelo! En Capsule Corp
+                </p>
+            </div>
+            <div>
+                <div class="iconofooter">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h4 class="titulosseleccion">Seguridad, de principio a fin </h4>
+                <p class="parrafo">no hay nada que no puedas hacer, porque estás
+                    siempre protegid@.</p>
+            </div>
+            <div>
+                <h3>
+                    Copyright © 1999-2020 Capsule Corp S.R.L.
+                </h3>
+            </div>
+        </div>
+    </nav>
 
 </footer>
  

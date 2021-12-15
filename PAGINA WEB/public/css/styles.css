@@ -3,10 +3,17 @@
     margin: 0;
     padding: 0;
 }
+body div{
+    border: solid 1px black;
+}
 
 body{
-    font-size: 30px;
+    font-size: 24px;
     font-family: 'Nanum Gothic Coding', monospace;
+ 
+}
+header,main,footer{
+width: 100vw;
 }
 
 .enviar{
@@ -16,15 +23,23 @@ body{
 }
 
 header{
-    background-color: rosybrown;
+    background-color:#E91E63;
+    font-size: 20px;
+    color: #ffff;
+
+}
+
+header a{
+    color: #ffff;
 }
 
 .banner{
     display: flex;
+    width: 100vw;
 
 }
 .bannerimg{
-    width: 100vw;
+    width: 100%;
 }
 
 .imgproducto{
@@ -96,7 +111,7 @@ right: 20px;
 }
 
 
-@media (min-width: 1000px){
+/*@media (min-width: 1000px){
     .cajadeproducto{
         display: flex;
         width: 100vw;
@@ -114,5 +129,5 @@ right: 20px;
     }
 
    
-}
+}*/
 
