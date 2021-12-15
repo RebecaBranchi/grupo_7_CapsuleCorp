@@ -21,5 +21,9 @@ app.get("/productDetail", (req, res)=>{
     res.sendFile(path.resolve(__dirname,'./views/productDetail.html'))
 })
 
+app.get("/creatucuenta", (req, res)=>{
+    res.sendFile(path.resolve(__dirname,'./views/register.html'))
+})
+
 //npm i -D nodemon para instalar nodemon
 //npx nodemon app.js   para ejecutar

@@ -3,6 +3,68 @@
     margin: 0;
     padding: 0;
 }
+
+.form-registro{
+    width: 500px;
+    background: #E91E63;
+    padding:50px ;
+    margin: 2rem auto;
+    border-radius: 4px;
+    font-family: 'Gill Sans';
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.form-registro h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+
+}
+.control{
+    width: 100%;
+    background: rgb(250, 248, 248);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16;
+   border:1px solid #ac9292;
+   font-family: 'Gill Sans';
+   font-size: 18px;
+}
+.form-registro p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+.form-registro a:hover{
+    color: rgb(224, 235, 245);
+    text-decoration: underline;
+}
+.boton{
+    background-color: rgb(83, 69, 95);
+    color: azure;
+    padding: 10px 30px;
+
+}
+
+.logoheader{
+
+    width:230px;
+    height: 230px;
+    border: solid 1px #E91E63;
+    display: block;
+    margin: auto;
+
+
+}
+.logoimg{
+    width: 105%;
+    height: 100%;
+    border-radius: 50%;
+  
+}
+
+
+
+
 body div{
     border: solid 1px black;
 }
