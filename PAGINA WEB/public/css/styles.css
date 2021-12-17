@@ -6,7 +6,7 @@
 
 .form-registro{
     width:100vw;
-    background: #E91E63;
+    background: #F9B761;
     padding:50px ;
     margin: 2rem auto;
     border-radius: 4px;
@@ -268,4 +268,15 @@ display: flex;
         display: block;
     }
     
+}
+
+.footer {
+    font-size: 15px;
+}
+
+.cat {
+    display: flex;
+    width: 25vw;
+    margin-left: auto;  
+    align-items: center;
 }
