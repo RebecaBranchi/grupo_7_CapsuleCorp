@@ -26,29 +26,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney&display=swap" rel="stylesheet">
+
+    
+
     <title>HOME</title>
 </head>
 <body>
+    <div class="promociones">
+        <h2>PROMOCIONES</h2>
+    </div>
     <header>
-        <div class="promociones">
-            <h2>PROMOCIONES</h2>
-        </div>
+       
         <div>
             <div class="logo">
-                <a href="#" class="burger-menu">
-                    <i class="fas fa-bars"></i>
-                    <a href="/"><img src="/img/logoresult.png" alt="" width="200px"></a>
-                   <a href="/carrito"><i class="fas fa-cart-plus"></i></a> 
+                <div class="hamburguesa">
+                    <a href="#" class="burger-menu"><i class="fas fa-bars"></i></a>
+                </div>
+                <div>
+                    <a href="/"><img src="/img/logo2.png" alt="" class="logoimg"></a>
+                </div>
+                <div>
+             <a href="/carrito"><i class="fas fa-cart-plus"></i></a> 
+                </div>
             </div>
-            <div>
-                <select name="marcas" id="">
+            <div class="marcasbuscar">
+                <select name="marcas" id="" class="marcas">
                     <option value="intel">intel</option>
                     <option value="asus">asus</option>
                 </select>
-                <div>
+                <div class="busqueda">
                     <label for="busqueda"> </label>
-                    <input type="text" name="busqueda" placeholder="Bucar">
+                    <input type="text" name="busqueda" placeholder="Buscar">
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </div>
             </div>
@@ -68,12 +78,10 @@
             </nav>
         </div>
     </header>
-    <div class="banner">
-        <img src="./img/capsule.png" alt="" class="bannerimg">
-    </div>
+    
     <main>
         <div>
-            <img src="./img/banner.jpg" alt="" class="bannerimg">
+            <img src="./img/bannernuevo.jpeg" alt="" class="bannerimg">
 
         </div>
 
@@ -89,13 +97,13 @@
             <img src="/img/joystick.jpg" alt="" width="70px">
         </div>
 
-        <div>
+        <div class="redessociales">
             ENLACES A REDES SOCIALES
-            <ul>
-                <li><a href="">facebook</a></li>
-                <li><a href="">facebook</a></li>
-                <li><a href="">facebook</a></li>
-            </ul>
+            <div class="sociales">
+                <div><a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a></div>
+                <div><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></div>
+                <div><a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a></div>
+            </div>
         </div>
 
     </main>

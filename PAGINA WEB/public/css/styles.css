@@ -5,7 +5,7 @@
 }
 
 .form-registro{
-    width: 500px;
+    width:100vw;
     background: #E91E63;
     padding:50px ;
     margin: 2rem auto;
@@ -65,17 +65,21 @@
 
 
 
-body div{
+/*body div{
     border: solid 1px black;
-}
+   
+}*/
 
 body{
     font-size: 24px;
-    font-family: 'Nanum Gothic Coding', monospace;
+    font-family: 'Tourney', cursive;
+    font-weight: normal;
+
+    width: 100vw;
  
 }
 header,main,footer{
-width: 100vw;
+width: 100%;
 }
 
 .enviar{
@@ -84,10 +88,24 @@ width: 100vw;
     color: red;
 }
 
+.promociones{
+   /*background-color: #5890f8;*/
+   background-color: #F9B761;
+
+    
+}
+
 header{
-    background-color:#E91E63;
+   /* background-color:#FCB0BE;*/
+
+    background-image: url(https://th.bing.com/th/id/R.a4909a42ee0e58c2ce1f18640e5ff7d8?rik=XFCBrZjTYolMFw&riu=http%3a%2f%2fi.imgur.com%2fVan5g.gif&ehk=NbP6MKeW8TngH%2b3ohLRFE%2fF5ty1j5TI15avLKJdGpsc%3d&risl=&pid=ImgRaw&r=0);
     font-size: 20px;
     color: #ffff;
+    padding-bottom: 10px;
+    border-bottom: solid 2px #0000;
+    background-repeat: no-repeat;
+    background-size: cover
+
 
 }
 
@@ -193,3 +211,61 @@ right: 20px;
    
 }*/
 
+.logoimg{
+    width: 150px;
+}
+
+.logo{
+display: flex;
+ justify-content: space-between;
+ width: 90vw;
+ align-items: flex-end;
+ flex-direction: row;
+  margin: auto;
+  font-size: 24px;
+  padding-bottom: 15px;
+}
+.marcasbuscar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90vw;
+    margin: auto;
+}
+.marcas{
+    width: 25%;
+}
+.busqueda{
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end
+}
+
+.redessociales{
+    width: 90%;
+    margin:auto;
+    text-align: center;
+}
+.sociales{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 30px;
+}
+
+.hamburguesa{
+    display:none ;
+}
+
+
+@media (max-width: 760px) {
+    .main-navbar{
+        display: none;
+    }
+
+    .hamburguesa{
+        display: block;
+    }
+    
+}
