@@ -103,6 +103,7 @@ header{
    /* background-color:#FCB0BE;*/
 
     background-image: url(https://th.bing.com/th/id/R.a4909a42ee0e58c2ce1f18640e5ff7d8?rik=XFCBrZjTYolMFw&riu=http%3a%2f%2fi.imgur.com%2fVan5g.gif&ehk=NbP6MKeW8TngH%2b3ohLRFE%2fF5ty1j5TI15avLKJdGpsc%3d&risl=&pid=ImgRaw&r=0);
+    height: 500px;
     font-size: 20px;
     color: #ffff;
     padding-bottom: 10px;
@@ -193,8 +194,34 @@ right: 20px;
     font-weight: bolder;
     color: darkslategrey;
 }
+/*menu*/
 
-
+.main-navbar{
+   height: 75px;
+   width: 100vw;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  
+}
+.left-navbar{
+    display: flex;
+    list-style: none;
+    margin-right: 30px;
+}
+.left-navbar li{
+   border-radius: 3px;
+   margin: 0 5px;
+}
+.right-navbar{
+    display: flex;
+    list-style: none;
+    margin-left: 30px;
+}
+.right-navba li{
+    border-radius: 10px;
+    margin: 0 10px;
+}
 /*@media (min-width: 1000px){
     .cajadeproducto{
         display: flex;
