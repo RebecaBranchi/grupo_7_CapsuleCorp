@@ -27,40 +27,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tourney&display=swap" rel="stylesheet">
-
-    
+    <link href="https://fonts.googleapis.com/css2?family=Tourney&display=swap" rel="stylesheet"> 
     <link rel="icon" href="/img/favicon.png" type="image/x-icon">
     <title>Capsule Corp</title>
 </head>
 <body>
+    <div class="loader"></div>
     <div class="promociones">
         <h2>PROMOCIONES</h2>
     </div>
+    <img src="/img/mario.gif" alt="" class="mario">
     <header>
-       
-        <div>
+        <div class="contenedorheader">
             <div class="logo">
                 <div class="hamburguesa">
-                    <a href="#" class="burger-menu"><i class="fas fa-bars"></i></a>
+                <a href="#" class="burger-menu"><i class="fas fa-bars"></i></a>
+                </div>
+                <a href="/"><img src="/img/logo2.png" alt="" class="logoimg"></a>
+                <div class="busqueda">
+                    <input type="text" name="busqueda" placeholder="Buscar" class="buscar">
+                    <i class="fas fa-search"></i>
                 </div>
                 <div>
-                    <a href="/"><img src="/img/logo2.png" alt="" class="logoimg"></a>
-                </div>
-                <div>
-             <a href="/carrito"><i class="fas fa-cart-plus"></i></a> 
+                <a href="/carrito"><i class="fas fa-cart-plus"></i></a> 
                 </div>
             </div>
             <div class="marcasbuscar">
                 <select name="marcas" id="" class="marcas">
                     <option value="intel">intel</option>
                     <option value="asus">asus</option>
-                </select>
-                <div class="busqueda">
-                    <label for="busqueda"> </label>
-                    <input type="text" name="busqueda" placeholder="Buscar">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </div>
+             </select>    
             </div>
             <nav class="main-navbar">
                 <ul class="left-navbar">
@@ -78,12 +74,23 @@
             </nav>
         </div>
     </header>
-    
+    <div class="banner">
+        <img src="./img/bannernuevo.jpeg" alt="" class="bannerimg">
+
+    </div>
+    <div class="banner">
+        <img src="./img/bannernuevo.jpeg" alt="" class="bannerimg">
+
+    </div>
+    <div class="banner">
+        <img src="./img/bannernuevo.jpeg" alt="" class="bannerimg">
+
+    </div>
+    <div class="banner">
+        <img src="./img/bannernuevo.jpeg" alt="" class="bannerimg">
+
+    </div>
     <main>
-        <div>
-            <img src="./img/bannernuevo.jpeg" alt="" class="bannerimg">
-
-        </div>
 
         <div>
 
@@ -96,17 +103,17 @@
             <img src="/img/joystick.jpg" alt="" width="70px">
             <img src="/img/joystick.jpg" alt="" width="70px">
         </div>
+    </main>
 
         <div class="redessociales">
             ENLACES A REDES SOCIALES
             <div class="sociales">
-                <div><a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a></div>
-                <div><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></div>
-                <div><a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a></div>
+                <div><a href="https://www.facebook.com"><i class="fab fa-facebook-square" id="icono"></i></a></div>
+                <div><a href="https://www.instagram.com"><i class="fab fa-instagram" id="icono"></i></a></div>
+                <div><a href="https://twitter.com/?lang=es"><i class="fab fa-twitter" id="icono"></i></a></div>
             </div>
         </div>
 
-    </main>
 
 
     <footer class="footer">
@@ -114,7 +121,7 @@
             <div class="contenedorfooter">
                 <div>
                     <div class="iconofooter">
-                        <i class="fas fa-credit-card"></i>
+                        <i class="fas fa-credit-card" id="icono"></i>
                     </div>
                     <h4 class="titulosseleccion">Pagá con tarjeta o en efectivo</h4>
                     <p class="parrafo"> Capsule Corp Cash, tenés cuotas sin
@@ -123,7 +130,7 @@
                     </div> <br>
                     <div>
                         <div class="iconofooter">
-                            <i class="fas fa-gift"></i>
+                            <i class="fas fa-gift" id="icono"></i>
                         </div>
                         <h4 class="titulosseleccion">Envío gratis desde $ 2.500</h4>
                         <p class="parrafo">por estar registrad@ en Capsule Corp
@@ -134,7 +141,7 @@
                             </div> <br>
                             <div>
                                 <div class="iconofooter">
-                                    <i class="fas fa-user-shield"></i>
+                                    <i class="fas fa-user-shield" id="icono"></i>
                                 </div>
                                 <h4 class="titulosseleccion">Seguridad, de principio a fin </h4>
                                 <p class="parrafo">no hay nada que no puedas hacer, porque estás

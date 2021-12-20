@@ -49,17 +49,14 @@
 
     width:230px;
     height: 230px;
-    border: solid 1px #E91E63;
     display: block;
     margin: auto;
 
 
 }
 .logoimg{
-    width: 105%;
-    height: 100%;
+    width: 80%;
     border-radius: 50%;
-  
 }
 
 
@@ -71,15 +68,12 @@
 }*/
 
 body{
-    font-size: 24px;
     font-family: 'Tourney', cursive;
     font-weight: normal;
-
-    width: 100vw;
- 
 }
 header,main,footer{
-width: 100%;
+width: 100vw;
+font-size: 24px;
 }
 
 .enviar{
@@ -89,33 +83,47 @@ width: 100%;
 }
 
 .promociones{
-   /*background-color: #5890f8;*/
    background-color: #F9B761;
-
+    display: none;
     
 }
 
 header{
-   /* background-color:#FCB0BE;*/
-
-    background-image: url(https://th.bing.com/th/id/R.a4909a42ee0e58c2ce1f18640e5ff7d8?rik=XFCBrZjTYolMFw&riu=http%3a%2f%2fi.imgur.com%2fVan5g.gif&ehk=NbP6MKeW8TngH%2b3ohLRFE%2fF5ty1j5TI15avLKJdGpsc%3d&risl=&pid=ImgRaw&r=0);
+    background-color:#5890f8 ;
     font-size: 20px;
-    color: #ffff;
-    padding-bottom: 10px;
+    color: #000;
+    padding: 15px 0  20px 0;
+    position: fixed;
+    top: 0;
     border-bottom: solid 2px #0000;
-    background-repeat: no-repeat;
-    background-size: cover
+    z-index: 1;
+    animation: arranque 6s linear 1 normal ;
+}
 
+@keyframes arranque {
+    0%{
+        display: none;
+        position: static;
+    }
+    100%{
+        display: block;
+        transition: all 6s;
+    }
 
 }
 
-header a{
-    color: #ffff;
+
+.mario{
+    width: 100vw;
+    display: none;
 }
+
+
 
 .banner{
     display: flex;
     width: 100vw;
+    margin-top: 68.60px;
 
 }
 .bannerimg{
@@ -212,66 +220,138 @@ right: 20px;
 }*/
 
 .logoimg{
-    width: 150px;
+    width: 100px;
+    display: none;
 }
 
 .logo{
 display: flex;
- justify-content: space-between;
- width: 90vw;
- align-items: flex-end;
- flex-direction: row;
-  margin: auto;
-  font-size: 24px;
-  padding-bottom: 15px;
+justify-content: space-around;
+width: 90vw;
+align-items: center;
+flex-direction: row;
+margin: auto;
+font-size: 24px;
 }
-.marcasbuscar{
+ 
+.busqueda{
+    width: 75%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
-    justify-content: space-around;
-    width: 90vw;
-    margin: auto;
+}
+
+.buscar{
+
+    display: inline-block;
+    width: 75%;
+    border-radius: 25px;
+    text-align: center;
+ }
+
+.marcasbuscar{
+   display: none;
 }
 .marcas{
     width: 25%;
 }
-.busqueda{
-    width: 75%;
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-end
+
+.loader {
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 1;
+    background-image: url("/img/logo2.png");
+    background-repeat: no-repeat;
+    background-size:300px;
+    background-position: center;
+    background-color: #5890f8;
+    animation: espera 6s linear 0s 1 normal ;
 }
+
+
+
+@keyframes espera {
+    0%{
+       
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        opacity: 1;
+        z-index: 9999;
+    }
+    100%{
+        display: none;
+        position: static;
+        opacity: 1;
+        transition: all 6s;
+        z-index: 9999;
+
+
+    }
+    
+}
+
+
 
 .redessociales{
     width: 90%;
     margin:auto;
     text-align: center;
+    font-size: 20px;
+    color: #000;
+    font-weight: bolder;
 }
 .sociales{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     font-size: 30px;
-}
-
-.hamburguesa{
-    display:none ;
+ 
 }
 
 
-@media (max-width: 760px) {
+.main-navbar{
+    display: none;
+}
+
+@media (min-width: 760px) {
     .main-navbar{
-        display: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+    .mario{
+        display: flex;
+    }
+    .promociones{
+        display: block;
+    }
+    .left-navbar,.right-navbar {
+        display: flex;
+        flex-direction: row;
+        color: #0000;
+        padding: 10px 5px;
+    }
+    .left-navbar{
+        align-items: flex-start;
+    }
+    .right-navbar{
+        align-items: flex-end;
     }
 
     .hamburguesa{
-        display: block;
+        display: none;
     }
     
 }
 
 .footer {
     font-size: 15px;
+    text-align: center;
 }
 
 .cat {
@@ -280,3 +360,40 @@ display: flex;
     margin-left: auto;  
     align-items: center;
 }
+
+.contenedorfooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90vw;
+    text-align: center;
+    margin: auto;
+}
+.nav-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+    width: 100vw;
+}
+
+.iconofooter{
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #03264C;
+    
+   
+}
+
+#icono{
+    font-size: 35px;
+    color:#03264C;
+    transition: all 10ms;
+}
+
+#icono:hover{
+   color:#5890f8;
+   font-size: 40px;
+
+}
+
