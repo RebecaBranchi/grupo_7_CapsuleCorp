@@ -59,11 +59,65 @@
     border-radius: 50%;
 }
 
+.categoriaspopulares{
+    font-size: 22px;
+    width: 90%;
+    margin: auto;
+    
+}
 .categoria{
     width: 100%;
     height: 100%;
-    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: "reboto";
+    padding: 10px 0;
+ 
 }
+
+.iconocat{
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+
+ 
+.categoriatexto{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    font-size: 18px;
+    opacity: 0;
+    color: #FFF;
+    transition: all 450ms;
+}
+
+.categoriatexto:hover{
+    opacity: 1;
+    background-color:#5890f8;
+    border-radius: 15px;
+}
+
+.subcategoria{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    width:33%;
+    border: solid 1px #5890f8;
+    border-radius: 15px;
+    padding: 5px;
+    position: relative;
+}
+
+
 
 
 body{
@@ -117,6 +171,7 @@ header{
 
 }
 
+
 .contenedor-texto{
     padding: 15px 15px;
     display: flex;
@@ -129,20 +184,23 @@ header{
 }
 
 .precio{
-    font-size: 18px;
-    width: 30%;
+    width: 40%;
+    font-family: "reboto";
+    font-size: 26px;
 }
 .descuento{
-    color:rgb(13, 219, 41);
-    font-size: 16px;
-    font-weight:bolder ;
-    width: 70%;
+    width: 60%;
+    font-family: "reboto";
+    color: #5890f8;
+    font-size: 26px;
+
 }
 
 .descripcion{
-    font-size: 26px;
-    color: #fff;
+    font-size: 40px;
     font-weight: bolder;
+    color: #5890f8;
+    font-family: "reboto";
     background-color: rgba(0, 0, 0,0.5);
     position: absolute;
     width: 100%;
@@ -150,7 +208,14 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: all 500ms;
+    
 }
+.descripcion:hover{
+  opacity: 1;
+  display: flex;
+}  
 
 .camionicon{
 display: block;
@@ -189,7 +254,6 @@ transition: transform 200ms;
 }
 
 
-
 .contenedor-foto-texto{
     background-color: #ffffff;
     display: flex;
@@ -197,7 +261,7 @@ transition: transform 200ms;
     justify-content: center;
     margin-bottom: 10px;
     position: relative;
-    z-index: -1;
+    z-index: 0;
 
     
 }
@@ -214,15 +278,6 @@ transition: transform 200ms;
 }
 
 
-.descripcion{
-    opacity: 0;
-    transition: all 500ms;
-}
-
-.descripcion:hover{
-  opacity: 1;
-  display: flex;
-}   
 
 
 .mario{
@@ -271,26 +326,7 @@ right: 20px;
     align-items: baseline;
 }
 
-.precio{
-    position: relative;
-    width: 34%;
-    font-size: 22px;
-    font-family: "reboto";
-}
-.descuento{
-    font-size: 20px;
-    color: #5890f8;
-    position: relative;
-    width: 60%;
-    padding-left: 10px;
-    font-family: "reboto";
-}
-.descripcion{
-    font-size: 40px;
-    font-weight: bolder;
-    color: #5890f8;
-    font-family: "reboto";
-}
+
 
 
 .main-navbar{
