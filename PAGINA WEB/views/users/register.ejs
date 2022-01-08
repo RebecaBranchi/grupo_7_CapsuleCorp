@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head") %>
+
+<body>
+    <header>
+                    <div class="logo">
+                        <div></div>
+                    <a href="/"><img src="/img/logoresult.png" alt="" class="logoimg"></a>
+                   <div></div>
+                </div>
+        
+        </header>
+
+ <section class="form-registro">
+    <h4>Formulario de Registro</h4>
+    <input class="boton" type= "submit" value="Google">
+    <input class="boton" type= "submit" value="Facebook">
+    <input class="control" type="text" name = "nombre" id="nombre" placeholder="Ingrese su nombre" required>
+    <input class="control" type="text" name = "apellido" id="apellido" placeholder="Ingrese su apellido" required>
+    <input class="control" type="email" name = "correo" id="correo" placeholder="Ingrese su correo" required>
+    <input class="control" type="password" name = "contraseña" id="contraseña" placeholder="Ingrese su contraseña" required>
+    <p>Estoy de acuerdo con <a a href="#">Terminos y condiciones</a></p>
+    <input class="boton" type= "submit" value="Registrar">
+    <p><a href="#">¿Ya tengo cuenta?</a></p>
+</section>
+
+<%- include("../partials/footer") %>
+
+</body>
+
+</html>

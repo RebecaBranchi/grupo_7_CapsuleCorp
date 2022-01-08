@@ -1,12 +1,14 @@
 const detalleProducto = (req,res)=>{
-    res.render("productDetail")
+    res.render("products/productDetail")
 };
 
 const carrito = (req,res)=>{
-    res.render("carrito")
+    res.render("products/carrito")
 };
 
-
+const creareditar = (req,res)=>{
+    res.render("products/createEdit")
+};
 
 
 
@@ -16,4 +18,5 @@ const carrito = (req,res)=>{
 module.exports ={
     detalleProducto,
     carrito,
+    creareditar
 }
