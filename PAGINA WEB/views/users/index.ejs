@@ -22,9 +22,12 @@
                 <h2>Basado en tu ultima visita</h2>
             </div>
             <div class="carrusel">
+                <% products.forEach(product => { %>
+                 <% if (product.type == "mas-vendido") { %>   
+              
                 <div class="contenedor-foto-texto">
-                    <div>
-                        <img src="/img/consolanintendo.jpg" alt="" class="imagenes">
+                    <div class="fotosss">
+                        <img src="/img/<%= product.image %> " alt="" class="imagenes">
                     </div>
                     <div class="contenedor-texto-icono">
                         <div class="camionicon">
@@ -32,66 +35,16 @@
                         </div>
                         <div class="contenedor-texto">
                             <div class="preciodescuento">
-                                <h3 class="precio">$ 6.770</h3>
-                                <h3 class="descuento">40% OFF</h3>
+                                <h3 class="precio">$ <%= product.price %> </h3>
+                                <h3 class="descuento"><%= product.discount %>  OFF</h3>
                             </div>
                         </div>
                     </div>
-                    <h3 class="descripcion">Consola Nintendo</h3>
+                    <h3 class="descripcion"><%= product.name %> </h3>
                 </div>
-                <div class="contenedor-foto-texto">
-                    <div>
-                        <img src="/img/img-macbook-pro-2019.jpg" alt="" class="imagenes">
-                    </div>
-                    <div class="contenedor-texto-icono">
-                        <div class="camionicon">
-                            <i class="fas fa-truck" id="camionicono"></i>
-                        </div>
-                        <div class="contenedor-texto">
-                            <div class="preciodescuento">
-                                <h3 class="precio">$ 230.000</h3>
-                                <h3 class="descuento">20% OFF</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="descripcion">Macbook Pro 2019</h3>
-                </div>
-                <div class="contenedor-foto-texto">
-                    <div>
-                        <img src="/img/joystick.jpg" alt="" class="imagenes">
-                    </div>
-                    <div class="contenedor-texto-icono">
-                        <div class="camionicon">
-                            <i class="fas fa-truck" id="camionicono"></i>
-                        </div>
-                        <div class="contenedor-texto">
-                            <div class="preciodescuento">
-                                <h3 class="precio">$ 70.500</h3>
-                                <h3 class="descuento">10% OFF</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="descripcion">Joystick jk10</h3>
-                </div>
-                <div class="contenedor-foto-texto">
-                    <div>
-                        <img src="/img/playstation5.jpeg" alt="" class="imagenes">
-                    </div>
-                    <div class="contenedor-texto-icono">
-                        <div class="camionicon">
-                            <i class="fas fa-truck" id="camionicono"></i>
-                        </div>
-                        <div class="contenedor-texto">
-                            <div class="preciodescuento">
-                                <h3 class="precio">$ 23.200</h3>
-                                <h3 class="descuento">5% OFF</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="descripcion">Playstation 5</h3>
-                </div>
+                <% } %>
+                <% }) %>
             </div>
-        </div>
 
 
         <div class="categoriaspopulares">

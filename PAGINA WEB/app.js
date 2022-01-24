@@ -5,6 +5,10 @@ const mainRouter = require("./routes/mainRouter")
 const productRouter = require("./routes/productRouter")
 const estiloRouter = require("./routes/estiloRouter")
 
+
+
+
+
 const publicPath = "public";
 app.use(express.static(publicPath))
 
