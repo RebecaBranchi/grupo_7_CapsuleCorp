@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <%- include ("../partials/head")%>
 
 <body>
@@ -18,10 +19,10 @@
     <main class="maincaja">
         <div class="contenedor">
             <div class="titulodeseccion">
-                <h2>Detalle Producto</h2>
+                <h2>Todos los productos</h2>
             </div>
             <div class="carrusel">
-                <% productDetail.forEach(product => { %> 
+                <% products.forEach(product => { %> 
                 <div class="contenedor-foto-texto">
                     <div class="fotosss">
                         <img src="/img/<%= product.image %> " alt="" class="imagenes">
@@ -41,8 +42,33 @@
                 </div>
                 <% }) %>
             </div>
-        </div>
           
+
+        <div class="categoriaspopulares">
+            <h3>Categorias populares</h3>
+        <div class="categoria">
+            <div class="subcategoria">
+                <img src="/img/procesador.png" alt="" class="iconocat" >
+                <div class="categoriatexto">Hardware Interno</div>
+            </div>
+            <div class="subcategoria">
+                <img src="/img/tarjeta-ssd.png" alt="" class="iconocat" >
+                <div class="categoriatexto">Memoria</div>
+            </div>
+            <div class="subcategoria">
+                <img src="/img/wifi.png" alt=""class="iconocat"  >
+                <div class="categoriatexto">Hardware Externo</div>
+            </div>
+            <div class="subcategoria">
+                <img src="/img/zumbido.png" alt="" class="iconocat"  >
+                <div class="categoriatexto">Gadget</div>
+            </div>
+            <div class="subcategoria">
+                <img src="/img/consola-de-juego.png" alt="" class="iconocat"  >
+                <div class="categoriatexto">Consolas y Videojuegos</div>
+            </div>
+        </div>
+    </div>
     </main>
 
         <%- include ("../partials/redessociales")%>

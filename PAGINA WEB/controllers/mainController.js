@@ -6,15 +6,15 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const getHome = (req,res)=>{
-    res.render("users/index",{products})
+    res.render("index",{products})
 };
 
 const getLogin = (req,res)=>{
-    res.render("users/login")
+    res.render("login")
 };
 
 const getRegister = (req,res)=>{
-    res.render("users/register")
+    res.render("register")
 }
 
 
