@@ -1,9 +1,14 @@
 const express = require ("express");
 const app = express();
 const path = require("path");
-const mainRouter = require("./routes/mainRouter")
-const productRouter = require("./routes/productRouter")
-const estiloRouter = require("./routes/estiloRouter")
+const cookieParser = require('cookie-parser');
+const multer = require ("multer");
+const session = require('express-session');
+const bcrypt = require('bcryptjs');
+const methodOverride = require('method-override');
+const mainRouter = require("./routes/mainRouter");
+const productRouter = require("./routes/productRouter");
+const estiloRouter = require("./routes/estiloRouter");
 
 
 const publicPath = "public";

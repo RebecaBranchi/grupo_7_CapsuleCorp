@@ -18,10 +18,9 @@ const productController = {
     },
     
 /*create:1,
-    
-    store:1,
+ store:1,
+
     editProduct:2,
-    
     updateProduct:2,
     
     deleteProduct:2,*/
