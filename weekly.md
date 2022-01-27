@@ -5,4 +5,5 @@
 - archivos Json
 - las rutas para el CRUD
 ### Lo que nos falta :
-- ponerlo mas bonito
+- rutas de editar, guardar y delete.
+- ponerlo mas bonito.
