@@ -11,6 +11,10 @@ const productRouter = require("./routes/productRouter");
 const estiloRouter = require("./routes/estiloRouter");
 
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+
 const publicPath = "public";
 app.use(express.static(publicPath))
 

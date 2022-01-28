@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ("../partials/head")%>
+
+
+<body>
+    <%- include ("../partials/header")%>
+ <section class="form-registro">
+    <h4>Formulario de Crear o Editar</h4>
+    <form action="/products" method="POST">
+        <input class="control" type="text" name = "name" id="name" placeholder="Nombre del producto">
+        <input class="control" type="text" name = "description" id="description" placeholder="Descripcion" >
+        <input class="control" type="file" name = "image" id="image" placeholder="Imagen" >
+        <input class="control" type="text" name = "category" id="category" placeholder="Categoria" >
+        <input class="control" type="number" name = "discount" id="discount" placeholder="descuento" >
+        <input class="control" type="text" name = "type" id="type" placeholder="tipo" >
+        <input class="control" type="text" name = "color" id="color" placeholder="color" >
+        <input class="control" type="number" name = "precio" id="precio" placeholder="Precio" >
+        <button type="submit">crear</button>
+
+    </form>
+</section>
+
+
+<%- include ("../partials/redessociales")%>
+<%- include ("../partials/footer")%>
+
+</body>
+
+</html>
