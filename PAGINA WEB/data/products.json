@@ -1,38 +1,5 @@
 [
  {
-  "id": 1,
-  "name": "playstation5",
-  "description": "fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec",
-  "price": 2096.42,
-  "discount": 16,
-  "category": "hardware",
-  "image": "placa-madre.jpg",
-  "type": "nuevo",
-  "color": "azul"
- },
- {
-  "id": 2,
-  "name": "ssd",
-  "description": "quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus",
-  "price": 4182.61,
-  "discount": 33,
-  "category": "gadgets",
-  "image": "combo-gamer.jpg",
-  "type": "ofertas",
-  "color": "gris"
- },
- {
-  "id": 3,
-  "name": "placa madre",
-  "description": "augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at",
-  "price": 4698.8,
-  "discount": 7,
-  "category": "gadgets",
-  "image": "monitor.jpg",
-  "type": "nuevo",
-  "color": "lila"
- },
- {
   "id": 4,
   "name": "xbox",
   "description": "ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam",
@@ -44,39 +11,6 @@
   "color": "rojo"
  },
  {
-  "id": 5,
-  "name": "playstation5",
-  "description": "ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam",
-  "price": 3499.64,
-  "discount": 17,
-  "category": "hardware",
-  "image": "combo-gamer.jpg",
-  "type": "mas-vendido",
-  "color": "blanco"
- },
- {
-  "id": 6,
-  "name": "placa madre",
-  "description": "nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante",
-  "price": 1774.23,
-  "discount": 12,
-  "category": "hardware",
-  "image": "xbox.jpg",
-  "type": "mas-vendido",
-  "color": "azul"
- },
- {
-  "id": 7,
-  "name": "playstation5",
-  "description": "posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet",
-  "price": 2522.95,
-  "discount": 33,
-  "category": "consolas y videojuegos",
-  "image": "combo-gamer.jpg",
-  "type": "ofertas",
-  "color": "negro"
- },
- {
   "id": 8,
   "name": "playstation5",
   "description": "morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu",
@@ -84,17 +18,6 @@
   "discount": 37,
   "category": "hardware",
   "image": "combo-gamer.jpg",
-  "type": "ofertas",
-  "color": "blanco"
- },
- {
-  "id": 9,
-  "name": "xbox",
-  "description": "natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus",
-  "price": 968.55,
-  "discount": 21,
-  "category": "periféricos",
-  "image": "ssd.jpg",
   "type": "ofertas",
   "color": "blanco"
  },
@@ -529,123 +452,68 @@
  },
  {
   "id": 49,
-  "name": "monitor",
-  "description": "pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget",
-  "price": 3657.51,
-  "discount": 11,
-  "category": "consolas y videojuegos",
-  "image": "placa-madre.jpg",
-  "type": "ofertas",
-  "color": "azul"
+  "name": "casita",
+  "description": "muñeca",
+  "color": "rosa",
+  "discount": 20,
+  "price": 20000,
+  "type": "msms"
  },
  {
   "id": 50,
-  "name": "playstation5",
-  "description": "venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam",
-  "price": 4116.35,
-  "discount": 18,
-  "category": "hardware",
-  "image": "playstation5.jpg",
-  "type": "nuevo",
-  "color": "rojo"
+  "name": "playstation5 ",
+  "description": "ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam ",
+  "color": "blanco ",
+  "discount": 20,
+  "price": 3499,
+  "type": "mas-vendido "
  },
  {
   "id": 51,
-  "name": "Consola Sega",
-  "description": "retro consola sega con 1000 juegos",
-  "image": "default.jpg",
-  "category": "consolas",
-  "discount": "5",
-  "type": "ofertas",
-  "color": "negro",
-  "precio": "3500"
+  "name": "ssd ",
+  "description": "quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus ",
+  "color": "gris ",
+  "discount": 30,
+  "price": 4182,
+  "type": "ofertas "
  },
  {
   "id": 52,
-  "name": "Pc. Gammer ",
-  "description": "PC gammers full Placa de Video",
-  "image": "default.jpg",
-  "category": "Pc.s",
-  "discount": "10",
-  "type": "ofertas",
-  "color": "azul",
-  "precio": "150000"
+  "name": "playstation5 ",
+  "description": "fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec ",
+  "color": "azul ",
+  "discount": 5,
+  "price": 2096,
+  "type": "nuevo "
  },
  {
-  "id": 53,
-  "name": "Pc. Gammer ",
-  "description": "PC gammers full",
-  "image": "default.jpg",
-  "category": "Pc.s",
-  "discount": "25",
-  "type": "ofertas",
-  "color": "roja",
-  "precio": "125000"
+  "id": 2,
+  "discount": null,
+  "price": null
  },
  {
-  "id": 54,
-  "name": "hdhdhd",
-  "description": "asasas",
-  "image": "default.jpg",
-  "category": "asas",
-  "discount": "1212",
-  "type": "ofertas",
-  "color": "roja",
-  "precio": "121212"
+  "id": 3,
+  "discount": null,
+  "price": null
  },
  {
-  "id": 55,
-  "name": "hdhdhd",
-  "description": "asasas",
-  "image": "default.jpg",
-  "category": "asas",
-  "discount": "1212",
-  "type": "ofertas",
-  "color": "roja",
-  "precio": "1"
+  "id": 5,
+  "discount": null,
+  "price": null
  },
  {
-  "id": 56,
-  "name": "Consola Sega",
-  "description": "retro consola sega con 1000 juegos",
-  "image": "default.jpg",
-  "category": "consolas",
-  "discount": "5",
-  "type": "ofertas",
-  "color": "negro",
-  "precio": "3500"
+  "id": 6,
+  "discount": null,
+  "price": null
  },
  {
-  "id": 57,
-  "name": "ss",
-  "description": "ssss",
-  "image": "default.jpg",
-  "category": "sss",
-  "discount": "5",
-  "type": "sss",
-  "color": "ss",
-  "precio": "12"
+  "id": 7,
+  "discount": null,
+  "price": null
  },
  {
-  "id": 58,
-  "name": "ccc",
-  "description": "cccc",
-  "image": "default.jpg",
-  "category": "ccc",
-  "discount": "5",
-  "type": "fff",
-  "color": "fff",
-  "precio": "12121212"
- },
- {
-  "id": 59,
-  "name": "sdsd",
-  "description": "sdsd",
-  "image": "default.jpg",
-  "category": "sdsds",
-  "discount": "5",
-  "type": "sdsd",
-  "color": "sdsdsd",
-  "precio": "121212"
+  "id": 9,
+  "discount": null,
+  "price": null
  }
 ]
