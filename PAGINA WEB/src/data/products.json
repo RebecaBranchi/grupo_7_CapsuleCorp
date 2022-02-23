@@ -143,17 +143,6 @@
   "color": "rojo"
  },
  {
-  "id": 21,
-  "name": "placa madre",
-  "description": "volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum",
-  "price": 1151.85,
-  "discount": 10,
-  "category": "gadgets",
-  "image": "playstation5.jpg",
-  "type": "mas-vendido",
-  "color": "negro"
- },
- {
   "id": 22,
   "name": "ssd",
   "description": "sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a",
@@ -533,5 +522,14 @@
   "discount": 14,
   "price": 5000,
   "type": "msms"
+ },
+ {
+  "id": 21,
+  "name": "tv",
+  "description": "volutpat",
+  "color": "negro",
+  "discount": 10,
+  "price": 1151,
+  "type": "mas-vendido"
  }
 ]

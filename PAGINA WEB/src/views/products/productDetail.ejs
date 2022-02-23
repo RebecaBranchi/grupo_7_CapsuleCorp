@@ -40,12 +40,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h3 >
+                                <h3>
                                     <%= product.name %>
                                 </h3>
                                 <div>
-                                    <button type="submint"> <a href="/products/edit/<%= product.id %>">EDITAR PRODUCTO</a></button>
-                                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"><button type="submit">BORRAR</button>
+                                    <button type="submint"> <a href="/products/edit/<%= product.id %>">EDITAR
+                                            PRODUCTO</a></button>
+                                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                        <button type="submit">BORRAR</button>
                                     </form>
                                     <BUtton>COMPRAR</BUtton>
                                 </div>

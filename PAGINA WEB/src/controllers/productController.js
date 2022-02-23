@@ -70,7 +70,7 @@ const productController = {
         let newJSON = JSON.stringify(productsEdit,null,1);
         fs.writeFileSync(productsFilePath,newJSON,"utf-8");
         const productEdit = productsEdit.filter(prod => prod.id == req.params.id)
-        res.redirect(`/products/${productEdit[0].id}`);
+        res.redirect(`/products/detail/${productEdit[0].id}`);
        
        },
     

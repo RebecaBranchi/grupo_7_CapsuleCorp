@@ -35,11 +35,11 @@ const validator = [
              .withMessage ("seleccione una de la opciones"),
       ]
 router.get("/",productController.listProducts);
-
+router.get("/:id", productController.detailProduct);
 router.get("/create",productController.create);
-router.post("/",validator,productController.store);
+router.post("/create",validator,productController.store);
 
-router.get("/detail/:id", productController.detailProduct);
+
 
 router.get("/edit/:id",productController.editProduct);
 router.put("/update/:id",productController.updateProduct);

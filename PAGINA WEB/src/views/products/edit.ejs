@@ -7,9 +7,9 @@
     <body>
         <%- include ("../partials/header")%>
             <section class="form-registro">
-                <h4>Formulario de Crear o Editar</h4>
+                <h4>Formulario Editar</h4>
                 <% productEdit.forEach(element=> { %>
-                    <form action="update/<%= element.id %>?_method=PUT" method="POST">
+                    <form action="/products/update/<%= element.id %>?_method=PUT" method="POST">
                         <input class="control" type="text" name="name" id="name" value=<%=element.name %> >
                         <input class="control" type="text" name="description" id="description"
                             value=<%=element.description %> >
