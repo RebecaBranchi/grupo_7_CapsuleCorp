@@ -7,7 +7,7 @@ const { body, validatorResult } = require ("express-validator");
 
 const fileStorageEngine = multer.diskStorage({ 
     destination: function (req, file, cb) { 
-       cb(null, './public/image'); 
+       cb(null, './public/img'); 
     }, 
     filename: function (req, file, cb) { 
        cb(null, `${Date.now()}--${file.originalname}`) } 
@@ -37,7 +37,7 @@ const validator = [
 router.get("/list",productController.listProducts);
 router.get("/detail/:id", productController.detailProduct);
 router.get("/create",productController.create);
-router.post("/create",productController.store);
+router.post("/create", upload.single('image')  ,productController.store);
 
 router.get("/edit/:id",productController.editProduct);
 router.put("/update/:id",productController.updateProduct);
