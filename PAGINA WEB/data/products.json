@@ -515,5 +515,23 @@
   "id": 9,
   "discount": null,
   "price": null
+ },
+ {
+  "id": 10,
+  "name": "teclado",
+  "description": "amnanana",
+  "color": "violata",
+  "discount": 14,
+  "price": 5000,
+  "type": "msms"
+ },
+ {
+  "id": 11,
+  "name": "teclado",
+  "description": "amnanana",
+  "color": "violata",
+  "discount": 14,
+  "price": 5000,
+  "type": "msms"
  }
 ]

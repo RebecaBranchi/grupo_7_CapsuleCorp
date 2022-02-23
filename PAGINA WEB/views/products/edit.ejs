@@ -9,7 +9,7 @@
             <section class="form-registro">
                 <h4>Formulario de Crear o Editar</h4>
                 <% productEdit.forEach(element=> { %>
-                    <form action="/products/update/<%= element.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <form action="update/<%= element.id %>?_method=PUT" method="POST">
                         <input class="control" type="text" name="name" id="name" value=<%=element.name %> >
                         <input class="control" type="text" name="description" id="description"
                             value=<%=element.description %> >

@@ -66,13 +66,12 @@ const productController = {
             //image: req.file.filename,
             type: req.body.type
         } 
-        console.log(req.body.name);
-        /*productsEdit.push(prodEdit);
+        productsEdit.push(prodEdit);
         let newJSON = JSON.stringify(productsEdit,null,1);
         fs.writeFileSync(productsFilePath,newJSON,"utf-8");
         const productEdit = productsEdit.filter(prod => prod.id == req.params.id)
-        res.redirect(`/products/detail/${productEdit[0].id}`);*/
-       res.send('recibido')
+        res.redirect(`/products/${productEdit[0].id}`);
+       
        },
     
     delete: (req,res )=> {
