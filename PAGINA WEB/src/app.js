@@ -10,6 +10,7 @@ const methodOverride = require('method-override');
 const mainRouter = require("./routes/mainRouter");
 const productRouter = require("./routes/productRouter");
 const estiloRouter = require("./routes/estiloRouter");
+const usersRouter = require("./routes/usersRouter");
 const publicPath = "public";
 app.use(express.static(publicPath));
 
@@ -28,8 +29,8 @@ app.listen(3050, () => {
 
 app.use("/", mainRouter)
 app.use("/products", productRouter)
-
+app.use("/users", usersRouter )
 
 app.use(estiloRouter)
 //npm i -D nodemon para instalar nodemon
-//npx nodemon app.js   para ejecutar
+//npx nodemon src/app.js   para ejecutar

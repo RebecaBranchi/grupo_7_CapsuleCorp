@@ -7,12 +7,12 @@
     <body>
         <%- include ("../partials/header")%>
             <section class="form-registro">
-                <h4>Formulario de Crear o Editar</h4>
+                <h4>Formulario de Crear</h4>
                 <form action="/products/create" method="POST">
                     <input class="control" type="text" name="name" id="name" placeholder="Nombre del producto">
                     <input class="control" type="text" name="description" id="description" placeholder="Descripcion">
                     <input class="control" type="file" name="image" id="image" placeholder="Imagen">
-                    <select name="category" id="category" placeholder="Categoria"><br>
+                    <select class="control" name="category" id="category" placeholder="Categoria"><br>
                         <option value="visited">nuevo</option>
                         <option value="in sale">oferta</option>
                         <option value="new">mas visitado</option>

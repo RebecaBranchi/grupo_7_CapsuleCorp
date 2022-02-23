@@ -22,17 +22,6 @@
   "color": "blanco"
  },
  {
-  "id": 10,
-  "name": "xbox",
-  "description": "in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis",
-  "price": 3181.34,
-  "discount": 33,
-  "category": "consolas y videojuegos",
-  "image": "playstation5.jpg",
-  "type": "ofertas",
-  "color": "negro"
- },
- {
   "id": 11,
   "name": "combo gamer",
   "description": "sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut",
@@ -95,17 +84,6 @@
   "discount": 10,
   "category": "consolas y videojuegos",
   "image": "monitor.jpg",
-  "type": "mas-vendido",
-  "color": "rojo"
- },
- {
-  "id": 17,
-  "name": "playstation5",
-  "description": "pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum",
-  "price": 4766.15,
-  "discount": 32,
-  "category": "consolas y videojuegos",
-  "image": "combo-gamer.jpg",
   "type": "mas-vendido",
   "color": "rojo"
  },
@@ -476,60 +454,12 @@
   "type": "nuevo "
  },
  {
-  "id": 2,
-  "discount": null,
-  "price": null
- },
- {
-  "id": 3,
-  "discount": null,
-  "price": null
- },
- {
-  "id": 5,
-  "discount": null,
-  "price": null
- },
- {
-  "id": 6,
-  "discount": null,
-  "price": null
- },
- {
-  "id": 7,
-  "discount": null,
-  "price": null
- },
- {
-  "id": 9,
-  "discount": null,
-  "price": null
- },
- {
   "id": 10,
-  "name": "teclado",
-  "description": "amnanana",
-  "color": "violata",
-  "discount": 14,
-  "price": 5000,
-  "type": "msms"
- },
- {
-  "id": 11,
-  "name": "teclado",
-  "description": "amnanana",
-  "color": "violata",
-  "discount": 14,
-  "price": 5000,
-  "type": "msms"
- },
- {
-  "id": 21,
-  "name": "tv",
-  "description": "volutpat",
+  "name": "xbox",
+  "description": "in",
   "color": "negro",
-  "discount": 10,
-  "price": 1151,
-  "type": "mas-vendido"
+  "discount": 1000000,
+  "price": 3181,
+  "type": "ofertas"
  }
 ]

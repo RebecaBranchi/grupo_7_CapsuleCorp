@@ -34,12 +34,10 @@ const validator = [
              .notEmpty()
              .withMessage ("seleccione una de la opciones"),
       ]
-router.get("/",productController.listProducts);
-router.get("/:id", productController.detailProduct);
+router.get("/list",productController.listProducts);
+router.get("/detail/:id", productController.detailProduct);
 router.get("/create",productController.create);
-router.post("/create",validator,productController.store);
-
-
+router.post("/create",productController.store);
 
 router.get("/edit/:id",productController.editProduct);
 router.put("/update/:id",productController.updateProduct);
