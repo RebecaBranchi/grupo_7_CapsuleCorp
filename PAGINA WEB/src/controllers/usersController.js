@@ -1,15 +1,30 @@
+const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 
-const getLogin = (req,res)=>{
-    res.render("users/login")
-};
 
-const getRegister = (req,res)=>{
-    res.render("users/register")
+const controller = {
+    register: (req, res) => {
+         res.render('users/register');
+    },
+    processRegister: (req, res) => {
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+        return res.send('ok, las validaciones se pasaron y no tienes errores')
+    },
+    login: (req, res) => {
+        res.render("users/login")
+    },
+
+    //profile:(req, res) => {
+    //return res.render("users/register")
+    //},
 }
-module.exports ={
-  
-    getLogin,
-    getRegister
-}
+
+module.exports = controller
+
