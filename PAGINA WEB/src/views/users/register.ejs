@@ -14,33 +14,34 @@
         </header>
 
         <section class="form-registro">
-            <h4>¡Hola! Aquí completas tus datos para registrarte</h4>
-             <input class="boton" type="submit" value="continuar con Google">
-            <input class="boton" type="submit" value="continuar con Facebook">
-            <p><label for="name">Ingresá tu nombre</label></p>
-            <input class="control" type="text" name="first_name" id="first_name" placeholder="Ingrese su nombre"
-                required>
-            <label for="last_name">Ingresá tu apellido</label>
-            <input class="control" type="text" name="last_name" id="last_name" placeholder="Ingrese su apellido"
-                required>
-            <label for="email">Ingresá tu e-mail</label>
-            <h6><label for="email">te enviaremos un mensaje para confirmarlo.</label></h6>
-            <input class="control" type="email" name="email" id="email" placeholder="Ingrese su correo" required>
-            <label for="password">Crear tu clave</label>
-            <input class="control" type="password" name="password" id="password" placeholder="Ingrese su contraseña"
-                required>
-            <label for="image">Ingresá la imagen de perfil</label>
-            <input class="control" type="file" name="image" id="image" placeholder="Imagen">
-            <label for="type">Selecciona la actividad que vas a realizar </label>
-            <select class="control" name="type" id="type" placeholder="Opciones"><br>
-                <option value="buyer">comprador</option>
-                <option value="seller">vendedor</option>
-                <option value="buyer_seller">comprador/vendedor</option>
-            </select><br>
-            <p>Estoy de acuerdo con <a a href="#">Terminos y condiciones</a></p>
-            <button type="submit">Registrar</button>
-            <p><a href="/users/login">¿Ya tengo cuenta?</a></p>
-
+            <form action="/users/register" method= " POST" enctype="multipart/form-data">
+                <h4>¡Hola! Aquí completas tus datos para registrarte</h4>
+                <input class="boton" type="submit" value="continuar con Google">
+                <input class="boton" type="submit" value="continuar con Facebook">
+                <p><label>Ingresá tu nombre</label></p>
+                <input class="control" type="text" name="first_name" id="first_name" placeholder="Ingrese su nombre"
+                    required>
+                <label>Ingresá tu apellido</label>
+                <input class="control" type="text" name="last_name" id="last_name" placeholder="Ingrese su apellido"
+                    required>
+                <label>Ingresá tu e-mail</label>
+                <h6><label>te enviaremos un mensaje para confirmarlo.</label></h6>
+                <input class="control" type="email" name="email" id="email" placeholder="Ingrese su correo" required>
+                <label>Crear tu clave</label>
+                <input class="control" type="password" name="password" id="password" placeholder="Ingrese su contraseña"
+                    required>
+                <label>Ingresá la imagen de perfil</label>
+                <input class="control" type="file" name="image" id="image"  >
+                <label>Selecciona la actividad que vas a realizar </label>
+                <select class="control" name="type" id="type" placeholder="Opciones"><br>
+                    <option value="buyer">comprador</option>
+                    <option value="seller">vendedor</option>
+                    <option value="buyer_seller">comprador/vendedor</option>
+                </select><br>
+                <p>Estoy de acuerdo con <a a href="#">Terminos y condiciones</a></p>
+                <button type="submit">Registrar</button>
+                <p><a href="/users/login">¿Ya tengo cuenta?</a></p>
+            </form>
         </section>
 
         <%- include("../partials/footer") %>

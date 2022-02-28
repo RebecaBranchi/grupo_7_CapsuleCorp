@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ("../partials/head")%>
+
+
+    <body>
+        <%- include ("../partials/header")%>
+            <section class="form-registro">
+                <article class="profile">
+                    <div class="profile-left">
+                        <figure><img src="/public/users" alt=""></figure>
+                        <h3>#<%= image.id %>
+                        </h3>
+                    </div>
+                    <div class="form-content">
+                        <h3>
+                            <label for="¡Hola!"></label>
+                            <%= profile.first_name %>
+                            
+                        </h3>
+                        <h3><%= profile.last_name %></h3>
+                        <h3>  <%= profile.email %></h3>
+                        
+                        <% if (profile.type) { %>
+                            <p>Categoría: <%= profile.type %>
+                            </p>
+                            <%} %>
+                                
+                                <div>
+                                    <a class="button" href="/<%= profile.id %>">volver</a>
+                                </div>
+                    </div>
+                </article>
+            </section>

@@ -21,9 +21,9 @@ const controller = {
         res.render("users/login")
     },
 
-    //profile:(req, res) => {
-    //return res.render("users/register")
-    //},
+    profile:(req, res) => {
+    return res.render("users/profile")
+    },
 }
 
 module.exports = controller
