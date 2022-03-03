@@ -14,8 +14,8 @@ const usersRouter = require("./routes/usersRouter");
 const publicPath = "public";
 app.use(express.static(publicPath));
 
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json());
+app.use(express.urlencoded({extended: false}));
+//app.use(Express.json());
 
 app.use(methodOverride("_method"))
 //app.use(session({secret:'secreto!!'}))

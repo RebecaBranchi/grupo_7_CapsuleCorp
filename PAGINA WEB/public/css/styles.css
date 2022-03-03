@@ -38,6 +38,12 @@
     text-align: center;
     font-size: 18px;
 }
+.is-invalid {
+    border: 2px solid black;
+  }
+.text-danger{
+    color: red;
+}
 .form-registro a:hover{
     color: rgb(224, 235, 245);
     text-decoration: underline;
@@ -49,6 +55,7 @@
     margin-bottom:10%;
     margin-top: 5%;
 }
+
 
 .logoheader{
 
