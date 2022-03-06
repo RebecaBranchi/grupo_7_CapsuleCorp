@@ -9,30 +9,49 @@
 /* final de estilos de redes sociales*/
 
 .form-registro{
-    width:100vw;
-    background: #F9B761;
+    width:60vw;
+    background: #f8d3a3;
     padding:50px ;
     margin: 2rem auto;
     border-radius: 4px;
     font-family: 'Gill Sans';
-    color: rgb(255, 255, 255);
-    text-align: center;
+    color: rgb(12, 12, 12);
+    text-align:left;
+   
+    padding-top: 5%;
 }
+.form-registro button{
+   
+    background-color: rgb(228, 143, 74);
+    color: rgb(51, 39, 7);
+    padding: 10px 5px;
+    margin-bottom:10%;
+    margin-top: 3%;
+    margin-left: 280px;
+}
+
 .form-registro h4{
     font-size: 22px;
-    margin-bottom: 20px;
-
+    margin-bottom: 50px;
+    margin-left: 50px;
 }
+
 .control{
     width: 100%;
+    margin: center;
     background: rgb(250, 248, 248);
-    padding: 10px;
+    padding:10px;
     border-radius: 4px;
     margin-bottom: 16;
    border:1px solid #ac9292;
    font-family: 'Gill Sans';
+
    font-size: 18px;
 }
+.form-registro label{
+    margin-left: 10px;
+}
+
 .form-registro p {
     height: 40px;
     text-align: center;
@@ -47,13 +66,17 @@
 .form-registro a:hover{
     color: rgb(224, 235, 245);
     text-decoration: underline;
+  
+    
 }
 .boton{
-    background-color: rgb(83, 69, 95);
-    color: azure;
-    padding: 10px 30px;
+    background-color: rgb(228, 143, 74);
+    color: rgb(51, 39, 7);
+    padding: 10px 5px;
     margin-bottom:10%;
-    margin-top: 5%;
+    margin-top: 3%;
+    margin-left: 100px;
+  
 }
 
 
