@@ -8,10 +8,11 @@
 
 /* final de estilos de redes sociales*/
 
+
 .form-registro{
-    width:60vw;
+    width:60%;
     background: #f8d3a3;
-    padding:50px ;
+    padding:30px ;
     margin: 2rem auto;
     border-radius: 4px;
     font-family: 'Gill Sans';
@@ -145,16 +146,54 @@
     height: 100%;
     text-align: center;
     font-size: 18px;
-    width:33%;
     border: solid 1px #5890f8;
     border-radius: 15px;
     padding: 5px;
     position: relative;
 }
+/*perfil*/
+.profilUser{
+    width: 30%;
+    background: rgb(250, 246, 246);
+    padding:10px;
+    border-radius: 4px;
+    margin-bottom: 100px;
+    margin-top: 10px;
+    margin-left: 50px;
 
+   font-family: 'Gill Sans';
+   font-size: 18px;
+   text-align: left;
+   
+}
+.profilUser h2{
+ margin-top: 10px;
+ margin-left: 20px;
+}
 
+.circular{
+    margin-bottom: 10px;
+    margin-top: 40px;
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+   
+}
+.right-navbar img{
+  
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+   
+}
 
-
+/**/
 body{
     font-family: 'Tourney', cursive;
     font-weight: normal;
@@ -355,7 +394,7 @@ right: 20px;
 
 .texto-icono{
     padding-left: 15px;
-    border-top: solid 5px blue;
+    border-top: solid 5px rgb(14, 14, 15);
     position: relative;
 }
 
@@ -365,36 +404,33 @@ right: 20px;
 }
 
 
-
-
 .main-navbar{
-   height: 75px;
-   width: 100vw;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-  
-}
-.left-navbar{
+    height: 75px;
+    width: 100vw;
     display: flex;
-    list-style: none;
-    margin-right: 30px;
-}
-.left-navbar li{
-   border-radius: 3px;
-   margin: 0 5px;
-}
-.right-navbar{
-    display: flex;
-    list-style: none;
-    margin-left: 30px;
-}
-.right-navba li{
-    border-radius: 10px;
-    margin: 0 10px;
-}
-
+    justify-content: space-between;
+    align-items: center;
    
+ }
+ .left-navbar{
+     display: flex;
+     list-style: none;
+     margin-right: 30px;
+ }
+ .left-navbar li{
+    border-radius: 3px;
+    margin: 0 5px;
+ }
+ .right-navbar{
+     display: flex;
+     list-style: none;
+     margin-left: 30px;
+ }
+ .right-navba li{
+     border-radius: 10px;
+     margin: 0 10px;
+ }
+ 
 
 .logoimg{
     width: 100px;
@@ -489,7 +525,6 @@ font-size: 24px;
 .main-navbar{
     display: none;
 }
-
 @media (min-width: 760px) {
     .main-navbar{
         display: flex;
@@ -727,5 +762,3 @@ font-size: 24px;
  font-size: 100px;
  text-align: center;
 }
-
-

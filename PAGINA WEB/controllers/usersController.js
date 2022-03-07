@@ -2,7 +2,8 @@ const { validationResult } = require('express-validator');
 const User = require('../models/user');
 const bcryptjs = require('bcryptjs');
 const controller = {
-    register: (req, res) => {
+        register: (req, res) => {
+           
         res.render('users/register');
     },
     processRegister: (req, res) => {
@@ -34,13 +35,16 @@ const controller = {
        return res.redirect('/users/login')
     },
     login: (req, res) => {
+              
                res.render('users/login')
+
     },
     loginProcess:(req,res)=>{
         let userToLogin = User.findByField('email', req.body.email);
         if(userToLogin){
             let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
             if(isOkThePassword){
+                delete userToLogin.password;
                 req.session.userLogged = userToLogin ;
                 return res.redirect('/users/profile')
             }
@@ -66,10 +70,15 @@ const controller = {
         
     },
     profile: (req, res) => {
-console.log("estas en profile");
-console.log(req.session);
-        res.render("users/profile")
+        return res.render('users/profile',{
+            user: req.session.userLogged
+        });
     },
+    logout: (req,res)=> {
+        req.session.destroy();
+        console.log(req.session);
+        return res.redirect('/');
+    }
 }
 
 module.exports = controller

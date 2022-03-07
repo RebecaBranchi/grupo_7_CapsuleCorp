@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../partials/head") %>
-<%- include("../partials/headerProfile") %>
+<%- include("../partials/header") %>
     <body>
 
-     
-        <div class= "form-registro" >
-            <div class="row">
-                <div class="control">
-                    <h2>Hi</h2>
-                    <img src="#">
+            <div class="profilUser">
+                   
+                    <img class="circular" src="/img/users/<%= user.avatar %> ">
                     <br>
                     <br>
-                    <div class="alert alert-success"> </div>
+                    <h2>¡Hola <%= user.first_name %> !</h2>
+                    
                 </div>
-            </div>
-        </div>
-
         <%- include ("../partials/redessociales")%>
-        <%- include ("../partials/footer")%>
+       
 
     </body>
 

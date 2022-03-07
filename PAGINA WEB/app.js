@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const bodyParser = require('body-parser')
-const cookieParser = require('cookie-parser');
+const cookies= require('cookie-parser');
 const multer = require("multer");
 const session = require('express-session');
 const bcrypt = require('bcryptjs');
@@ -12,6 +12,7 @@ const productRouter = require("./routes/productRouter");
 const estiloRouter = require("./routes/estiloRouter");
 const usersRouter = require("./routes/usersRouter");
 const publicPath = "public";
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 app.use(express.static(publicPath));
 
 app.use(express.urlencoded({extended: false}));
@@ -27,11 +28,12 @@ app.listen(3050, () => {
     console.log("Capsule Corp")
 });
 app.use(session({
-    secret:'it is a secret',
-    resave: false,
-    saveUninitialized: false})
-);
-
+	secret: "Shhh, It's a secret",
+	resave: false,
+	saveUninitialized: false,
+}));
+app.use(cookies());
+app.use(userLoggedMiddleware);
 app.use("/", mainRouter)
 app.use("/products", productRouter)
 app.use("/users", usersRouter )

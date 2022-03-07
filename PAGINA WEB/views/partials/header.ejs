@@ -20,18 +20,34 @@
          </select>    
         </div>
         <nav class="main-navbar">
-            <ul class="left-navbar">
+            <% if (locals.isLogged) { %>
+              <ul class="left-navbar">
                 <li><a href="/ofertas">Ofertas</a></li>
                 <li><a href="/tiendasoficiales">Tiendas Oficiales</a></li>
                 <li><a href="/vender">Vender</a></li>
                 <li><a href="/productDetail">Producto</a></li>
                 <li><a href="/ayuda">Ayuda</a></li>
-            </ul>
-            <ul class="right-navbar">
-                <li><a href="users/register">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
-                <li><a href="users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+              </ul>
+              <ul class="right-navbar">
                 <li><a href="/miscompras">Mis compras <i class="fas fa-shopping-bag"></i></a></li>
-            </ul>
+                <li><a href="/users/logout">Cerrar sesión <i class="far fa-address-card"></i></a></li>
+                <li><img src="/img/users/<%= locals.userLogged.avatar %> "></li>
+                <li><a href=""> ¡hola!<%= locals.userLogged.first_name %> </a></li>
+             </ul>
+            <% } else { %>
+                <ul class="left-navbar">
+                    <li><a href="/ofertas">Ofertas</a></li>
+                    <li><a href="/tiendasoficiales">Tiendas Oficiales</a></li>
+                    <li><a href="/vender">Vender</a></li>
+                    <li><a href="/productDetail">Producto</a></li>
+                    <li><a href="/ayuda">Ayuda</a></li>
+                  </ul>
+                  <ul class="right-navbar">
+                    <li><a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
+                    <li><a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="/miscompras">Mis compras <i class="fas fa-shopping-bag"></i></a></li>
+                 </ul>
+                 <% } %>
         </nav>
     </div>
 </header>
