@@ -3,29 +3,24 @@
 
 
     <%- include ("../partials/head")%>
+ 
 <main>
+    <%- include ("../partials/navLoginRegister")%>
     <div>
+        <div class="titleLoginRegister"><h1>¡Hola Ingresa los siguientes datos para logearte!</h1></div>
+        
         <form action="/users/login" method="POST" class="form-registro">
-
+           
             <label><b>Correo electrónico</b></label>
             <input class="control" type="email" name = "email" id="correo" >
             <% if (locals.errors && errors.email) { %>
                 <div class="text-danger">
                     <%= errors.email.msg %>
-                </div>
+                </div>    
             <% } %>
-            <label><b>Contraseña</b></label>
-            <input class="control" type="password" name = "password" id="contraseña" >
-            <div class="col-md-6 my-2">
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
-                    </label>
-                </div>
-            </div>
+           
+            <a href=""> <button type="submit"> Continuar</button> </a>
              <p><a target="_blank" href="">Olvidé mi contraseña</a></p>
-            
-             <button type="submit"> Ingresar</button>
              <p><a href="/users/register">¿Aún no tenes cuenta?</a></p></div>
              
         </form>
@@ -33,8 +28,5 @@
 
 </main>
 
-
-<%- include ("../partials/footer")%>
-    
 </body>
 </html>

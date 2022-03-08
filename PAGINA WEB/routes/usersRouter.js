@@ -23,8 +23,10 @@ const usersController = require("../controllers/usersController")
 
 // formulario login
 router.get("/login", usersController.login);
-// procesamiento del login
-router.post("/login", usersController.loginProcess);
+//router.get("/loginPass", usersController.loginProcess);
+router.post("/login", usersController.loginPassaword);
+
+router.post("/loginPass", usersController.loginProcess);
 // creacion del formulario
 router.get("/register", guesmiddleware, usersController.register);
 // procesamiento del formulario de creacion usuario

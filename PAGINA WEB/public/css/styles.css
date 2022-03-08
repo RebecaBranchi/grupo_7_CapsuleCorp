@@ -11,20 +11,19 @@
 
 .form-registro{
     width:60%;
-    background: #f8d3a3;
+    background: #e7e5e5;
     padding:30px ;
     margin: 2rem auto;
-    border-radius: 4px;
+    border-radius: 10px;
     font-family: 'Gill Sans';
     color: rgb(12, 12, 12);
     text-align:left;
-   
     padding-top: 5%;
 }
 .form-registro button{
    
-    background-color: rgb(228, 143, 74);
-    color: rgb(51, 39, 7);
+    background-color: rgb(14, 13, 13);
+    color: rgb(255, 255, 255);
     padding: 10px 5px;
     margin-bottom:10%;
     margin-top: 3%;
@@ -151,6 +150,29 @@
     padding: 5px;
     position: relative;
 }
+/*nav_register login*/
+.titleLoginRegister{
+    margin-left: 15%;
+}
+.navLoginRegister{
+
+    background-color:#e7e5e5;
+    ;
+    font-size: 20px;
+     padding: 15px 0  20px 0;
+      animation: arranque 6s linear 1 normal ;
+    z-index: 100;
+
+}
+.logoLogin img{
+ 
+    width:100px;
+    height: 100px;
+    display: block;
+    margin: auto;
+  
+}
+
 /*perfil*/
 .profilUser{
     width: 30%;

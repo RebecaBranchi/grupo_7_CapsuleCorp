@@ -1,9 +1,11 @@
 const { validationResult } = require('express-validator');
 const User = require('../models/user');
 const bcryptjs = require('bcryptjs');
+
+
+
 const controller = {
         register: (req, res) => {
-           
         res.render('users/register');
     },
     processRegister: (req, res) => {
@@ -37,18 +39,27 @@ const controller = {
     login: (req, res) => {
               
                res.render('users/login')
+               
 
+    },
+    loginPassaword:(req,res)=>{
+        let userToLogin = User.findByField('email', req.body.email);
+        if (userToLogin) {
+            return res.render('users/loginPass',{userToLogin})
+        }
     },
     loginProcess:(req,res)=>{
         let userToLogin = User.findByField('email', req.body.email);
+        
         if(userToLogin){
+            
             let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
             if(isOkThePassword){
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin ;
                 return res.redirect('/users/profile')
             }
-            return res.render('users/login', {
+            return res.render('users/loginPass', {
                 errors: {
                    email:{
                    msg:'La contraseña es errónea'
@@ -58,6 +69,7 @@ const controller = {
            });
 
         }
+
            return res.render('users/login', {
                 errors: {
                    email:{
@@ -75,9 +87,9 @@ const controller = {
         });
     },
     logout: (req,res)=> {
+        res.clearCookie('userEmail');
         req.session.destroy();
-        console.log(req.session);
-        return res.redirect('/');
+         return res.redirect('/');
     }
 }
 
