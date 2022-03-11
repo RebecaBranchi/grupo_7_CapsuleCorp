@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include ("../partials/head")%>
+
+    <main>
+        <%- include ("../partials/navLoginRegister")%>
+            <div>
+                <div class="titleLoginRegister">
+                    <h1>¡Hola Ingresa tu email para loguearte!</h1>
+                </div>
+
+                <form action="/users/login" method="POST" class="form-registro">
+                   
+                   <div class="email">
+
+                        <label><b>Correo electrónico</b></label>
+                        <input type="text" name="email" id="email"
+                            class="control <%= locals.errors && errors.email ? 'is-invalid': null %>"
+                            value="<%= locals.oldData ? oldData.email :null %>">
+                            
+                              <% if (locals.errors && errors.email) { %>
+                                 <div class="text-danger">
+                                      <p class="errorEmail"><%= errors.email.msg %></p>
+                                    
+                                  </div>
+                             <% } %>
+                       
+                            
+                      
+                    </div>
+                
+                        <button type="submit">continuar</button>
+                        <p><a target="_blank" href="">Olvidé mi contraseña</a></p>
+                        <p><a href="/users/register">¿Aún no tenes cuenta?</a></p>         
+            
+      </form>
+      </div>
+     
+            
+    </main>
+   
+    </body>
+
+</html>

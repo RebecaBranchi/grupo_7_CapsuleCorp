@@ -36,6 +36,14 @@
     margin-left: 50px;
 }
 
+#emailPass {
+border: 0;
+outline: none;
+background-color : #e7e5e5;
+text-align: center;
+font-size: 24px ;
+}
+
 .control{
     width: 100%;
     margin: center;

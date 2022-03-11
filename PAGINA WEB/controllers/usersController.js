@@ -40,13 +40,23 @@ const controller = {
     },
     login: (req, res) => {
              
-               res.render('users/login')
+               res.render('users/loginEmail')
        },
    
     loginProcess:(req,res)=>{
         let userToLogin = User.findByField('email', req.body.email);
+
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            res.render('users/loginEmail', {
+                errors: resultValidation.mapped(),
+                oldData:req.body
+            });
+        }
+  
         if(!userToLogin){
-            return res.render('users/login', {
+           
+            return res.render('users/loginEmail', {
                 errors: {
                    email:{
                    msg:'El correo electronico no esta registrado'
@@ -55,19 +65,12 @@ const controller = {
               
            })
         }else{
-             res.render('users/login', {
+             res.render('users/loginPass', {
             oldData :req.body})
-        }
-       
-        const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            res.render('users/login', {
-                errors: resultValidation.mapped(),
-                oldData:req.body
-            });
-        }
-  
-            
+             }},
+loginPass: (req,res)=>{
+
+            let userToLogin = User.findByField('email', req.body.email);
             let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
       
             if(isOkThePassword){
@@ -75,7 +78,7 @@ const controller = {
                 req.session.userLogged = userToLogin ;
                 return res.redirect('/users/profile')
             }
-            return res.render('users/login', {
+            return res.render('users/loginPass', {
                 errors: {
                    email:{
                    msg:'La contraseña es errónea'

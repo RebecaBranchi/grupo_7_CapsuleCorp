@@ -26,7 +26,7 @@ app.set('views', path.join(__dirname, '/views'));
 app.use(express.static(path.resolve(__dirname, '../public')));
 
 app.listen(3050, () => {
-    console.log("Capsule Corp")
+    console.log("Capsule Corp 3050")
 });
 app.use(session({
 	secret: "Shhh, It's a secret",

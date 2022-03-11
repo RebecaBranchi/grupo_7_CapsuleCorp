@@ -7,6 +7,7 @@ const validationsRegister = require('../middlewares/userMiddle');
 const guesmiddleware = require('../middlewares/guesmiddleware');
 const authMiddLeware = require('../middlewares/authMiddeleware');
 const validationsLogin = require('../middlewares/userLoginMiddeleware')
+const validationsPass = require('../middlewares/userPassMiddleware')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -25,7 +26,8 @@ const usersController = require("../controllers/usersController")
 // formulario login
 router.get("/login", usersController.login);
 
-router.post("/login",  validationsLogin,usersController.loginProcess);
+router.post("/login", validationsLogin,usersController.loginProcess);
+router.post("/pass", validationsPass,usersController.loginPass);
 
 
 // creacion del formulario
