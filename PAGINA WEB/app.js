@@ -13,6 +13,7 @@ const estiloRouter = require("./routes/estiloRouter");
 const usersRouter = require("./routes/usersRouter");
 const publicPath = "public";
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+const userLoginMiddleware = require('./middlewares/userLoginMiddeleware');
 app.use(express.static(publicPath));
 
 app.use(express.urlencoded({extended: false}));
@@ -37,7 +38,7 @@ app.use(userLoggedMiddleware);
 app.use("/", mainRouter)
 app.use("/products", productRouter)
 app.use("/users", usersRouter )
-
+app.use(userLoginMiddleware)
 app.use(estiloRouter)
 //npm i -D nodemon para instalar nodemon
 //npx nodemon app.js   para ejecutar

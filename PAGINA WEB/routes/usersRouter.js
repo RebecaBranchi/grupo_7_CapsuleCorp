@@ -3,9 +3,10 @@ const router = express.Router();
 const path = require('path');
 //const { path } = require("express/lib/application");
 const multer = require('multer');
-const validations = require('../middlewares/userMiddle');
+const validationsRegister = require('../middlewares/userMiddle');
 const guesmiddleware = require('../middlewares/guesmiddleware');
 const authMiddLeware = require('../middlewares/authMiddeleware');
+const validationsLogin = require('../middlewares/userLoginMiddeleware')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -23,14 +24,14 @@ const usersController = require("../controllers/usersController")
 
 // formulario login
 router.get("/login", usersController.login);
-//router.get("/loginPass", usersController.loginProcess);
-router.post("/login", usersController.loginPassaword);
 
-router.post("/loginPass", usersController.loginProcess);
+router.post("/login",  validationsLogin,usersController.loginProcess);
+
+
 // creacion del formulario
 router.get("/register", guesmiddleware, usersController.register);
 // procesamiento del formulario de creacion usuario
-router.post("/register", uploadFile.single('avatar'), validations, usersController.processRegister);
+router.post("/register", uploadFile.single('avatar'), validationsRegister, usersController.processRegister);
 router.get("/profile/",authMiddLeware, usersController.profile);
 router.get("/logout/",usersController.logout);
 module.exports = router

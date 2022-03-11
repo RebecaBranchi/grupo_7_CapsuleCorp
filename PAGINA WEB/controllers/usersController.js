@@ -5,6 +5,7 @@ const bcryptjs = require('bcryptjs');
 
 
 const controller = {
+
         register: (req, res) => {
         res.render('users/register');
     },
@@ -16,6 +17,7 @@ const controller = {
                 oldData :req.body
             });
         }
+        
         let userInDB= User.findByField('email', req.body.email);
         if(userInDB){
              res.render('users/register', {
@@ -37,50 +39,53 @@ const controller = {
        return res.redirect('/users/login')
     },
     login: (req, res) => {
-              
+             
                res.render('users/login')
-               
-
-    },
-    loginPassaword:(req,res)=>{
-        let userToLogin = User.findByField('email', req.body.email);
-        if (userToLogin) {
-            return res.render('users/loginPass',{userToLogin})
-        }
-    },
+       },
+   
     loginProcess:(req,res)=>{
         let userToLogin = User.findByField('email', req.body.email);
-        
-        if(userToLogin){
-            
-            let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
-            if(isOkThePassword){
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin ;
-                return res.redirect('/users/profile')
-            }
-            return res.render('users/loginPass', {
-                errors: {
-                   email:{
-                   msg:'La contraseña es errónea'
-                   }
-               },
-        
-           });
-
-        }
-
-           return res.render('users/login', {
+        if(!userToLogin){
+            return res.render('users/login', {
                 errors: {
                    email:{
                    msg:'El correo electronico no esta registrado'
                    }
                },
-        
+              
            })
+        }else{
+             res.render('users/login', {
+            oldData :req.body})
+        }
        
-        
-    },
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            res.render('users/login', {
+                errors: resultValidation.mapped(),
+                oldData:req.body
+            });
+        }
+  
+            
+            let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
+      
+            if(isOkThePassword){
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin ;
+                return res.redirect('/users/profile')
+            }
+            return res.render('users/login', {
+                errors: {
+                   email:{
+                   msg:'La contraseña es errónea'
+                   }
+               },
+               oldData :req.body
+           });
+        },
+ 
+
     profile: (req, res) => {
         return res.render('users/profile',{
             user: req.session.userLogged

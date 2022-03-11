@@ -2,31 +2,64 @@
 <html lang="en">
 
 
-    <%- include ("../partials/head")%>
- 
-<main>
-    <%- include ("../partials/navLoginRegister")%>
-    <div>
-        <div class="titleLoginRegister"><h1>¡Hola Ingresa los siguientes datos para logearte!</h1></div>
-        
-        <form action="/users/login" method="POST" class="form-registro">
-           
-            <label><b>Correo electrónico</b></label>
-            <input class="control" type="email" name = "email" id="correo" >
-            <% if (locals.errors && errors.email) { %>
-                <div class="text-danger">
-                    <%= errors.email.msg %>
-                </div>    
-            <% } %>
-           
-            <a href=""> <button type="submit"> Continuar</button> </a>
-             <p><a target="_blank" href="">Olvidé mi contraseña</a></p>
-             <p><a href="/users/register">¿Aún no tenes cuenta?</a></p></div>
-             
-        </form>
-    </div>
+<%- include ("../partials/head")%>
 
-</main>
+    <main>
+        <%- include ("../partials/navLoginRegister")%>
+            <div>
+                <div class="titleLoginRegister">
+                    <h1>¡Hola Ingresa los siguientes datos para loguearte!</h1>
+                </div>
 
-</body>
+                <form action="/users/login" method="POST" class="form-registro">
+                   
+                   <div class="email">
+
+                        <label><b>Correo electrónico</b></label>
+                        <input type="text" name="email" id="email"
+                            class="control <%= locals.errors && errors.email ? 'is-invalid': null %>"
+                            value="<%= locals.oldData ? oldData.email :null %>">
+                            
+                              <% if (locals.errors && errors.email) { %>
+                                 <div class="text-danger">
+                                      <p class="errorEmail"><%= errors.email.msg %></p>
+                                    
+                                  </div>
+                             <% } %>
+                       
+                            
+                      
+                    </div>
+                    <div class="password">
+                        <label><b>Contraseña</b></label>
+                        <input  type="password" name="password" id="password"
+                        class="control <%= locals.errors && errors.password ? 'is-invalid': null %>">
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                             <p class="errors"> <%= errors.password.msg %></p>
+                            </div>
+                      <% } %>
+                     
+                 
+                          <div class="form-check">
+                              <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
+                               </label>
+                          </div>
+                        </div>
+                        <button class='button' type="button"></button>
+                        <p><a target="_blank" href="">Olvidé mi contraseña</a></p>
+                        <p><a href="/users/register">¿Aún no tenes cuenta?</a></p>
+                   
+                    
+            
+               
+      </form>
+      </div>
+     
+            
+    </main>
+    <script src="/js/login.js"></script>
+    </body>
+
 </html>

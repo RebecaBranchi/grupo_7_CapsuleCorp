@@ -6,7 +6,7 @@ const validations= [
         body('first_name').notEmpty().withMessage('Tienes que escribir tu nombre'),
         body('last_name')
         .notEmpty().withMessage('Tienes que escribirt tu apellido'),
-        body('email').notEmpty().withMessage('Tienes que escribir un correo electronico').bail().isEmail().withMessage('Debes escribir un correo electronico válido'),
+        body('email').notEmpty().withMessage('Tienes que escribir un correo electronico').isEmail().withMessage('Debes escribir un correo electronico válido').bail(),
         body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
         body('avatar').custom((value, { req })=>{
             let file = req.file;
