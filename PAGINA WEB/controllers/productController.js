@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { body , validationResult} = require("express-validator")
+const {validationResult} = require("express-validator")
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -17,34 +17,34 @@ const productController = {
     },
     
     create: (req,res)=>{
-        const errores = validationResult(req);
-        const mensajes = errores.errors.map(error => error.msg)
-        res.render("products/create",{errores: mensajes})
+           res.render("products/create")
     },
 
      store: (req,res)=>{
+    
+     const resultValidation = validationResult(req);
+     if (resultValidation.errors.length > 0) {
+        res.render('products/create', {
+            errors: resultValidation.mapped(),
+            oldData :req.body
+        }); 
+
+    } else{ 
         let newProduct ={
-            id:products[products.length -1].id +1,
+            id:products.length +1,
             name: req.body.name,
             description: req.body.description,
             color: req.body.color,
             discount: parseInt(req.body.discount),
             price: parseInt(req.body.price),
-            //image: req.file.filename,
+            image: req.file.filename,
             type: req.body.type
-           
             
      } 
-     const errores = validationResult(req);
-     if (!errores.isEmpty()) {
-     const mensajes = errores.errors.map(error => error.msg)
-     console.log(mensajes)
-     res.render("products/create", {errores: mensajes})
-     } else{ 
         products.push(newProduct);
         const newJSON=JSON.stringify(products,null,1);
         fs.writeFileSync(productsFilePath,newJSON,"utf-8");
-        res.render(`products/create`);
+        res.redirect("/products/create");
     }
      },
      editProduct:(req,res)=>{
@@ -63,7 +63,7 @@ const productController = {
             color: req.body.color,
             discount: parseInt(req.body.discount),
             price: parseInt(req.body.price),
-            //image: req.file.filename,
+            image: req.file.filename,
             type: req.body.type
         } 
         productsEdit.push(prodEdit);
@@ -82,10 +82,7 @@ const productController = {
     res.redirect("/products")
     
        }
-    /*editProduct:2,
-    updateProduct:2,
     
-    deleteProduct:2,*/
     
 }
 

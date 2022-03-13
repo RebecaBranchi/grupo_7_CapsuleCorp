@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head") %>
+
+<body>
+    <div class="loader"></div>
+    <div class="promociones">
+        <h2>PROMOCIONES</h2>
+    </div>
+    <img src="/img/mario.gif" alt="" class="mario">
+    <header>
+        <div class="contenedorheader">
+            <div class="logo">
+                <div class="hamburguesa">
+                <a href="#" class="burger-menu"><i class="fas fa-bars"></i></a>
+                </div>
+                <a href="/"><img src="/img/logo2.png" alt="" class="logoimg"></a>
+                <div class="busqueda">
+                    <input type="text" name="busqueda" placeholder="Buscar" class="buscar">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div>
+                <a href="/carrito"><i class="fas fa-cart-plus"></i></a> 
+                </div>
+            </div>
+            <div class="marcasbuscar">
+                <select name="marcas" id="" class="marcas">
+                    <option value="intel">intel</option>
+                    <option value="asus">asus</option>
+             </select>    
+            </div>
+            <nav class="main-navbar">
+                <ul class="left-navbar">
+                    <li><a href="/ofertas">Ofertas</a></li>
+                    <li><a href="/tiendasoficiales">Tiendas Oficiales</a></li>
+                    <li><a href="/vender">Vender</a></li>
+                    <li><a href="/productDetail">Producto</a></li>
+                    <li><a href="/ayuda">Ayuda</a></li>
+                </ul>
+                <ul class="right-navbar">
+                    <li><a href="/creatucuenta">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
+                    <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="/miscompras">Mis compras <i class="fas fa-shopping-bag"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="banner">
+        <img src="./img/bannernuevo.jpeg" alt="" class="bannerimg"> </div>
+
+    <main>
+        <div>
+            <div>
+                <img src="/img/joystick.jpg" alt="" width="70px">
+            </div>
+            <div>
+                <h3>Nombre del producto</h3>
+            </div>
+            <div>
+                <h3>Envio gratis</h3>
+            </div>
+            <div>
+                <div>
+                    <select name="cantidad" id="">
+                        <option value="1">1u</option>
+                        <option value="2">2u</option>
+                        <option value="3">3u</option>
+                        <option value="4">4u</option>
+                        <option value="5">5u</option>
+                        <option value="6">6u</option>
+                        <option value="7">7u</option>
+                        <option value="8">8u</option>
+                        <option value="9">9u</option>
+                        <option value="10">10u</option>
+                    </select>
+                </div>
+                <div>
+                    <h3>PRECIO</h3>
+                </div>
+    
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Eliminar</a></li>
+                    <li><a href="#">Mas productos del vendedor</a></li>
+                    <li><a href="#">Comprar ahora</a></li>
+                    <li><a href="#">Guardar para despues</a></li>
+                </ul>
+            </div>
+    
+        </div>
+        
+        <div>
+           <div><h4>DOMICILIO</h4></div> 
+           <div><h4>Gratis</h4></div> 
+        </div>
+        <div><h3>Total con envio</h3></div>
+        <div><h3>SUMATOTAL</h3></div>
+        <BUtton>COMPRAR AHORA</BUtton>
+
+        <div>
+            <h3>Pensado para tu carrito de compras</h3>
+            <div>
+                carrusel
+            </div>
+        </div>
+        <div>
+            <h3>Aprovecha el envio gratis de todo tu carrito 
+                y segui sumando productos </h3>
+            <div>
+                carrusel
+            </div>
+        </div>
+        <div>
+            <h3>Productos que te interesaron</h3>
+            <div>
+                carrusel
+            </div>
+        </div>
+    </main>
+  
+    <%- include("../partials/redessociales") %> 
+
+    <%- include("../partials/footer") %>
+
+    </body>
+    
+    </html>

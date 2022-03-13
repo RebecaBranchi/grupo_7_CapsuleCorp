@@ -6,7 +6,7 @@ const multer = require('multer');
 const validationsRegister = require('../middlewares/userMiddle');
 const guesmiddleware = require('../middlewares/guesmiddleware');
 const authMiddLeware = require('../middlewares/authMiddeleware');
-const validationsLogin = require('../middlewares/userLoginMiddeleware')
+const validationsLogin = require('../middlewares/userLoginMiddleware')
 const validationsPass = require('../middlewares/userPassMiddleware')
 
 const storage = multer.diskStorage({

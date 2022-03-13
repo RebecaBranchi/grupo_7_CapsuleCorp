@@ -1,4 +1,4 @@
-const getEstilo = (req,res)=>{
+const getStyle = (req,res)=>{
     res.render("estilizar/estilo")
 };
 
@@ -6,6 +6,6 @@ const getEstilo = (req,res)=>{
 
 
 module.exports ={
-    getEstilo,
+    getStyle,
 
 }

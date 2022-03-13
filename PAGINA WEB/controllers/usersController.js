@@ -16,6 +16,8 @@ const controller = {
                 errors: resultValidation.mapped(),
                 oldData :req.body
             });
+
+       
         }
         
         let userInDB= User.findByField('email', req.body.email);

@@ -4,23 +4,76 @@
 <%- include ("../partials/head")%>
 
 
-    <body>
+<body>
         <%- include ("../partials/header")%>
             <section class="form-registro">
                 <h4>Formulario de Crear</h4>
-                <form action="/products/create" method="POST">
-                    <input class="control" type="text" name="name" id="name" placeholder="Nombre del producto">
-                    <input class="control" type="text" name="description" id="description" placeholder="Descripcion">
-                    <input class="control" type="file" name="image" id="image" placeholder="Imagen">
+                <form action="/products/create" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="name" id="name" placeholder="Nombre del producto"
+                    class="control <%= locals.errors && errors.name ? 'is-invalid': null %>"
+                    value="<%= locals.oldData ? oldData.name :null %>">
+                         <% if (locals.errors && errors.name) { %>
+                           <div class="text-danger">
+                              <%= errors.name.msg %>
+                           </div>
+                         <% } %> 
+
+                    <input type="text" name="description" id="description" placeholder="Descripcion"
+                    class="control <%= locals.errors && errors.name ? 'is-invalid': null %>"
+                    value="<%= locals.oldData ? oldData.description :null %>">
+                         <% if (locals.errors && errors.description) { %>
+                           <div class="text-danger">
+                              <%= errors.description.msg %>
+                           </div>
+                         <% } %> 
+                   
+                    <input type="file" name="image" id="image" placeholder="Imagen"
+                    class="control" >
+                         <% if (locals.errors && errors.image) { %>
+                           <div class="text-danger">
+                              <%= errors.image.msg %>
+                           </div>
+                         <% } %>
+                   
                     <select class="control" name="category" id="category" placeholder="Categoria"><br>
+                        <option >Elige una categoria</option>
                         <option value="visited">nuevo</option>
                         <option value="in sale">oferta</option>
                         <option value="new">mas visitado</option>
                     </select><br>
-                    <input class="control" type="number" name="discount" id="discount" placeholder="descuento">
-                    <input class="control" type="text" name="type" id="type" placeholder="tipo">
-                    <input class="control" type="text" name="color" id="color" placeholder="color">
-                    <input class="control" type="number" name="precio" id="precio" placeholder="Precio">
+                    
+                    <input  type="number" name="discount" id="discount" placeholder="descuento"
+                    class="control <%= locals.errors && errors.discount ? 'is-invalid': null %>"
+                    value="<%= locals.oldData ? oldData.discount :null %>">
+                         <% if (locals.errors && errors.discount) { %>
+                           <div class="text-danger">
+                              <%= errors.discount.msg %>
+                           </div>
+                         <% } %> 
+                    <input type="text" name="type" id="type" placeholder="tipo"
+                    class="control <%= locals.errors && errors.type ? 'is-invalid': null %>"
+                    value="<%= locals.oldData ? oldData.type :null %>">
+                         <% if (locals.errors && errors.type) { %>
+                           <div class="text-danger">
+                              <%= errors.type.msg %>
+                           </div>
+                         <% } %> 
+                    <input type="text" name="color" id="color" placeholder="color"
+                    class="control <%= locals.errors && errors.color ? 'is-invalid': null %>"
+                    value="<%= locals.oldData ? oldData.color :null %>">
+                         <% if (locals.errors && errors.color) { %>
+                           <div class="text-danger">
+                              <%= errors.color.msg %>
+                           </div>
+                         <% } %> 
+                    <input type="number" name="price" id="price" placeholder="Precio"
+                    class="control <%= locals.errors && errors.price ? 'is-invalid': null %>"
+                    value="<%= locals.oldData ? oldData.price :null %>">
+                         <% if (locals.errors && errors.price) { %>
+                           <div class="text-danger">
+                              <%= errors.price.msg %>
+                           </div>
+                         <% } %> 
                     <button type="submit">crear</button>
 
                 </form>

@@ -66,17 +66,6 @@
   "color": "azul"
  },
  {
-  "id": 15,
-  "name": "xbox",
-  "description": "aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum",
-  "price": 3013.74,
-  "discount": 2,
-  "category": "consolas y videojuegos",
-  "image": "monitor.jpg",
-  "type": "mas-vendido",
-  "color": "lila"
- },
- {
   "id": 16,
   "name": "combo gamer",
   "description": "ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur",
@@ -461,5 +450,15 @@
   "discount": 1000000,
   "price": 3181,
   "type": "ofertas"
+ },
+ {
+  "id": 15,
+  "name": "xbox",
+  "description": "aliquam",
+  "color": "lila",
+  "discount": 5,
+  "price": 3013,
+  "type": "mas-vendido"
  }
+ 
 ]

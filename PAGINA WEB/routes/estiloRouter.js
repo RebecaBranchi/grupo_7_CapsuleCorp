@@ -4,7 +4,7 @@ const router=express.Router();
 
 const estiloController = require ("../controllers/estiloController")
 
-router.get("/estilo", estiloController.getEstilo);
+router.get("/estilo", estiloController.getStyle);
 
 
 

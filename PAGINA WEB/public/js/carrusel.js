@@ -3,7 +3,7 @@ const big = document.querySelector('.big');
 const point = document.querySelectorAll('.point')
 
 point.forEach((eachPoint, i)=>{
-    point[i].addEventListener('click',()=>{
+    point[i].addEventListener('mouseover',()=>{
         let position = i;
         let operation= position * -100;
         big.style.transform = `translateX(${operation}%)`

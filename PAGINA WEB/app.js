@@ -13,7 +13,7 @@ const estiloRouter = require("./routes/estiloRouter");
 const usersRouter = require("./routes/usersRouter");
 const publicPath = "public";
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
-const userLoginMiddleware = require('./middlewares/userLoginMiddeleware');
+const userLoginMiddleware = require('./middlewares/userLoginMiddleware');
 app.use(express.static(publicPath));
 
 app.use(express.urlencoded({extended: false}));

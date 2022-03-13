@@ -169,7 +169,7 @@ font-size: 24px ;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    transition: all .5s ease;
+    transition: all 3s ease;
     transform: translateX(0%);
    
     
