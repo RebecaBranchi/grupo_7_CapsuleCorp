@@ -3,109 +3,131 @@
 
 <%- include ("../partials/head")%>
 
-<body>
-    <div class="loader"></div>
-    <div class="promociones">
-        <h2>PROMOCIONES</h2>
-    </div>
-    
-    <img src="/img/mario.gif" alt="" class="mario">
-    
-    <%- include ("../partials/header")%>
+    <body>
+        <div class="loader"></div>
+        <div class="promociones">
+            <h2>PROMOCIONES</h2>
+        </div>
 
-    <div class="banner">
-        <img src="./img/bannernuevo.jpeg" alt="" class="bannerimg">
-    </div>
-    <main class="maincaja">
-        <div class="contenedor">
-            <div class="titulodeseccion">
-                <h2>Basado en tu ultima visita</h2>
-            </div>
-            <div class="carrusel">
-                <% products.forEach(product => { %>
-                 <% if (product.type == "mas-vendido") { %>   
-              
-                <div class="contenedor-foto-texto">
-                    <a href="/products/detail/<%= product.id %> ">
-                    <div class="fotosss">
-                        <img src="/img/<%= product.image %> " alt="" class="imagenes">
-                    </div>
-                    <div class="contenedor-texto-icono">
-                        <div class="camionicon">
-                            <i class="fas fa-truck" id="camionicono"></i>
-                        </div>
-                        <div class="contenedor-texto">
-                            <div class="preciodescuento">
-                                <h3 class="precio">$ <%= product.price %> </h3>
-                                <h3 class="descuento"><%= product.discount %>  OFF</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="descripcion"><%= product.name %> </h3>
+        <img src="/img/mario.gif" alt="" class="mario">
+
+        <%- include ("../partials/header")%>
+
+            <div class="bannerCarrusel">
+                <div class="big">
+                    <img src="/img/banners/1.png" alt="img1" class="img">
+                    <img src="/img/banners/2.png" alt="img2" class="img">
+                    <img src="/img/banners/3.png" alt="img3" class="img">
+                   
                 </div>
-                <% } %>
-                <% }) %>
+                <ul class="points">
+                    <li class="point activo"></li>
+                    <li class="point activo"></li>
+                    <li class="point activo"></li>
+                </ul>
+                
             </div>
-            <div class="contenedor">
-                <div class="titulodeseccion">
-                    <h2>Ofertas</h2>
-                </div>
-                <div class="carrusel">
-                    <% products.forEach(product => { %>
-                     <% if (product.type == "ofertas") { %>   
-                  
-                    <div class="contenedor-foto-texto">
-                        <a href="/products/detail/<%= product.id %> ">
-                        <div class="fotosss">
-                            <img src="/img/<%= product.image %> " alt="" class="imagenes">
+            <main class="maincaja">
+                <div class="contenedor">
+                    <div class="titulodeseccion">
+                        <h2>Basado en tu ultima visita</h2>
+                    </div>
+
+                    <div class="carrusel">
+                        <% products.forEach(product=> { %>
+                            <% if (product.type=="mas-vendido" ) { %>
+
+                                <div class="contenedor-foto-texto">
+                                    <a href="/products/detail/<%= product.id %> ">
+                                        <div class="fotosss">
+                                            <img src="/img/<%= product.image %> " alt="" class="imagenes">
+                                        </div>
+                                        <div class="contenedor-texto-icono">
+                                            <div class="camionicon">
+                                                <i class="fas fa-truck" id="camionicono"></i>
+                                            </div>
+                                            <div class="contenedor-texto">
+                                                <div class="preciodescuento">
+                                                    <h3 class="precio">$ <%= product.price %>
+                                                    </h3>
+                                                    <h3 class="descuento">
+                                                        <%= product.discount %> OFF
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h3 class="descripcion">
+                                            <%= product.name %>
+                                        </h3>
+                                </div>
+                                <% } %>
+                                    <% }) %>
+                    </div>
+                    <div class="contenedor">
+                        <div class="titulodeseccion">
+                            <h2>Ofertas</h2>
                         </div>
-                        <div class="contenedor-texto-icono">
-                            <div class="camionicon">
-                                <i class="fas fa-truck" id="camionicono"></i>
-                            </div>
-                            <div class="contenedor-texto">
-                                <div class="preciodescuento">
-                                    <h3 class="precio">$ <%= product.price %> </h3>
-                                    <h3 class="descuento"><%= product.discount %>  OFF</h3>
+                        <div class="carrusel">
+                            <% products.forEach(product=> { %>
+                                <% if (product.type=="ofertas" ) { %>
+
+                                    <div class="contenedor-foto-texto">
+                                        <a href="/products/detail/<%= product.id %> ">
+                                            <div class="fotosss">
+                                                <img src="/img/<%= product.image %> " alt="" class="imagenes">
+                                            </div>
+                                            <div class="contenedor-texto-icono">
+                                                <div class="camionicon">
+                                                    <i class="fas fa-truck" id="camionicono"></i>
+                                                </div>
+                                                <div class="contenedor-texto">
+                                                    <div class="preciodescuento">
+                                                        <h3 class="precio">$ <%= product.price %>
+                                                        </h3>
+                                                        <h3 class="descuento">
+                                                            <%= product.discount %> OFF
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3 class="descripcion">
+                                                <%= product.name %>
+                                            </h3>
+                                    </div>
+                                    <% } %>
+                                        <% }) %>
+                        </div>
+
+                        <div class="categoriaspopulares">
+                            <h3>Categorias populares</h3>
+                            <div class="categoria">
+                                <div class="subcategoria">
+                                    <img src="/img/procesador.png" alt="" class="iconocat">
+                                    <div class="categoriatexto">Hardware Interno</div>
+                                </div>
+                                <div class="subcategoria">
+                                    <img src="/img/tarjeta-ssd.png" alt="" class="iconocat">
+                                    <div class="categoriatexto">Memoria</div>
+                                </div>
+                                <div class="subcategoria">
+                                    <img src="/img/wifi.png" alt="" class="iconocat">
+                                    <div class="categoriatexto">Hardware Externo</div>
+                                </div>
+                                <div class="subcategoria">
+                                    <img src="/img/zumbido.png" alt="" class="iconocat">
+                                    <div class="categoriatexto">Gadget</div>
+                                </div>
+                                <div class="subcategoria">
+                                    <img src="/img/consola-de-juego.png" alt="" class="iconocat">
+                                    <div class="categoriatexto">Consolas y Videojuegos</div>
                                 </div>
                             </div>
                         </div>
-                        <h3 class="descripcion"><%= product.name %> </h3>
-                    </div>
-                    <% } %>
-                    <% }) %>
-                </div>
+            </main>
 
-        <div class="categoriaspopulares">
-            <h3>Categorias populares</h3>
-        <div class="categoria">
-            <div class="subcategoria">
-                <img src="/img/procesador.png" alt="" class="iconocat" >
-                <div class="categoriatexto">Hardware Interno</div>
-            </div>
-            <div class="subcategoria">
-                <img src="/img/tarjeta-ssd.png" alt="" class="iconocat" >
-                <div class="categoriatexto">Memoria</div>
-            </div>
-            <div class="subcategoria">
-                <img src="/img/wifi.png" alt=""class="iconocat"  >
-                <div class="categoriatexto">Hardware Externo</div>
-            </div>
-            <div class="subcategoria">
-                <img src="/img/zumbido.png" alt="" class="iconocat"  >
-                <div class="categoriatexto">Gadget</div>
-            </div>
-            <div class="subcategoria">
-                <img src="/img/consola-de-juego.png" alt="" class="iconocat"  >
-                <div class="categoriatexto">Consolas y Videojuegos</div>
-            </div>
-        </div>
-    </div>
-    </main>
-
-        <%- include ("../partials/redessociales")%>
-        <%- include ("../partials/footer")%>
-  
-</body>
+            <%- include ("../partials/redessociales")%>
+                <%- include ("../partials/footer")%>
+                <script src="/js/carrusel.js"></script>
+    </body>
 
 </html>
