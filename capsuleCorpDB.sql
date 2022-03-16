@@ -1,9 +1,12 @@
+CREATE DATABASE capsuleCorpDB;
+USE capsuleCorpDB;
+
 CREATE TABLE `users` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `first_name` VARCHAR(30) NOT NULL,
    `last_name` VARCHAR(30) NOT NULL,
    `email` VARCHAR(100) NOT NULL,
-   `avatar` VARCHAR(100) NOT NULL DEFAULT default.jpg,
+   `avatar` VARCHAR(100) NOT NULL,
    `password` VARCHAR(255) NOT NULL,
    `adress` VARCHAR(255) NOT NULL,
    `createdate` DATETIME NOT NULL,
