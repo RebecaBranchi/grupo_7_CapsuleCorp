@@ -11,6 +11,7 @@ const mainRouter = require("./routes/mainRouter");
 const productRouter = require("./routes/productRouter");
 const estiloRouter = require("./routes/estiloRouter");
 const usersRouter = require("./routes/usersRouter");
+const shoppingRouter = require("./routes/shoppingRouter")
 const publicPath = "public";
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const userLoginMiddleware = require('./middlewares/userLoginMiddleware');
@@ -40,5 +41,6 @@ app.use("/products", productRouter)
 app.use("/users", usersRouter )
 app.use(userLoginMiddleware)
 app.use(estiloRouter)
+app.use("/compras",shoppingRouter )
 //npm i -D nodemon para instalar nodemon
 //npx nodemon app.js   para ejecutar

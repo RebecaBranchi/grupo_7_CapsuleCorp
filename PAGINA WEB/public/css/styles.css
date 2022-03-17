@@ -102,15 +102,17 @@ font-size: 24px ;
     border-radius: 50%;
 }
 
+
+/*comienzo de categoria*/
 .categoriaspopulares{
     font-size: 22px;
-    width: 90%;
+    width: 60%;
     margin: auto;
     
 }
 .categoria{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -119,14 +121,11 @@ font-size: 24px ;
     padding: 10px 0;
  
 }
-
-.iconocat{
+.category{
     width: 90%;
     margin: auto;
     display: block;
 }
-
- 
 .categoriatexto{
     width: 100%;
     height: 100%;
@@ -144,7 +143,7 @@ font-size: 24px ;
 
 .categoriatexto:hover{
     opacity: 1;
-    background-color:#5890f8;
+    background-color:#ac9292;
     border-radius: 15px;
 }
 
@@ -153,11 +152,15 @@ font-size: 24px ;
     height: 100%;
     text-align: center;
     font-size: 18px;
-    border: solid 1px #5890f8;
+    border: solid 1px #292622;
     border-radius: 15px;
     padding: 5px;
     position: relative;
+
 }
+/*fin de categoria*/
+ 
+
 /*carrusel banner*/
 .bannerCarrusel{
     width:100%;

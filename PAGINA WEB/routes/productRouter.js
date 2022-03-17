@@ -5,6 +5,9 @@ const productController = require ("../controllers/productController");
 const multer = require ("multer");
 const { body} = require ("express-validator");
 const productValidator= require ("../middlewares/productMiddle")
+
+
+
 const fileStorageEngine = multer.diskStorage({ 
     destination: function (req, file, cb) { 
        cb(null, './public/img'); 
