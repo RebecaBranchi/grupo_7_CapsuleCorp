@@ -1,5 +1,6 @@
-CREATE DATABASE capsuleCorpDB;
-USE capsuleCorpDB;
+CREATE DATABASE capsuleCorp_db;
+USE capsuleCorp_db;
+
 
 CREATE TABLE `users` (
    `id` INT NOT NULL AUTO_INCREMENT,
@@ -9,8 +10,9 @@ CREATE TABLE `users` (
    `avatar` VARCHAR(100) NOT NULL,
    `password` VARCHAR(255) NOT NULL,
    `adress` VARCHAR(255) NOT NULL,
-   `createdate` DATETIME NOT NULL,
    `category_id` INT NOT NULL,
+   `created_at` DATETIME NOT NULL,
+   `updated_at` DATETIME NOT NULL,
    PRIMARY KEY (`id`)
 );
 
@@ -21,10 +23,11 @@ CREATE TABLE `products` (
    `image` VARCHAR(100) NOT NULL,
    `stock` INT NOT NULL,
    `price` DECIMAL NOT NULL,
-   `createdate` DATETIME NOT NULL,
    `category_id` INT NOT NULL,
    `color_id` INT NOT NULL,
    `brand_id` INT NOT NULL,
+   `created_at` DATETIME NOT NULL,
+   `updated_at` DATETIME NOT NULL,
    PRIMARY KEY (`id`)
 );
 
@@ -57,11 +60,12 @@ CREATE TABLE `orders` (
    `id` INT NOT NULL,
    `user_id` INT NOT NULL,
    `shopping_carts_id` INT NOT NULL,
-   `create_date` DATETIME NOT NULL,
    ` delivery_date` DATETIME NOT NULL,
    `total_price` INT NOT NULL,
    `order_status_id` INT NOT NULL,
    `pay_status_id` INT NOT NULL,
+   `created_at` DATETIME NOT NULL,
+   `updated_at` DATETIME NOT NULL,
    PRIMARY KEY (`id`)
 );
 
@@ -72,6 +76,8 @@ CREATE TABLE `shopping_carts` (
    `quantity_products` INT NOT NULL,
    `price` INT NOT NULL,
    `total_price` INT NOT NULL,
+   `created_at` DATETIME NOT NULL,
+   `updated_at` DATETIME NOT NULL,
    PRIMARY KEY (`id`)
 );
 
