@@ -11,7 +11,7 @@ const validationsPass = require('../middlewares/userPassMiddleware')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, './public/img/users');
+        cb(null, '../public/img/users');
     },
     filename: (req, file, cb) => {
         console.log(file);
