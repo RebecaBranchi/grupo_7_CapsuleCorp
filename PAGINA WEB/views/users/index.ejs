@@ -32,7 +32,7 @@
                     <div class="titulodeseccion">
                         <h2>Basado en tu ultima visita</h2>
                     </div>
-
+                </div>
                     <div class="carrusel">
                         <% products.forEach(product=> { %>
                             <% if (product.type=="mas-vendido" ) { %>
@@ -97,7 +97,7 @@
                                     <% } %>
                                         <% }) %>
                         </div>
-
+                    </div>
                         <div class="categoriaspopulares">
                             <h3> Categorias </h3>
                             <div class="categoria">
@@ -127,6 +127,7 @@
                                 </div>
                             </div>
                         </div>
+                        
             </main>
 
             <%- include ("../partials/redessociales")%>
