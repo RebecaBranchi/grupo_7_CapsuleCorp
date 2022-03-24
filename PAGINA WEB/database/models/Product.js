@@ -32,8 +32,8 @@ let cols = {
         color_id: dataTypes.BIGINT(10),
         brand_id: dataTypes.BIGINT(10),
       
-        created_at: dataTypes.TIMESTAMP(),
-        updated_at: dataTypes.TIMESTAMP(),
+        //created_at: dataTypes.TIMESTAMP(),
+        //updated_at: dataTypes.TIMESTAMP(),
     };
    
     let config = {

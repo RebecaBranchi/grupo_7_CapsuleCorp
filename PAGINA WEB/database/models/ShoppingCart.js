@@ -30,8 +30,8 @@ module.exports = (sequelize, dataTypes) => {
                 allowNull: false
             },
                               
-            created_at: dataTypes.TIMESTAMP(),
-            updated_at: dataTypes.TIMESTAMP(),
+            //created_at: dataTypes.TIMESTAMP(),
+            //updated_at: dataTypes.TIMESTAMP(),
         };
        
         let config = {

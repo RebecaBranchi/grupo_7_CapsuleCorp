@@ -34,14 +34,14 @@
                               <%= errors.image.msg %>
                            </div>
                          <% } %>
-                   
+                                            
                     <select class="control" name="category" id="category" placeholder="Categoria"><br>
                         <option >Elige una categoria</option>
                         <option value="visited">nuevo</option>
                         <option value="in sale">oferta</option>
                         <option value="new">mas visitado</option>
                     </select><br>
-                    
+                    <input  type="stock" name="stock" id="stock" placeholder="stock">
                     <input  type="number" name="discount" id="discount" placeholder="descuento"
                     class="control <%= locals.errors && errors.discount ? 'is-invalid': null %>"
                     value="<%= locals.oldData ? oldData.discount :null %>">
@@ -50,14 +50,7 @@
                               <%= errors.discount.msg %>
                            </div>
                          <% } %> 
-                    <input type="text" name="type" id="type" placeholder="tipo"
-                    class="control <%= locals.errors && errors.type ? 'is-invalid': null %>"
-                    value="<%= locals.oldData ? oldData.type :null %>">
-                         <% if (locals.errors && errors.type) { %>
-                           <div class="text-danger">
-                              <%= errors.type.msg %>
-                           </div>
-                         <% } %> 
+                    <input type="brand" name="brand" id="brande" placeholder="brand">
                     <input type="text" name="color" id="color" placeholder="color"
                     class="control <%= locals.errors && errors.color ? 'is-invalid': null %>"
                     value="<%= locals.oldData ? oldData.color :null %>">
