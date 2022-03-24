@@ -3,7 +3,6 @@
 
 <%- include ("../partials/head")%>
 
-
 <body>
         <%- include ("../partials/header")%>
             <section class="form-registro">
@@ -34,39 +33,53 @@
                               <%= errors.image.msg %>
                            </div>
                          <% } %>
-                                            
-                    <select class="control" name="category" id="category" placeholder="Categoria"><br>
-                        <option >Elige una categoria</option>
-                        <option value="visited">nuevo</option>
-                        <option value="in sale">oferta</option>
-                        <option value="new">mas visitado</option>
-                    </select><br>
-                    <input  type="stock" name="stock" id="stock" placeholder="stock">
-                    <input  type="number" name="discount" id="discount" placeholder="descuento"
+                      
+                     <input class="control" type="number" name="stock" id="stock" placeholder="stock">  
+                     
+                     <input type="number" name="price" id="price" placeholder="Precio"
+                     class="control <%= locals.errors && errors.price ? 'is-invalid': null %>"
+                     value="<%= locals.oldData ? oldData.price :null %>">
+                          <% if (locals.errors && errors.price) { %>
+                            <div class="text-danger">
+                               <%= errors.price.msg %>
+                            </div>
+                          <% } %> 
+
+                          <select name="category" id="" class="control" required>
+                            <option value="" disabled selected>- Seleccione la categoria - </option>
+                            <% categories.forEach(category => { %>
+                            <option value="<%= category.id %>"><%= category.name %></option>
+                            <% }); %>
+                        </select>
+
+                        <select name="color" id="" class="control" required>
+                          <option value="" disabled selected>- Seleccione el color - </option>
+                          <% colors.forEach(color => { %>
+                          <option value="<%= color.id %>"><%= color.name %></option>
+                          <% }); %>
+                      </select>
+
+                      <select name="brand" id="" class="control" required>
+                        <option value="" disabled selected>- Seleccione la marca - </option>
+                        <% brands.forEach(brand => { %>
+                        <option value="<%= brand.id %>"><%= brand.name %></option>
+                        <% }); %>
+                    </select>
+
+
+                  
+                  <!--  <input  type="number" name="discount" id="discount" placeholder="descuento"
                     class="control <%= locals.errors && errors.discount ? 'is-invalid': null %>"
                     value="<%= locals.oldData ? oldData.discount :null %>">
                          <% if (locals.errors && errors.discount) { %>
                            <div class="text-danger">
                               <%= errors.discount.msg %>
                            </div>
-                         <% } %> 
-                    <input type="brand" name="brand" id="brande" placeholder="brand">
-                    <input type="text" name="color" id="color" placeholder="color"
-                    class="control <%= locals.errors && errors.color ? 'is-invalid': null %>"
-                    value="<%= locals.oldData ? oldData.color :null %>">
-                         <% if (locals.errors && errors.color) { %>
-                           <div class="text-danger">
-                              <%= errors.color.msg %>
-                           </div>
-                         <% } %> 
-                    <input type="number" name="price" id="price" placeholder="Precio"
-                    class="control <%= locals.errors && errors.price ? 'is-invalid': null %>"
-                    value="<%= locals.oldData ? oldData.price :null %>">
-                         <% if (locals.errors && errors.price) { %>
-                           <div class="text-danger">
-                              <%= errors.price.msg %>
-                           </div>
-                         <% } %> 
+                         <% } %> -->
+                    
+ 
+                
+                  
                     <button type="submit">crear</button>
 
                 </form>

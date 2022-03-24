@@ -11,20 +11,21 @@ const mainRouter = require("./routes/mainRouter");
 const productRouter = require("./routes/productRouter");
 const estiloRouter = require("./routes/estiloRouter");
 const usersRouter = require("./routes/usersRouter");
-const shoppingRouter = require("./routes/shoppingRouter")
-const publicPath = "public";
+const shoppingRouter = require("./routes/shoppingRouter");
+
+
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const userLoginMiddleware = require('./middlewares/userLoginMiddleware');
-app.use(express.static(publicPath));
+
 
 app.use(express.urlencoded({extended: false}));
-//app.use(Express.json());
+app.use(express.json());
 
 app.use(methodOverride("_method"))
-//app.use(session({secret:'secreto!!'}))
+app.use(express.static(path.resolve(__dirname, './public')));
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, '/views'));
-app.use(express.static(path.resolve(__dirname, '../public')));
+
 
 app.listen(3050, () => {
     console.log("Capsule Corp 3050")
@@ -34,13 +35,13 @@ app.use(session({
 	resave: false,
 	saveUninitialized: false,
 }));
-app.use(cookies());
-app.use(userLoggedMiddleware);
+//app.use(cookies());
+//app.use(userLoggedMiddleware);
 app.use("/", mainRouter)
 app.use("/products", productRouter)
-app.use("/users", usersRouter )
-app.use(userLoginMiddleware)
-app.use(estiloRouter)
-app.use("/compras",shoppingRouter )
+//app.use("/users", usersRouter )
+//app.use(userLoginMiddleware)
+
+
 //npm i -D nodemon para instalar nodemon
 //npx nodemon app.js   para ejecutar

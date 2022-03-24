@@ -8,24 +8,72 @@
         <%- include ("../partials/header")%>
             <section class="form-registro">
                 <h4>Formulario Editar</h4>
-                <% productEdit.forEach(element=> { %>
-                    <form action="/products/update/<%= element.id %>?_method=PUT" method="POST">
-                        <input class="control" type="text" name="name" id="name" value=<%=element.name %> >
+              
+                    <form action="/products/update/<%= product.id %>?_method=PUT" method="POST">
+                        <input class="control" type="text" name="name" id="name" value="<%=product.name %>" >
                         <input class="control" type="text" name="description" id="description"
-                            value=<%=element.description %> >
-                        <!--<input class="control" type="file" name="image" id="image" >----->
-                        <select class="control" name="category" id="category" value=<%=element.category %> ><br>
-                            <option value="visited">nuevo</option>
-                            <option value="in sale">oferta</option>
-                            <option value="new">mas visitado</option>
-                        </select><br>
-                        <input class="control" type="number" name="discount" id="discount" value=<%=element.discount %>>
-                        <input class="control" type="text" name="type" id="type" value=<%=element.type %> >
-                        <input class="control" type="text" name="color" id="color" value=<%=element.color %>>
-                        <input class="control" type="number" name="price" id="precio" value=<%=element.price %>>
+                            value= "<%=product.description%>" >
+                      
+                        <input class="control" type="file" name="image" id="image"  >
+                       
+                       <!--  <input class="control" type="number" name="discount" id="discount" value=<%=product.discount %>> -->
+                        
+                       <input class="control" type="number" name="stock" id="stock" value=<%=product.stock %>>
+
+                        <input class="control" type="number" name="price" id="precio" value=<%=product.price %>>
+
+                                            
+                        <select name="category" id="" class="control" required >
+                            <% categories.forEach(category => { %>
+
+                                <% if (category.id == product.category_id) { %>
+                                 
+                                <option value="<%= category.id %>" selected><%= category.name %></option>
+                             
+                             <% } else { %>
+                                <option value="<%= category.id %>" ><%= category.name %></option>
+                             
+                                <% } %>
+
+                            <% }); %>
+                        </select>
+
+                      
+                        <select name="color" id="" class="control" required >
+                            <% colors.forEach(color => { %>
+
+                                <% if (color.id == product.color_id) { %>
+                                 
+                                <option value="<%= color.id %>" selected><%= color.name %></option>
+                             
+                             <% } else { %>
+                                <option value="<%= color.id %>" ><%= color.name %></option>
+                             
+                                <% } %>
+
+                            <% }); %>
+                        </select>
+
+                                            
+                        <select name="brand" id="" class="control" required >
+                            <% brands.forEach(brand => { %>
+
+                                <% if (brand.id == product.brand_id) { %>
+                                 
+                                <option value="<%= brand.id %>" selected><%= brand.name %></option>
+                             
+                             <% } else { %>
+                                <option value="<%= brand.id %>" ><%= brand.name %></option>
+                             
+                                <% } %>
+
+                            <% }); %>
+                        </select>
+                      
+                                                                  
                         <button type="submit">Editar</button>
                     </form>
-                    <% }) %>
+                
 
             </section>
 

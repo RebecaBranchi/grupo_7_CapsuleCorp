@@ -24,9 +24,9 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.INTEGER(),
                 allowNull: false
             },
-            orders_status_id: dataTypes.BIGINT(10),
+            ordersstatus_id: dataTypes.BIGINT(10),
            
-            pay_status_id: dataTypes.BIGINT(10),
+            paystatus_id: dataTypes.BIGINT(10),
                      
             
         };
@@ -44,13 +44,13 @@ module.exports = (sequelize, dataTypes) => {
     
     Order.associate = function(models){
             Order.belongsTo(models.OrderStatus, { 
-                as: "order_status",
-                foreignKey: "orders_status_id"
+                as: "orderstatus",
+                foreignKey: "ordersstatus_id"
             }),
         
             Order.belongsTo(models.PayStatus, { 
                 as: "payment_status",
-                foreignKey: "pay_status_id"
+                foreignKey: "paystatus_id"
             })
          
         }

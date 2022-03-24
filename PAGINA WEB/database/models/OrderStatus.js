@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
         };
        
         let config = {
-            tableName: 'orders_status',
+            tableName: 'order_status',
             timestamps: false,
         }
       
@@ -30,8 +30,8 @@ module.exports = (sequelize, dataTypes) => {
     
         OrderStatus.associate = function (models) {
             OrderStatus.hasMany(models.Order, { 
-                as: "order_status",
-                foreignKey: "orders_status_id"
+                as: "orderstatus",
+                foreignKey: "ordersstatus_id"
             })
         
 

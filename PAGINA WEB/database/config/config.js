@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": 'caramel0',
-    "database": "capsuleCorp_db",
+    "password": '',
+    "database": "capsulecorp_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

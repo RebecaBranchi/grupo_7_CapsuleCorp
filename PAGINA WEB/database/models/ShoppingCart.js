@@ -20,15 +20,7 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.INTEGER(),
                 allowNull: false
             },
-            price: {
-                type: dataTypes.INTEGER(),
-                allowNull: false
-            },
-
-            total_price: {
-                type: dataTypes.INTEGER(),
-                allowNull: false
-            },
+          
                               
           
         };
@@ -44,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
     
     //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
     
-    ShoppingCart.associate = function(models){
+ /*   ShoppingCart.associate = function(models){
             ShoppingCart.hasMany(models.User, { 
                 as: "users",
                 foreignKey: "user_id"
@@ -55,7 +47,7 @@ module.exports = (sequelize, dataTypes) => {
                 foreignKey: "product_id"
             })
          
-        }
+        }*/
         
    
         return ShoppingCart
