@@ -30,16 +30,13 @@ module.exports = (sequelize, dataTypes) => {
                 allowNull: false
             },
                               
-            //created_at: dataTypes.TIMESTAMP(),
-            //updated_at: dataTypes.TIMESTAMP(),
+          
         };
        
         let config = {
             tableName: 'shopping_carts',
-            timestamps: true,
-            createdAt: 'created_at',
-            updatedAt: 'updated_at',
-            deletedAt: false
+            timestamps: false,
+            
         };
       
       

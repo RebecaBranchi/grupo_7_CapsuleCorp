@@ -28,16 +28,13 @@ module.exports = (sequelize, dataTypes) => {
            
             pay_status_id: dataTypes.BIGINT(10),
                      
-            //created_at: dataTypes.TIMESTAMP(),
-            //updated_at: dataTypes.TIMESTAMP(),
+            
         };
        
         let config = {
             tableName: 'orders',
-            timestamps: true,
-            createdAt: 'created_at',
-            updatedAt: 'updated_at',
-            deletedAt: false
+            timestamps: false,
+            
         };
       
       
