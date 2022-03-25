@@ -1,13 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const db = require ("../database/models")
 
 
 const getHome = (req,res)=>{
+
+ db.Product.findAll()
+.then(products=>{  
+
     res.render("users/index",{products})
-};
+})};
 
 
 

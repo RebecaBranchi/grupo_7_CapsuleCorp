@@ -9,4 +9,6 @@ const validations= [
         body('password').notEmpty().withMessage('Tienes que escribir una contraseña').bail(),
  
       ]
+
+      
 module.exports= validations;

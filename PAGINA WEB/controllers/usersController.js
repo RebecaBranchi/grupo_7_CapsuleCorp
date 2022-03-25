@@ -1,16 +1,19 @@
 const { validationResult } = require('express-validator');
-const User = require('../database/models/User');
+
 const bcryptjs = require('bcryptjs');
 
+const db = require("../database/models");
 
+const userController = {
 
-const controller = {
-
-        register: (req, res) => {
+    register: (req, res) => {
         res.render('users/register');
     },
-    processRegister: (req, res) => {
+
+   processRegister: (req, res) => {
         const resultValidation = validationResult(req);
+       
+       
         if (resultValidation.errors.length > 0) {
             res.render('users/register', {
                 errors: resultValidation.mapped(),
@@ -18,10 +21,11 @@ const controller = {
             });
 
        
-        }
+        }else{ 
         
-        let userInDB= User.findByField('email', req.body.email);
-        if(userInDB){
+     db.User.findOne({where:{'email': req.body.email}})
+     .then((userInDB)=>{   
+     if(userInDB){
              res.render('users/register', {
                  errors: {
                     email:{
@@ -30,33 +34,44 @@ const controller = {
                 },
             oldData :req.body
             })
-        }
+        }else{  
+
+     db.User.create(
+        {
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        adress: req.body.adress,
+        avatar:req.file.filename,
+        category_id: 1,
+       } )
+   
+    }
       
-       let userToCreate ={
-          ...req.body,
-          password: bcryptjs.hashSync(req.body.password, 10),
-          avatar:req.file.filename
-       }
-       let userCreated= User.create(userToCreate);
+      
        return res.redirect('/users/login')
-    },
+    })}},
+
     login: (req, res) => {
              
                res.render('users/loginEmail')
        },
    
     loginProcess:(req,res)=>{
-        let userToLogin = User.findByField('email', req.body.email);
+        
+        db.User.findOne({where:{'email': req.body.email}})
+
+        .then( (userToLogin)=>{  
 
         const resultValidation = validationResult(req);
+       
         if (resultValidation.errors.length > 0) {
             res.render('users/loginEmail', {
                 errors: resultValidation.mapped(),
                 oldData:req.body
             });
-        }
-  
-        if(!userToLogin){
+        } else if(!userToLogin){
            
             return res.render('users/loginEmail', {
                 errors: {
@@ -67,19 +82,28 @@ const controller = {
               
            })
         }else{
-             res.render('users/loginPass', {
+            res.render('users/loginPass', {
             oldData :req.body})
-             }},
+             }})},
+       
+         
 loginPass: (req,res)=>{
 
-            let userToLogin = User.findByField('email', req.body.email);
+     db.User.findOne({where:{ 'email': req.body.email}})
+           .then ( (userToLogin)=>{    
+
             let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
       
             if(isOkThePassword){
                 delete userToLogin.password;
+                
                 req.session.userLogged = userToLogin ;
-                return res.redirect('/users/profile')
-            }
+
+                res.cookie('userEmail',req.body.email, { maxAge: (1000 * 60) * 60 })
+                
+                 return res.redirect('/users/profile')
+          
+            }else{ 
             return res.render('users/loginPass', {
                 errors: {
                    email:{
@@ -87,8 +111,8 @@ loginPass: (req,res)=>{
                    }
                },
                oldData :req.body
-           });
-        },
+           })};
+        })},
  
 
     profile: (req, res) => {
@@ -96,6 +120,7 @@ loginPass: (req,res)=>{
             user: req.session.userLogged
         });
     },
+
     logout: (req,res)=> {
         res.clearCookie('userEmail');
         req.session.destroy();
@@ -103,5 +128,5 @@ loginPass: (req,res)=>{
     }
 }
 
-module.exports = controller
+module.exports = userController
 

@@ -8,10 +8,13 @@ const guesmiddleware = require('../middlewares/guesmiddleware');
 const authMiddLeware = require('../middlewares/authMiddeleware');
 const validationsLogin = require('../middlewares/userLoginMiddleware')
 const validationsPass = require('../middlewares/userPassMiddleware')
+const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware")
+
+
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, '../public/img/users');
+        cb(null, './public/img/users');
     },
     filename: (req, file, cb) => {
         console.log(file);
@@ -24,16 +27,15 @@ const uploadFile = multer({ storage });
 const usersController = require("../controllers/usersController")
 
 // formulario login
-router.get("/login", usersController.login);
-
-router.post("/login", validationsLogin,usersController.loginProcess);
+router.get("/login",usersController.login);
+router.post("/login",validationsLogin,usersController.loginProcess);
 router.post("/pass", validationsPass,usersController.loginPass);
 
 
 // creacion del formulario
-router.get("/register", guesmiddleware, usersController.register);
+router.get("/register",guesmiddleware, usersController.register);
 // procesamiento del formulario de creacion usuario
 router.post("/register", uploadFile.single('avatar'), validationsRegister, usersController.processRegister);
-router.get("/profile/",authMiddLeware, usersController.profile);
-router.get("/logout/",usersController.logout);
+router.get("/profile",authMiddLeware, usersController.profile);
+router.get("/logout",usersController.logout);
 module.exports = router

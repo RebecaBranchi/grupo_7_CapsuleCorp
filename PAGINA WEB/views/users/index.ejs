@@ -35,7 +35,7 @@
                 </div>
                     <div class="carrusel">
                         <% products.forEach(product=> { %>
-                            <% if (product.type=="mas-vendido" ) { %>
+                            <% if (product.discount == 0 ) { %>
 
                                 <div class="contenedor-foto-texto">
                                     <a href="/products/detail/<%= product.id %> ">
@@ -69,7 +69,7 @@
                         </div>
                         <div class="carrusel">
                             <% products.forEach(product=> { %>
-                                <% if (product.type=="ofertas" ) { %>
+                                <% if (product.discount > 5 ) { %>
 
                                     <div class="contenedor-foto-texto">
                                         <a href="/products/detail/<%= product.id %> ">

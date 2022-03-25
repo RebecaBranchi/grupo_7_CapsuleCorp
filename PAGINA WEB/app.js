@@ -35,12 +35,12 @@ app.use(session({
 	resave: false,
 	saveUninitialized: false,
 }));
-//app.use(cookies());
-//app.use(userLoggedMiddleware);
+app.use(cookies());
+app.use(userLoggedMiddleware);
 app.use("/", mainRouter)
 app.use("/products", productRouter)
-//app.use("/users", usersRouter )
-//app.use(userLoginMiddleware)
+app.use("/users", usersRouter )
+app.use(userLoginMiddleware)
 
 
 //npm i -D nodemon para instalar nodemon

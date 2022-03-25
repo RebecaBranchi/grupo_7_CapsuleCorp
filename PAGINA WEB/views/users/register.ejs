@@ -40,7 +40,7 @@
                              <%= errors.email.msg %>
                          </div>
                     <% } %>
-                    <label>Crear tu clave</label>
+                   <label>Crear tu clave</label>
                    <input type="password" name="password" id="password"
                     class="control <%= locals.errors && errors.password ? 'is-invalid': null %>">
                         <% if (locals.errors && errors.password) { %>
@@ -49,8 +49,18 @@
                             </div>
                       <% } %>
 
+                      <label>Coloca tu direccion</label>
+                      <input type="text" name="adress" id="adress"
+                      class="control <%= locals.errors && errors.adress ? 'is-invalid': null %>"
+                      value="<%= locals.oldData ? oldData.adress :null %>">
+                          <% if (locals.errors && errors.adress) { %>
+                            <div class="text-danger">
+                                     <%= errors.adress.msg %>
+                              </div>
+                          <% } %>
+
                  <label>Imagen de perfil</label>
-                 <input class="control" type="file" name="avatar" id="image">
+                 <input class="control" type="file" name="avatar" id="avatar">
                      <% if (locals.errors && errors.avatar) { %>
                        <div class="text-danger">
                                 <%= errors.avatar.msg %>
