@@ -1,6 +1,7 @@
 CREATE DATABASE capsuleCorp_db;
 USE capsuleCorp_db;
 
+
 CREATE TABLE `users` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `first_name` VARCHAR(30) NOT NULL,
@@ -20,6 +21,7 @@ CREATE TABLE `products` (
    `image` VARCHAR(100) NOT NULL,
    `stock` INT NOT NULL,
    `price` DECIMAL NOT NULL,
+   `discount` INT NOT NULL,
    `category_id` INT NOT NULL,
    `color_id` INT NOT NULL,
    `brand_id` INT NOT NULL,

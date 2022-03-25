@@ -50,6 +50,7 @@ const productController = {
             image:req.file.filename,
             stock:req.body.stock,
             price: req.body.price,
+            discount:req.body.discount,
             category_id:req.body.category,
             color_id:req.body.color,
             brand_id:req.body.brand
@@ -84,6 +85,7 @@ const productController = {
             image:req.file.filename,
             stock:req.body.stock,
             price: req.body.price,
+            discount:req.body.discount,
             category_id:req.body.category,
             color_id:req.body.color,
             brand_id:req.body.brand
@@ -95,6 +97,7 @@ const productController = {
                 description:req.body.description,
                 stock:req.body.stock,
                 price: req.body.price,
+                discount:req.body.discount,
                 category_id:req.body.category,
                 color_id:req.body.color,
                 brand_id:req.body.brand

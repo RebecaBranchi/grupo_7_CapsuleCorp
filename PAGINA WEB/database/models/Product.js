@@ -27,6 +27,8 @@ let cols = {
             allowNull: false
         },
         price: dataTypes.DECIMAL(10,2),
+
+        discount: dataTypes.INTEGER(),
        
         category_id: dataTypes.BIGINT(10),
         color_id: dataTypes.BIGINT(10),

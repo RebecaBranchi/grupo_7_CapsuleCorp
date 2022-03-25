@@ -16,14 +16,15 @@
                       
                         <input class="control" type="file" name="image" id="image"  >
                        
-                       <!--  <input class="control" type="number" name="discount" id="discount" value=<%=product.discount %>> -->
+         
                         
                        <input class="control" type="number" name="stock" id="stock" value=<%=product.stock %>>
 
                         <input class="control" type="number" name="price" id="precio" value=<%=product.price %>>
 
-                                            
-                        <select name="category" id="" class="control" required >
+                       <input class="control" type="number" name="discount" id="discount" value=<%=product.discount %>>                    
+                      
+                       <select name="category" id="" class="control" required >
                             <% categories.forEach(category => { %>
 
                                 <% if (category.id == product.category_id) { %>

@@ -45,6 +45,15 @@
                             </div>
                           <% } %> 
 
+                          <input type="number" name="discount" id="discount" placeholder="Descuento"
+                          class="control <%= locals.errors && errors.discount ? 'is-invalid': null %>"
+                          value="<%= locals.oldData ? oldData.discount :null %>">
+                               <% if (locals.errors && errors.discount) { %>
+                                 <div class="text-danger">
+                                    <%= errors.discount.msg %>
+                                 </div>
+                               <% } %> 
+
                           <select name="category" id="" class="control" required>
                             <option value="" disabled selected>- Seleccione la categoria - </option>
                             <% categories.forEach(category => { %>
