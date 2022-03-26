@@ -38,6 +38,7 @@ module.exports = (sequelize, dataTypes) => {
         };
       
       
+        
      const Order = sequelize.define(alias,cols,config);
     
     //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
