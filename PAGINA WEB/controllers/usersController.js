@@ -23,7 +23,7 @@ const userController = {
        
         }else{ 
         
-     db.User.findOne({where:{'email': req.body.email}})
+     db.User.findOne({where:{email: req.body.email}})
      .then((userInDB)=>{   
      if(userInDB){
              res.render('users/register', {
@@ -51,7 +51,7 @@ const userController = {
       
       
        return res.redirect('/users/login')
-    })}},
+    }).catch(  err => { console.log(err)})}},
 
     login: (req, res) => {
              
@@ -60,7 +60,7 @@ const userController = {
    
     loginProcess:(req,res)=>{
         
-        db.User.findOne({where:{'email': req.body.email}})
+        db.User.findOne({where:{email: req.body.email}})
 
         .then( (userToLogin)=>{  
 
@@ -84,23 +84,29 @@ const userController = {
         }else{
             res.render('users/loginPass', {
             oldData :req.body})
-             }})},
+             }}).catch(  err => { console.log(err)})},
        
          
 loginPass: (req,res)=>{
 
-     db.User.findOne({where:{ 'email': req.body.email}})
+     db.User.findOne({where:{ email: req.body.email}})
            .then ( (userToLogin)=>{    
 
             let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
       
+
+         
             if(isOkThePassword){
                 delete userToLogin.password;
                 
                 req.session.userLogged = userToLogin ;
 
+                if(req.body.remember_user) {
+
                 res.cookie('userEmail',req.body.email, { maxAge: (1000 * 60) * 60 })
-                
+                }
+         
+
                  return res.redirect('/users/profile')
           
             }else{ 
@@ -112,7 +118,7 @@ loginPass: (req,res)=>{
                },
                oldData :req.body
            })};
-        })},
+        }).catch(  err => { console.log(err)})},
  
 
     profile: (req, res) => {

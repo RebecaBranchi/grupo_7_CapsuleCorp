@@ -39,7 +39,7 @@ const productController = {
          .all ([Categ,Col,Bran])
          .then(([categories,colors,brands])=>{
                return res.render("products/create", {categories,colors,brands});
-           })
+           }).catch(  err => { console.log(err)})
     },
 
  
@@ -71,7 +71,7 @@ const productController = {
         .all ([Prod,Categ,Col,Bran])
         .then(([product,categories,colors,brands])=>{
               return res.render("products/edit", {product,categories,colors,brands});
-          })
+          }).catch(  err => { console.log(err)})
        
      },
 
