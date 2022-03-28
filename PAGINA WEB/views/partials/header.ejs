@@ -9,9 +9,7 @@
                 <input type="text" name="busqueda" placeholder="Buscar" class="buscar">
                 <i class="fas fa-search"></i>
             </div>
-            <div>
-            <a href="/carrito"><i class="fas fa-cart-plus"></i></a> 
-            </div>
+           
         </div>
         <div class="marcasbuscar">
             <select name="marcas" id="" class="marcas">
@@ -25,11 +23,11 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="#">Ofertas</a></li>
                 <li><a href="/vender">Marcas</a></li>
-                <li><a href="/productDetail">Arma tu pc</a></li>
+                <li><a href="/color">colores</a></li>
                 <li><a href="/ayuda">Ayuda</a></li>
               </ul>
               <ul class="right-navbar">
-                <li><a href="/miscompras">Mis compras <i class="fas fa-shopping-bag"></i></a></li>
+                <li><a href="/shopping/cart">Mis compras<i class="fas fa-shopping-bag"></i></a></li>
                 <li><a href="/users/logout">Cerrar sesión <i class="far fa-address-card"></i></a></li>
                 <li><img src="/img/users/<%= locals.userLogged.avatar %> "></li>
                 <li><a href="/users/profile"><%= locals.userLogged.first_name %> </a></li>
@@ -37,15 +35,15 @@
             <% } else { %>
                 <ul class="left-navbar">
                     <li><a href="/ofertas">Ofertas</a></li>
-                    <li><a href="/Marcas">Marcas</a></li>
-                    <li><a href="/vender">Arma tu pc</a></li>
+                    <li><a href="/brand">Marcas</a></li>
+                    <li><a href="/color">Colores</a></li>
                     <li><a href="/Categorias">Categorias</a></li>
                     <li><a href="/ayuda">Ayuda</a></li>
                   </ul>
                   <ul class="right-navbar">
                     <li><a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
                     <li><a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
-                    <li><a href="/compras/carrito">Mis compras <i class="fas fa-shopping-bag"></i></a></li>
+                   
                  </ul>
                  <% } %>
         </nav>
