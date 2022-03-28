@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator');
 
 const db = require("../database/models")
 
@@ -42,9 +43,28 @@ const productController = {
            }).catch(  err => { console.log(err)})
     },
 
- 
-     store: (req,res)=>{
-        db.Product.create({
+ store: (req,res)=>{
+
+    const resultValidation = validationResult(req);
+              
+    if (resultValidation.errors.length > 0) {
+        let Categ =  db.ProductCategory.findAll();
+        let Col = db.ProductColor.findAll();
+        let Bran = db.ProductBrand.findAll();
+        Promise
+        .all ([Categ,Col,Bran])
+        .then(([categories,colors,brands])=>{
+            res.render('products/create', {
+                errors: resultValidation.mapped(),
+                oldData :req.body,
+              categories,
+              brands,
+              colors
+            })})
+      
+        }else{ 
+           
+            db.Product.create({
             name: req.body.name,
             description:req.body.description,
             image:req.file.filename,
@@ -55,10 +75,10 @@ const productController = {
             color_id:req.body.color,
             brand_id:req.body.brand
         })
-            res.redirect("/products")
-      },
-
-
+        res.redirect("/products")
+      }
+     
+    },
 
 
      editProduct:(req,res)=>{

@@ -3,6 +3,7 @@ const path = require('path');
 
 const db = require("../database/models")
 
+const { validationResult } = require ("express-validator");
 
 
 const colorsController = {
@@ -26,12 +27,26 @@ const colorsController = {
 
  
      store: (req,res)=>{
+
+        const resultValidation = validationResult(req);
+              
+        if (resultValidation.errors.length > 0) {
+          
+                res.render('secondaryTables/createColors', {
+                    errors: resultValidation.mapped(),
+                    oldData :req.body,
+                 
+                })
+          
+            }else{ 
+
+
         db.ProductColor.create({
             name: req.body.name,
             
         })
             res.redirect("/color")
-      },
+      }},
 
 
 

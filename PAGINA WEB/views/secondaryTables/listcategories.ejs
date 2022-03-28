@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ("../partials/head")%>
+
+<body>
+       
+    <%- include ("../partials/header")%>
+    
+    <main class="maincaja">
+        <div class="contenedor">
+            <div class="titulodeseccion">
+                <h2>Todas las categorias</h2><br>
+                <button><a href="/category/create">Agrega categorias</a></button>
+           <br>
+           <br>
+            </div>
+            <div class="carrusel">
+                <% categories.forEach( category => { %> 
+                <div class="contenedor-foto-texto">
+                   
+                    <h2 ><%= category.name %> </h2>
+
+                   <button><a href="category/edit/<%= category.id %>">Editar  categoria</a></button> 
+                  
+                   <form action="/category/delete/<%= category.id %>?_method=DELETE" method="POST">
+                    <button type="submit">Eliminar categoria</button>
+                
+                </form>                   
+                
+                   
+                   
+                   
+                </div>
+                <% }) %>
+            </div>
+
+    </main>
+
+    <%- include ("../partials/categories")%>
+    <%- include ("../partials/redessociales")%>
+    <%- include ("../partials/footer")%>
+  
+</body>
+
+</html>

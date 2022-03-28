@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ("../partials/head")%>
+
+
+    <body>
+        <%- include ("../partials/header")%>
+            <section class="form-registro">
+                <h4>Formulario Editar Categoria</h4>
+              
+                    <form action="/category/update/<%=category.id %>?_method=PUT" method="POST">
+                        <input class="control" type="text" name="name" id="name" value="<%=category.name %>" >
+                    
+                                          
+                        <button type="submit">Editar Marca</button>
+                    </form>
+                
+
+            </section>
+
+
+            <%- include ("../partials/redessociales")%>
+            <%- include ("../partials/footer")%>
+
+    </body>
+
+</html>

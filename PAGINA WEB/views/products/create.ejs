@@ -34,7 +34,14 @@
                            </div>
                          <% } %>
                       
-                     <input class="control" type="number" name="stock" id="stock" placeholder="stock">  
+                         <input type="number" name="stock" id="stock" placeholder="Stock"
+                         class="control <%= locals.errors && errors.stock ? 'is-invalid': null %>"
+                         value="<%= locals.oldData ? oldData.stock :null %>">
+                              <% if (locals.errors && errors.stock) { %>
+                                <div class="text-danger">
+                                   <%= errors.stock.msg %>
+                                </div>
+                              <% } %> 
                      
                      <input type="number" name="price" id="price" placeholder="Precio"
                      class="control <%= locals.errors && errors.price ? 'is-invalid': null %>"
@@ -60,6 +67,11 @@
                             <option value="<%= category.id %>"><%= category.name %></option>
                             <% }); %>
                         </select>
+                        <% if (locals.errors && errors.category) { %>
+                          <div class="text-danger">
+                             <%= errors.category.msg %>
+                          </div>
+                        <% } %> 
 
                         <select name="color" id="" class="control" required>
                           <option value="" disabled selected>- Seleccione el color - </option>
@@ -67,6 +79,11 @@
                           <option value="<%= color.id %>"><%= color.name %></option>
                           <% }); %>
                       </select>
+                      <% if (locals.errors && errors.color) { %>
+                        <div class="text-danger">
+                           <%= errors.color.msg %>
+                        </div>
+                      <% } %> 
 
                       <select name="brand" id="" class="control" required>
                         <option value="" disabled selected>- Seleccione la marca - </option>
@@ -74,6 +91,11 @@
                         <option value="<%= brand.id %>"><%= brand.name %></option>
                         <% }); %>
                     </select>
+                    <% if (locals.errors && errors.brand) { %>
+                      <div class="text-danger">
+                         <%= errors.brand.msg %>
+                      </div>
+                    <% } %> 
 
                     <button type="submit">crear</button>
 

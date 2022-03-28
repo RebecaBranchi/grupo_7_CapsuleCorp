@@ -4,7 +4,7 @@ const path = require("path");
 const categoriesController = require ("../controllers/categoriesController");
 const multer = require ("multer");
 const { body} = require ("express-validator");
-const categoryValidator= require ("../middlewares/productMiddle")
+const categoryValidator= require ("../middlewares/categoryMiddle")
 
 
 
@@ -18,14 +18,15 @@ const fileStorageEngine = multer.diskStorage({
 
 const upload = multer({storage: fileStorageEngine});
 
-/*router.get("/",productController.listProducts);
-router.get("/detail/:id", productController.detailProduct);
-router.get("/create",productController.create);
-router.post("/create",upload.single('image'),productValidator,productController.store);
+router.get("/",categoriesController.listCategories);
 
-router.get("/edit/:id",productController.editProduct);
-router.put("/update/:id",productController.updateProduct);
 
-router.delete("/delete/:id",productController.delete);
-*/
+router.get("/create",categoriesController.create);
+router.post("/create",upload.single('image'),categoryValidator,categoriesController.store);
+
+router.get("/edit/:id",categoriesController.editCategory);
+router.put("/update/:id",categoriesController.updateCategory);
+
+router.delete("/delete/:id",categoriesController.delete);
+
 module.exports = router

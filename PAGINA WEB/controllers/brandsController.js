@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const db = require("../database/models")
-
+const { validationResult } = require ("express-validator");
 
 
 const brandsController = {
@@ -26,12 +26,25 @@ const brandsController = {
 
  
      store: (req,res)=>{
+
+        const resultValidation = validationResult(req);
+              
+        if (resultValidation.errors.length > 0) {
+          
+                res.render('secondaryTables/createBrands', {
+                    errors: resultValidation.mapped(),
+                    oldData :req.body,
+                 
+                })
+          
+            }else{ 
+
         db.ProductBrand.create({
             name: req.body.name,
             
         })
             res.redirect("/brand")
-      },
+      }},
 
 
 

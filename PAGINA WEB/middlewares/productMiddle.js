@@ -12,6 +12,9 @@ const productValidator = [
         body("color")
                 .notEmpty()
                 .withMessage("debe completar el color"),
+         body("stock")
+                .notEmpty()
+                .withMessage("debe completar el stock"),
         body("discount")
                 .notEmpty()
                 .withMessage("tiene descuento?")
@@ -22,9 +25,9 @@ const productValidator = [
                 .withMessage("debe colocar un precio a su producto")
                 .isInt()
                 .withMessage("tiene que ser un numero"),
-        body("type")
+        body("category")
                 .notEmpty()
-                .withMessage("seleccione una de la opciones"),
+                .withMessage("seleccione una de las categorias"),
         body("image").custom((value, { req }) => {
                 let file = req.file;
                 let acceptedExtensions = ['.jpg', '.png', '.gif'];

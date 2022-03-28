@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-//const { path } = require("express/lib/application");
+
 const multer = require('multer');
 const validationsRegister = require('../middlewares/userMiddle');
 const guesmiddleware = require('../middlewares/guesmiddleware');
