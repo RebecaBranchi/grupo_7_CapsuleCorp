@@ -10,8 +10,10 @@ module.exports = (sequelize, dataTypes) => {
                 autoIncrement: true
             },
             
-            user_id: {
+            order_id: {
                 type: dataTypes.BIGINT(10),
+               
+
             },
             product_id: {
                 type: dataTypes.BIGINT(10),
@@ -19,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
              quantity_products: {
                 type: dataTypes.INTEGER(),
                 allowNull: false
-            },
+            }
           
                               
           
@@ -35,19 +37,18 @@ module.exports = (sequelize, dataTypes) => {
      const ShoppingCart = sequelize.define(alias,cols,config);
     
     //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
+    ShoppingCart.associate = function (models) {
     
- /*   ShoppingCart.associate = function(models){
-            ShoppingCart.hasMany(models.User, { 
-                as: "users",
-                foreignKey: "user_id"
-            }),
-        
-            ShoppingCart.hasMany(models.Product, { 
-                as: "products",
-                foreignKey: "product_id"
-            })
-         
-        }*/
+        ShoppingCart.belongsTo(models.Product, { 
+        as: "shoppingProduct",
+        foreignKey: "product_id"
+    })
+
+  
+
+
+}
+    
         
    
         return ShoppingCart

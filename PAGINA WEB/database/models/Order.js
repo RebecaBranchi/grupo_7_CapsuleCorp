@@ -13,13 +13,10 @@ module.exports = (sequelize, dataTypes) => {
             user_id: {
                 type: dataTypes.BIGINT(10),
             },
-            shopping_carts_id: {
+            shoppingcart_id: {
                 type: dataTypes.BIGINT(10),
             },
-             delivery_date: {
-                type: dataTypes.DATE(),
-                allowNull: false
-            },
+        
             total_price: {
                 type: dataTypes.INTEGER(),
                 allowNull: false
@@ -53,9 +50,17 @@ module.exports = (sequelize, dataTypes) => {
                 as: "payment_status",
                 foreignKey: "paystatus_id"
             })
+
+            
+          
+
+
+
+                   
          
         }
     
+
     
     
     

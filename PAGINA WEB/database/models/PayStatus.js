@@ -9,10 +9,14 @@ module.exports = (sequelize, dataTypes) => {
                 allowNull: false,
                 autoIncrement: true
             },
+            user_id:{
+                type: dataTypes.BIGINT(30),
+                allowNull: false
+            },
             
             pay_status: {
                 type: dataTypes.STRING(30),
-                allowNull: false
+                allowNull: true
             }
        
          
@@ -31,8 +35,10 @@ module.exports = (sequelize, dataTypes) => {
         PayStatus.associate = function (models) {
             PayStatus.hasMany(models.Order, { 
                 as: "payment_status",
-                foreignKey: "pay_status_id"
+                foreignKey: "paystatus_id"
             })
+
+
         
 
         }

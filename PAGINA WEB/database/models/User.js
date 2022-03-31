@@ -40,9 +40,10 @@ module.exports = (sequelize, dataTypes) => {
             },
            
             category_id: dataTypes.BIGINT(10),
+
+
+
        
-            //created_at: dataTypes.TIMESTAMP(),
-            //updated_at: dataTypes.TIMESTAMP(),
         };
        
         let config = {
@@ -61,6 +62,9 @@ module.exports = (sequelize, dataTypes) => {
                 as: "userscategories",
                 foreignKey: "category_id"
             })
+
+ 
+   
                    
             }
     

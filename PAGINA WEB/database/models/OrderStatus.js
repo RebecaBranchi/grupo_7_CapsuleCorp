@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
                 autoIncrement: true
             },
             
-            order_status: {
+            status: {
                 type: dataTypes.STRING(30),
                 allowNull: false
             }

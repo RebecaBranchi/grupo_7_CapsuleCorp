@@ -62,12 +62,22 @@ let cols = {
         Product.belongsTo(models.ProductBrand, { 
             as: "productsbrands",
             foreignKey: "brand_id"
+        }),
+
+
+        Product.hasMany(models.ShoppingCart, { 
+            as: "productShopping",
+            foreignKey: 'product_id',
+            
         })
 
 
-
-
     }
+
+
+
+
+    
 
 
 
