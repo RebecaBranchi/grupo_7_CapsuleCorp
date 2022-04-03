@@ -7,6 +7,7 @@
         <%- include ("../partials/header")%>
             <section class="form-registro">
                 <h4>Formulario de Crear</h4>
+                <div id="errors"></div>
                 <form action="/products/create" method="POST" enctype="multipart/form-data">
                     <input type="text" name="name" id="name" placeholder="Nombre del producto"
                     class="control <%= locals.errors && errors.name ? 'is-invalid': null %>"
@@ -105,7 +106,7 @@
 
             <%- include ("../partials/redessociales")%>
                 <%- include ("../partials/footer")%>
-
+<script src="../../public/js/formCreateProduct.js"></script>
     </body>
 
 </html>
