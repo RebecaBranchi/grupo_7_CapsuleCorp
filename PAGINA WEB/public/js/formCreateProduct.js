@@ -1,4 +1,6 @@
 window.addEventListener('load', function(){
+
+
     let formCreateProduct = document.querySelector('form');
 
     formCreateProduct.addEventListener('submit', function(e){
@@ -10,7 +12,7 @@ window.addEventListener('load', function(){
             errors.push('El campo no debe estar vacío');
         }
 
-        let inputDescription = document.querySelector('#description') ;
+       let inputDescription = document.querySelector('#description') ;
 
         if (inputDescription.value == '') {
             errors.push('El campo no debe estar vacío');
