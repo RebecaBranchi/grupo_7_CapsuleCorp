@@ -11,6 +11,8 @@
       
       <form action="/users/register" method="POST" enctype="multipart/form-data">
       <h4>¡Hola! Aquí completas tus datos para registrarte</h4>
+
+      <div id="errors"></div>
        
       <br><label>Ingresá tu nombre</label></br>
       <input type="text" name="first_name" id="first_name"
@@ -75,6 +77,8 @@
   </section>
 
         <%- include("../partials/footer") %>
+
+     <script src="/js/formRegister.js" ></script>
 
     </body>
 
