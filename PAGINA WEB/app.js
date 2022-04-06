@@ -16,6 +16,7 @@ const shoppingRouter = require("./routes/shoppingRouter");
 const colorRouter = require("./routes/colorRouter");
 const categoryRouter = require("./routes/categoryRouter");
 const brandRouter = require("./routes/brandRouter");
+const apiRouter = require ("./routes/api/apiRouter")
 
 //Middleware///
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
@@ -52,13 +53,14 @@ app.use(userLoggedMiddleware);
 
 
 ///Routes ///
-app.use("/", mainRouter)
-app.use("/products", productRouter)
-app.use("/users", usersRouter )
-app.use("/shopping", shoppingRouter )
-app.use("/color",colorRouter)
-app.use("/category",categoryRouter)
-app.use("/brand",brandRouter)
+app.use("/", mainRouter);
+app.use("/products", productRouter);
+app.use("/users", usersRouter );
+app.use("/shopping", shoppingRouter );
+app.use("/color",colorRouter);
+app.use("/category",categoryRouter);
+app.use("/brand",brandRouter);
+app.use("/api",apiRouter)
 
 
 app.use(userLoginMiddleware)
