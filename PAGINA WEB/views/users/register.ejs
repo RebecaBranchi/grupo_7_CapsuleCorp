@@ -34,7 +34,7 @@
            <% } %>
                <label>Ingresá tu e-mail</label>
               <h6><label>te enviaremos un mensaje para confirmarlo.</label></h6>
-              <input type="email" name="email" id="email"
+              <input type="text" name="email" id="email"
                class="control <%= locals.errors && errors.email ? 'is-invalid': null %>"
                    value="<%= locals.oldData ? oldData.email :null %>">
                      <% if (locals.errors && errors.email) { %>

@@ -1,36 +1,42 @@
 window.addEventListener('load', function(){
 
 
-    let formCreateProduct = document.querySelector('form');
+    let formRegister = document.querySelector('form');
 
-    formCreateProduct.addEventListener('submit', function(e){
+    formRegister.addEventListener('submit', function(e){
        let errors = [];
 
-        let inputFirstName = document.querySelector('#first_name') ;
+        let inputFirstName = document.querySelector("#first_name") ;
 
-        if (inputFirstName.value == '') {
-            errors.push('El campo no debe estar vacío');
+        if (inputFirstName.val== ' ') {
+            errors.push('El campo NOMBRE no debe estar vacío');
         }
+        console.log(inputFirstName.value);
+        let inputLastName = document.querySelector('#last_name') ;
 
-        let inputLasttName = document.querySelector('#last_name') ;
-
-        if (inputLasttName.value == '') {
-            errors.push('El campo no debe estar vacío');
+        if (inputLastName.value == '') {
+            errors.push('El campo APELLIDO no debe estar vacío');
         }
 
         let inputEmail = document.querySelector('#email') ;
 
         if (inputEmail.value == '') {
-            errors.push('El campo no debe estar vacío');
-        } 
+            errors.push('El campo EMAIL no debe estar vacío');
+        } else if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(inputEmail.value)){
+            errors.push("La dirección de email " + inputEmail.value + " es correcta!.");
+           } else {
+            errors.push("La dirección de email es incorrecta!.");
+           }
+         
 
         let inputPassword = document.querySelector('#password') ;
 
         if (inputPassword.value == '') {
-            errors.push('El campo no debe estar vacío');
+            errors.push('El campo CONTRASEÑA no debe estar vacío');
         } else if (inputPassword.value.length < 8) {
             errors.push('La contraseña debe tener al menos 8 caracteres')
         }
+        console.log(inputPassword.value);
 
         if(errors.length > 0) {
             e.preventDefault();
