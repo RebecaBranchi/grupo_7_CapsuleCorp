@@ -60,7 +60,7 @@ const productController = {
               categories,
               brands,
               colors
-            })})
+            })}).catch(  err => { console.log(err)})
       
         }else{ 
            

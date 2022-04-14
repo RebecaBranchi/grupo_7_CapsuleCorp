@@ -89,13 +89,12 @@ const userController = {
          
 loginPass: (req,res)=>{
 
+    if(req.body.email){ 
      db.User.findOne({where:{ email: req.body.email}})
            .then ( (userToLogin)=>{    
 
             let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
-      
-
-         
+               
             if(isOkThePassword){
                 delete userToLogin.password;
                 
@@ -106,7 +105,6 @@ loginPass: (req,res)=>{
                 res.cookie('userEmail',req.body.email, { maxAge: (1000 * 60) * 60 })
                 }
          
-
                  return res.redirect('/users/profile')
           
             }else{ 
@@ -118,7 +116,9 @@ loginPass: (req,res)=>{
                },
                oldData :req.body
            })};
-        }).catch(  err => { console.log(err)})},
+        })
+        .catch(  err => { console.log(err)})}
+    } ,
  
 
     profile: (req, res) => {

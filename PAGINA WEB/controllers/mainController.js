@@ -10,7 +10,12 @@ const getHome = (req,res)=>{
 .then(products=>{  
 
     res.render("users/index",{products})
-})};
+})
+.catch(  err => { console.log(err)})
+
+
+
+};
 
 
 

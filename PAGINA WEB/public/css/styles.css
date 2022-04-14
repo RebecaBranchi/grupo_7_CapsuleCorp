@@ -444,7 +444,7 @@ transition: transform 200ms;
 
 .mario{
     min-width: 50%;
-
+    
     width: 100%;
     display: none;
 }

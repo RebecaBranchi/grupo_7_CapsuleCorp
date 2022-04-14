@@ -14,7 +14,7 @@ const trolleyController = {
         .then((carts)=>{
 
             res.render('shopping/cart',{carts})
-        })
+        }).catch(  err => { console.log(err)})
     },
 
     add: (req, res) => {
@@ -52,7 +52,8 @@ const trolleyController = {
 
                 }
 
-            })
+            }).catch(  err => { console.log(err)})
+        
 
 
 

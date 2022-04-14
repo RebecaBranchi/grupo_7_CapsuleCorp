@@ -25,8 +25,8 @@ const userLoginMiddleware = require('./middlewares/userLoginMiddleware');
 
 
 // Req.body //
-app.use(express.urlencoded({extended: false}));
-app.use(express.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 //Form Put and delete
 app.use(methodOverride("_method"))
