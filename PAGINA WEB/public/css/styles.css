@@ -4,11 +4,6 @@
     padding: 0;
 }
 
-/* principio estilos de redes sociales*/
-
-/* final de estilos de redes sociales*/
-
-
 .form-registro{
     width:60%;
     background: #e7e5e5;
@@ -201,8 +196,7 @@ font-size: 24px ;
     width:  2em;
     height: 2em;
     margin: 1em 1em 0;
-       color: #FFF;
-   
+    color: #FFF;
     border-radius: 15px;
 }
 
@@ -221,8 +215,8 @@ font-size: 24px ;
     background-color:#e7e5e5;
     ;
     font-size: 20px;
-     padding: 15px 0  20px 0;
-      animation: arranque 6s linear 1 normal ;
+    padding: 15px 0  20px 0;
+    animation: arranque 6s linear 1 normal ;
     z-index: 100;
 
 }
@@ -279,7 +273,7 @@ font-size: 24px ;
 
 
 body{
-    font-family: 'Tourney', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-weight: normal;
 }
 
@@ -288,7 +282,7 @@ width: 100vw;;
 }
 
 .enviar{
-    font-family: 'Tourney', cursive;
+  
     font-size: 50px;
     color: red;
 }
@@ -300,14 +294,25 @@ header{
     background-image: url("/img/unknown (2).png") ;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 10px;
-  
-    font-size: 20px;
-    color: #000;
+    background-position: 0px;
+    font-size: 1em;
+    color: #ffffff;
     padding: 15px 0  15px 0;
     border-bottom: solid 2px #0000;
  
 }
+
+header a{
+   
+    color: black;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+}
+
+header a:hover{
+    font-size: 1.6em;
+}
+
 
 
 
@@ -333,12 +338,12 @@ header{
 
 .precio{
     width: 40%;
-    font-family: "reboto";
+  
     font-size: 26px;
 }
 .descuento{
     width: 60%;
-    font-family: "reboto";
+  
     color: #5890f8;
     font-size: 26px;
 
@@ -348,7 +353,7 @@ header{
     font-size: 40px;
     font-weight: bolder;
     color: #5890f8;
-    font-family: "reboto";
+
     background-color: rgba(0, 0, 0,0.5);
     position: absolute;
     width: 100%;
@@ -429,21 +434,6 @@ transition: transform 200ms;
 
 
 
-/*
-.topmario{
-
-    background-image:  url("/img/mariob.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-   
-
-    height: 25vh;
-    width: 100vw;
-    display: none;
-}
-
-*/
 
 .banner{
     display: flex;
@@ -486,7 +476,7 @@ right: 20px;
 
 
 .main-navbar{
-    height: 75px;
+    height: 50px;
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -557,19 +547,47 @@ font-size: 24px;
     height: 100%;
     z-index: 9999;
     opacity: 1;
-    background-image: url("/img/logo2.png");
+    
+    background-image: url("/img/logo4.png");
     background-repeat: no-repeat;
     background-size:300px;
     background-position: center;
-    background-color: #5890f8;
-    clip-path: circle(150% at 100% 0);
-    transition: clip-path 1.8s ease-in-out ;
+
+    background-color: black;
+    /*clip-path: circle(150% at 100% 0);*/
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 1s ease-in-out ;
     
   
 }
 
+.subloader{
+
+display: block;
+margin: auto;
+text-align: center;
+margin-top: 70vh;
+font-size: 80px;
+font-family:  'Montserrat', sans-serif;
+animation: neon2 0.1s ease-in-out infinite alternate;
+ 
+}
+
+@keyframes neon2 {
+    from {
+      text-shadow: 0 0 15px #fff, 0 0 25px #fff, 0 0 35px #fff, 0 0 45px #228dff,
+        0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+        0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+    }
+  }
+  
+
 .loader2{
-    clip-path: circle(0% at 100% 0); 
+   /* clip-path: circle(0% at 100% 0); */
+   clip-path: inset(0 0 0 100%);
    
 }
 
@@ -613,7 +631,7 @@ font-size: 24px;
         display: flex;
         flex-direction: row;
         color: #0000;
-        padding: 10px 5px;
+        padding: 10px 30px;
     }
     .bannerCarrusel,.big, .points, .point{
         align-items: flex-start;
@@ -637,12 +655,7 @@ font-size: 24px;
     text-align: center;
 }
 
-.cat {
-    display: flex;
-    width: 25vw;
-    margin-left: auto;  
-    align-items: center;
-}
+
 
 .contenedorfooter{
     display: flex;
@@ -798,13 +811,13 @@ font-size: 24px;
      font-weight: 400;
  }
  .main-navbar{
-     margin-top: 50px;
+     margin-top: 10px;
  }
  .main-navbar li{
      margin: 0 10px;
  }
  .main-navbar a {
-     font-size: 19px;
+     font-size: 1.3em;
  }
 
  .contenedorfooter{
