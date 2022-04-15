@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+.sep{
+    border-bottom: solid 1px #000;
+    margin-top: 165px;
+}
+
 .form-registro{
     margin: 30px auto;
     width:50%;
@@ -78,9 +83,9 @@ font-size: 24px ;
 
 
 .form-registro p {
-    margin: 15px;
+    margin: 10px;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 .is-invalid {
     border: 2px solid black;
@@ -95,18 +100,26 @@ font-size: 24px ;
 
 
 
-.logoheader{
+.logoimg{
+    width: 20%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+    -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
+    -moz-box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+}
 
-    width:230px;
-    height: 230px;
+.logoimg:hover{
+    width: 22%;
+}
+
+.logoImgUser{
     display: block;
     margin: auto;
-
-
-}
-.logoimg{
-    width: 80%;
+    width: 8%;
     border-radius: 50%;
+    box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+    -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
+    -moz-box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
 }
 
 
@@ -218,18 +231,12 @@ font-size: 24px ;
 /* fin carrusel banner*/
 
 /*nav_register login*/
-.titleLoginRegister{
- text-align: center;
+.titleLogin{
+margin-top: 10px;
+text-align: center;
 }
 
-.logoLogin img{
- 
-    width:100px;
-    height: 100px;
-    display: block;
-    margin: auto;
-  
-}
+
 
 /*perfil*/
 .profilUser{
@@ -291,7 +298,23 @@ width: 100vw;;
 
 
 header{
-    
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    background-image: url("/img/unknown (2).png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px;
+    font-size: 1em;
+    color: #ffffff;
+    padding: 15px 0  15px 0;
+    border-bottom: solid 2px #0000;
+ 
+}
+
+.rlUser{
+    position:relative;
+    top: 0;
     background-image: url("/img/unknown (2).png") ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -321,8 +344,6 @@ header a:hover{
     width: 90vw;
     display: block;
     margin: auto;
-
-
 }
 
 
@@ -500,26 +521,28 @@ right: 20px;
      list-style: none;
      margin-left: 30px;
  }
- .right-navba li{
+ .right-navbar li{
      border-radius: 10px;
      margin: 0 10px;
  }
  
 
-.logoimg{
-    width: 80px;
- 
-}
 
 .logo{
-display: flex;
-justify-content: space-around;
-width: 90vw;
-align-items: center;
-flex-direction: row;
-margin: auto;
-font-size: 24px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 80vw;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+    font-size: 1.5em;
 }
+
+.logoUser{
+display: block;
+margin: auto;
+   
+    }
  
 .busqueda{
     width: 75%;
@@ -545,17 +568,17 @@ font-size: 24px;
 
 
 .loader{
-    position: fixed;
+    position:fixed;
     width: 100%;
     height: 100%;
     z-index: 9999;
+    top: 0;
+    left: 0;
     opacity: 1;
-    
     background-image: url("/img/logo4.png");
     background-repeat: no-repeat;
     background-size:300px;
     background-position: center;
-
     background-color: black;
     /*clip-path: circle(150% at 100% 0);*/
     clip-path: inset(0 0 0 0);
@@ -568,7 +591,7 @@ font-size: 24px;
 display: block;
 margin: auto;
 text-align: center;
-margin-top: 70vh;
+margin-top: 72vh;
 font-size: 80px;
 animation: neon2 0.1s ease-in-out infinite alternate;
  
@@ -745,7 +768,8 @@ animation: neon2 0.1s ease-in-out infinite alternate;
  display: flex;
 }
 .maincaja{
-  margin: 0;
+
+  margin:0;
 }
 
 .formulario-registro{
