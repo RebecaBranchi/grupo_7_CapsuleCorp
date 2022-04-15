@@ -4,7 +4,7 @@
             <div class="hamburguesa">
             <a href="#" class="burger-menu"><i class="fas fa-bars"></i></a>
             </div>
-            <a href="/"><img src="/img/logo2.png" alt="" class="logoimg"></a>
+            <a href="/"><img src="/img/logo3.png" alt="" class="logoimg"></a>
             <div class="busqueda">
                 <input type="text" name="busqueda" placeholder="Buscar" class="buscar">
                 <i class="fas fa-search"></i>
@@ -18,23 +18,22 @@
          </select>    
         </div>
         <nav class="main-navbar">
-            <% if (locals.isLogged ) { %>
+            <% if (locals.isLogged) { %>
               <ul class="left-navbar">
-                <li><a href="/">Home</a></li>
-                <li><a href="#">Ofertas</a></li>
+                <li><a href="/products">Productos</a></li>
                 <li><a href="/vender">Marcas</a></li>
-                <li><a href="/color">colores</a></li>
+                <li><a href="/color">Colores</a></li>
                 <li><a href="/ayuda">Ayuda</a></li>
               </ul>
               <ul class="right-navbar">
-                <li><a href="/shopping/cart">Mis compras<i class="fas fa-shopping-bag"></i></a></li>
+                <li><a href="/shopping/cart">Mis compras <i class="fas fa-shopping-bag"></i></a></li>
                 <li><a href="/users/logout">Cerrar sesión <i class="far fa-address-card"></i></a></li>
-                <li><img src="/img/users/<%= locals.userLogged.avatar %> "></li>
+                <li><img src="/img/users/<%= locals.userLogged.avatar %>"></li>
                 <li><a href="/users/profile"><%= locals.userLogged.first_name %> </a></li>
              </ul>
             <% } else { %>
                 <ul class="left-navbar">
-                    <li><a href="/ofertas">Ofertas</a></li>
+                    <li><a href="/products">Productos</a></li>
                     <li><a href="/brand">Marcas</a></li>
                     <li><a href="/color">Colores</a></li>
                     <li><a href="/category">Categorias</a></li>

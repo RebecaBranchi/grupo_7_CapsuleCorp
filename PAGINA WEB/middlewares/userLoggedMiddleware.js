@@ -2,12 +2,10 @@ const db = require('../database/models')
 
 
 function userLoggedMiddleware(req, res, next){
-	
-	res.locals.isLogged = false;
+	res.locals.isLogged = false
 
 	if(req.cookies.userEmail){
 
-		
 		let emailInCookie = req.cookies.userEmail;
     	
 		db.User.findOne({where: {email : emailInCookie}})
@@ -24,7 +22,9 @@ function userLoggedMiddleware(req, res, next){
 			res.locals.isLogged = true;
 			res.locals.userLogged = req.session.userLogged;
 		}
-	}
+
+	
+}
   
     next();
 	

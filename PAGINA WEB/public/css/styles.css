@@ -5,31 +5,57 @@
 }
 
 .form-registro{
-    width:60%;
+    margin: 30px auto;
+    width:50%;
     background: #e7e5e5;
-    padding:30px ;
-    margin: 2rem auto;
+    padding:15px ;
     border-radius: 10px;
-    font-family: 'Gill Sans';
-    color: rgb(12, 12, 12);
+    color: #000;
     text-align:left;
-    padding-top: 5%;
+    padding-top: 15px;
+    font-weight: 100;
+    -webkit-box-shadow:0px 0px 43px 2px rgba(37,8,255,1);
+    -moz-box-shadow: 0px 0px 43px 2px rgba(37,8,255,1);
+    box-shadow: 0px 0px 43px 2px rgba(37,8,255,1);
 }
 .form-registro button{
-   
-    background-color: rgb(14, 13, 13);
-    color: rgb(255, 255, 255);
-    padding: 10px 5px;
-    margin-bottom:10%;
-    margin-top: 3%;
-    margin-left: 280px;
+    display: block;
+    margin: auto;
+    font-size:1.6em;
+    width:41%;
+    height:40px;
+    color:#fff;
+    font-weight:bold;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    border-bottom-left-radius:6px;
+    border-bottom-right-radius:6px;
+    text-shadow:inset 0px 1px 0px #528ecc;
+    background-image: url("/img/unknown (1).png");
+    background-position: 80px;
+    margin-bottom: 15px;
+    text-align:left;
+    padding-left: 25px;
 }
+  
+  .form-registro button:hover {
+    background: linear-gradient(#1a01ff, #00aeff);
+  }
+
 
 .form-registro h4{
-    font-size: 22px;
-    margin-bottom: 50px;
-    margin-left: 50px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
 }
+
+#emailLogin {
+    margin-bottom: 50px;
+}
+
+.form-check-input{
+    margin-bottom: 50px;
+}
+
 
 #emailPass {
 border: 0;
@@ -47,18 +73,14 @@ font-size: 24px ;
     border-radius: 4px;
     margin-bottom: 16;
    border:1px solid #ac9292;
-   font-family: 'Gill Sans';
-
    font-size: 18px;
 }
-.form-registro label{
-    margin-left: 10px;
-}
+
 
 .form-registro p {
-    height: 40px;
+    margin: 15px;
     text-align: center;
-    font-size: 18px;
+    font-size: 1.2em;
 }
 .is-invalid {
     border: 2px solid black;
@@ -67,20 +89,10 @@ font-size: 24px ;
     color: red;
 }
 .form-registro a:hover{
-    color: rgb(224, 235, 245);
     text-decoration: underline;
   
-    
 }
-.boton{
-    background-color: rgb(228, 143, 74);
-    color: rgb(51, 39, 7);
-    padding: 10px 5px;
-    margin-bottom:10%;
-    margin-top: 3%;
-    margin-left: 100px;
-  
-}
+
 
 
 .logoheader{
@@ -114,7 +126,6 @@ font-size: 24px ;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    font-family: "reboto";
     padding: 10px 0;
  
 }
@@ -208,18 +219,9 @@ font-size: 24px ;
 
 /*nav_register login*/
 .titleLoginRegister{
-    margin-left: 15%;
+ text-align: center;
 }
-.navLoginRegister{
 
-    background-color:#e7e5e5;
-    ;
-    font-size: 20px;
-    padding: 15px 0  20px 0;
-    animation: arranque 6s linear 1 normal ;
-    z-index: 100;
-
-}
 .logoLogin img{
  
     width:100px;
@@ -239,7 +241,6 @@ font-size: 24px ;
     margin-top: 10px;
     margin-left: 50px;
 
-   font-family: 'Gill Sans';
    font-size: 18px;
    text-align: left;
    
@@ -303,14 +304,14 @@ header{
 }
 
 header a{
-   
-    color: black;
+    color:  #000 ;
     font-size: 1.2em;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+    text-shadow: 0 0 15px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
 }
 
 header a:hover{
     font-size: 1.6em;
+    color:#0012FF 
 }
 
 
@@ -425,7 +426,9 @@ transition: transform 200ms;
     width: 90vw;
     padding:10px 0;
     font-size: 24px;
+   
 }
+
 .imagenes{
     width: 100%;
     display: block;
@@ -504,8 +507,8 @@ right: 20px;
  
 
 .logoimg{
-    width: 100px;
-    display: none;
+    width: 80px;
+ 
 }
 
 .logo{
@@ -562,13 +565,11 @@ font-size: 24px;
 }
 
 .subloader{
-
 display: block;
 margin: auto;
 text-align: center;
 margin-top: 70vh;
 font-size: 80px;
-font-family:  'Montserrat', sans-serif;
 animation: neon2 0.1s ease-in-out infinite alternate;
  
 }
@@ -797,9 +798,7 @@ animation: neon2 0.1s ease-in-out infinite alternate;
  margin: 5px;
 }
 
-.logo{
- width: 250px;
-}
+
 
 .main-header-top-bar{
  align-items: center;
