@@ -4,10 +4,148 @@
     padding: 0;
 }
 
+
+/* inicio  HEADER ------*/
 .sep{
     border-bottom: solid 1px #000;
     margin-top: 165px;
 }
+
+.logo{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80vw;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+    font-size: 1.5em;
+}
+.logoUser{
+display: block;
+margin: auto;
+}
+
+.logoimg{
+    width: 20%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+    -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
+    -moz-box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+}
+.logoimg:hover{
+    width: 22%;
+}
+
+.logoImgUser{
+    display: block;
+    margin: auto;
+    width: 8%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+    -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
+    -moz-box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+}
+
+.busqueda{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.buscar{
+    display: inline-block;
+    width: 75%;
+    border-radius: 25px;
+    text-align: center;
+ }
+
+ 
+.main-navbar{
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+ }
+ .left-navbar{
+     display: flex;
+     list-style: none;
+     margin-right: 30px;
+ }
+ .left-navbar li{
+    border-radius: 3px;
+    margin: 0 5px;
+ }
+ .right-navbar{
+     display: flex;
+     list-style: none;
+     margin-left: 30px;
+ }
+ .right-navbar li{
+     border-radius: 10px;
+     margin: 0 10px;
+ }
+ 
+/* fin  HEADER ------*/
+
+/*---- inicio Pantalla de espera ----*/
+.loader{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-image: url("/img/logo4.png");
+    background-repeat: no-repeat;
+    background-size:300px;
+    background-position: center;
+    background-color: black;
+    /*clip-path: circle(150% at 100% 0);*/
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 1s ease-in-out ;
+    
+  
+}
+
+.subloader{
+display: block;
+margin: auto;
+text-align: center;
+margin-top: 72vh;
+font-size: 80px;
+animation: neon2 0.1s ease-in-out infinite alternate;
+ 
+}
+
+@keyframes neon2 {
+    from {
+      text-shadow: 0 0 15px #fff, 0 0 25px #fff, 0 0 35px #fff, 0 0 45px #228dff,
+        0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+        0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+    }
+  }
+  
+
+.loader2{
+   /* clip-path: circle(0% at 100% 0); */
+   clip-path: inset(0 0 0 100%);
+   
+}
+
+/*---- fin Pantalla de espera ----*/
+
+
+
+
+
+
 
 .form-registro{
     margin: 30px auto;
@@ -98,29 +236,6 @@ font-size: 24px ;
   
 }
 
-
-
-.logoimg{
-    width: 20%;
-    border-radius: 50%;
-    box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
-    -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
-    -moz-box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
-}
-
-.logoimg:hover{
-    width: 22%;
-}
-
-.logoImgUser{
-    display: block;
-    margin: auto;
-    width: 8%;
-    border-radius: 50%;
-    box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
-    -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
-    -moz-box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
-}
 
 
 /*comienzo de categoria*/
@@ -499,124 +614,6 @@ right: 20px;
 }
 
 
-.main-navbar{
-    height: 50px;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   
- }
- .left-navbar{
-     display: flex;
-     list-style: none;
-     margin-right: 30px;
- }
- .left-navbar li{
-    border-radius: 3px;
-    margin: 0 5px;
- }
- .right-navbar{
-     display: flex;
-     list-style: none;
-     margin-left: 30px;
- }
- .right-navbar li{
-     border-radius: 10px;
-     margin: 0 10px;
- }
- 
-
-
-.logo{
-    display: flex;
-    justify-content: space-evenly;
-    width: 80vw;
-    align-items: center;
-    flex-direction: row;
-    margin: auto;
-    font-size: 1.5em;
-}
-
-.logoUser{
-display: block;
-margin: auto;
-   
-    }
- 
-.busqueda{
-    width: 75%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
-.buscar{
-    display: inline-block;
-    width: 75%;
-    border-radius: 25px;
-    text-align: center;
- }
-
-.marcasbuscar{
-   display: none;
-}
-.marcas{
-    width: 25%;
-}
-
-
-.loader{
-    position:fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    background-image: url("/img/logo4.png");
-    background-repeat: no-repeat;
-    background-size:300px;
-    background-position: center;
-    background-color: black;
-    /*clip-path: circle(150% at 100% 0);*/
-    clip-path: inset(0 0 0 0);
-    transition: clip-path 1s ease-in-out ;
-    
-  
-}
-
-.subloader{
-display: block;
-margin: auto;
-text-align: center;
-margin-top: 72vh;
-font-size: 80px;
-animation: neon2 0.1s ease-in-out infinite alternate;
- 
-}
-
-@keyframes neon2 {
-    from {
-      text-shadow: 0 0 15px #fff, 0 0 25px #fff, 0 0 35px #fff, 0 0 45px #228dff,
-        0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
-    }
-    to {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
-        0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
-    }
-  }
-  
-
-.loader2{
-   /* clip-path: circle(0% at 100% 0); */
-   clip-path: inset(0 0 0 100%);
-   
-}
-
-
-
 
 .redessociales{
     width: 90%;
@@ -637,48 +634,23 @@ animation: neon2 0.1s ease-in-out infinite alternate;
 .main-navbar{
     display: none;
 }
-@media (min-width: 760px) {
-    .main-navbar{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
 
-    }
+.titulo{
+    font-weight: 100;
+    font-size: 50px;
+    font-style: italic;
+   }
+   
+   .icono{
+    font-size: 100px;
+    text-align: center;
+   }
 
-    .topmario{
-        display: flex;
-    }
-    .promociones{
-        display: block;
-    }
-    .left-navbar,.right-navbar {
-        display: flex;
-        flex-direction: row;
-        color: #0000;
-        padding: 10px 30px;
-    }
-    .bannerCarrusel,.big, .points, .point{
-        align-items: flex-start;
-     
-    }
-    .left-navbar{
-        align-items: flex-start;
-    }
-    .right-navbar{
-        align-items: flex-end;
-    }
 
-    .hamburguesa{
-        display: none;
-    }
-    
-}
-
-.footer {
+   .footer {
     font-size: 15px;
     text-align: center;
 }
-
 
 
 .contenedorfooter{
@@ -715,6 +687,54 @@ animation: neon2 0.1s ease-in-out infinite alternate;
    font-size: 40px;
 
 }
+
+
+
+
+
+
+
+/* inicio media ----------- hasta 760px*/
+
+@media (min-width: 760px) {
+    .main-navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+
+    .left-navbar,.right-navbar {
+        display: flex;
+        flex-direction: row;
+        color: #0000;
+        padding: 10px 30px;
+    }
+    .bannerCarrusel,.big, .points, .point{
+        align-items: flex-start;
+     
+    }
+    .left-navbar{
+        align-items: flex-start;
+    }
+    .right-navbar{
+        align-items: flex-end;
+    }
+
+    .hamburguesa{
+        display: none;
+    }
+    
+}
+
+/* fin media ----------- hasta 760px*/
+
+
+
+
+
+/* inicio media ----------- hasta 768px*/
 
 @media (min-width:768px ){
     .main-header-top-bar{
@@ -778,13 +798,14 @@ animation: neon2 0.1s ease-in-out infinite alternate;
 
 }
 
+/* inicio media ----------- desde 1200px*/
+
 @media (min-width: 1200px){
  .main-header-top-bar, .main-navbar {
     display: flex;
      justify-content: space-between;
      flex-direction: row;
  }
-
 
 .carrusel{
  display: flex;
@@ -821,8 +842,6 @@ animation: neon2 0.1s ease-in-out infinite alternate;
 .contenedor-foto-texto{
  margin: 5px;
 }
-
-
 
 .main-header-top-bar{
  align-items: center;
@@ -862,13 +881,5 @@ animation: neon2 0.1s ease-in-out infinite alternate;
 
 }
 
-.titulo{
- font-weight: 100;
- font-size: 50px;
- font-style: italic;
-}
+/* fin media ----------- desde 1200px*/
 
-.icono{
- font-size: 100px;
- text-align: center;
-}
