@@ -9,14 +9,12 @@ const trolleyController = {
 
     shopping: (req, res) => {
         db.ShoppingCart.findAll({
-            include:[{association:"shoppingProduct"}]
-        })
-        .then((carts)=>{
-
-            res.render('shopping/cart',{carts})
-        }).catch(  err => { console.log(err)})
+                include: [{ association: "shoppingProduct" }]
+            })
+            .then((carts) => {
+                res.render('shopping/cart', { carts })
+            }).catch(err => { console.log(err) })
     },
-
     add: (req, res) => {
 
         db.ShoppingCart.findAll()
@@ -52,12 +50,7 @@ const trolleyController = {
 
                 }
 
-            }).catch(  err => { console.log(err)})
-        
-
-
-
-
+            }).catch(err => { console.log(err) })
 
     }
 }

@@ -23,7 +23,8 @@
                                 </div>
                                 <div class="contenedor-texto">
                                     <div class="preciodescuento">
-                                        <h3 class="precio">$ <%= product.price %>
+                                        <h3 class="precio">$
+                                            <%= product.price %>
                                         </h3>
                                         <h3 class="descuento">
                                             <%= product.discount %> %OFF
@@ -37,28 +38,34 @@
                             <h3>
                                 <%= product.productscolors.name%>
                             </h3>
-                            <div>
-                                <button type="submint"> <a href="/products/edit/<%= product.id %>">EDITAR
+
+                            <% if (locals.isLogged && !locals.admin) { %>
+
+                                <div>
+                                    <form action="/shopping/add/<%= product.id %> " method="POST">
+
+                                        <select name="stock" id="" class="control" required>
+                                    <option value="" disabled selected> cantidad </option>
+
+                                    <% for( let i=1; i <=product.stock; i++ ) { %>
+
+                                        <option value="<%= i %>">
+                                            <%= i %>
+                                        </option>
+                                        <% } %>
+                                </select>
+                                        <button type="submit">Agregar a carrito</button>
+                                    </form>
+                                    <% } else if (locals.isLogged && locals.admin) { %>
+                                        <button type="submit"> <a href="/products/edit/<%= product.id %>">EDITAR
                                         PRODUCTO</a></button>
-                                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                                    <button type="submit">BORRAR</button>
-                                </form>
+                                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                            <button type="submit">BORRAR PRODUCTO</button>
+                                        </form>
 
-                                <form action="/shopping/add/<%= product.id %> " method="POST">
+                                </div>
 
-                                    <select name="stock" id="" class="control" required>
-                                        <option value="" disabled selected> cantidad </option>
-
-                                        <% for( let i=1; i <=product.stock; i++ ) { %>
-
-                                            <option value="<%= i %>">
-                                                <%= i %>
-                                            </option>
-                                            <% } %>
-                                    </select>
-                                    <button type="submit">Agregar a carrito</button>
-                                </form>
-                            </div>
+                                <% } %>
                         </div>
 
                     </div>

@@ -34,7 +34,7 @@ header {
     background-size: cover;
     background-position: 0px;
     color: #ffffff;
-    padding: 10px 0 10px 0;
+    padding: 15px 0 0 0;
     border-bottom: solid 2px #0000;
 }
 
@@ -726,7 +726,6 @@ header a:hover {
         display: flex;
         flex-direction: row;
         color: #0000;
-        padding: 10px 10px;
     }
     .sep {
         margin-top: 72px;

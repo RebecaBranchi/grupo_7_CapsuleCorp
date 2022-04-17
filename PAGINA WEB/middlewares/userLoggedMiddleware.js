@@ -2,9 +2,7 @@ const db = require('../database/models')
 
 function userLoggedMiddleware(req, res, next) {
     res.locals.isLogged = false
-
-
-    console.log(res.locals);
+    res.locals.admin = false
 
     if (req.cookies.userEmail) {
 
@@ -18,7 +16,13 @@ function userLoggedMiddleware(req, res, next) {
             })
             .catch(err => { console.log(err) })
 
-        if (req.session.userLogged) {
+        if (req.session.userLogged && req.session.userLogged.category_id === 2) {
+            res.locals.isLogged = true;
+            res.locals.userLogged = req.session.userLogged;
+            res.locals.admin = true
+            console.log(res.locals);
+
+        } else {
             res.locals.isLogged = true;
             res.locals.userLogged = req.session.userLogged;
         }
