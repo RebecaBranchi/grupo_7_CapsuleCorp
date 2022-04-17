@@ -3,29 +3,28 @@
 
 <%- include ("../partials/head")%>
 
-<body>
+    <body>
         <%- include ("../partials/header")%>
-            <section class="form-registro">
-                <h4>Formulario de Crear Marcas</h4>
-                <form action="/brand/create" method="POST" >
-                    <input type="text" name="name" id="name" placeholder="Nombre de la marca"
-                    class="control <%= locals.errors && errors.name ? 'is-invalid': null %>"
-                    value="<%= locals.oldData ? oldData.name :null %>">
-                         <% if (locals.errors && errors.name) { %>
-                           <div class="text-danger">
-                              <%= errors.name.msg %>
-                           </div>
-                         <% } %> 
+            <main>
 
-                  
-                    <button type="submit">crear</button>
+                <section class="form-registro">
+                    <h4>Formulario de Crear Marcas</h4>
+                    <form action="/brand/create" method="POST">
+                        <input type="text" name="name" id="name" placeholder="Nombre de la marca"
+                            class="control <%= locals.errors && errors.name ? 'is-invalid': null %>"
+                            value="<%= locals.oldData ? oldData.name :null %>">
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %>
+                            </div>
+                            <% } %>
+                                <button type="submit">crear</button>
+                    </form>
+                </section>
 
-                </form>
-            </section>
-
-
-            <%- include ("../partials/redessociales")%>
-                <%- include ("../partials/footer")%>
+                <%- include ("../partials/redessociales")%>
+            </main>
+            <%- include ("../partials/footer")%>
 
     </body>
 

@@ -3,44 +3,42 @@
 
 <%- include ("../partials/head")%>
 
-<body>
-       
-    <%- include ("../partials/header")%>
-    
-    <main class="maincaja">
-        <div class="contenedor">
-            <div class="titulodeseccion">
-                <h2>Todas las marcas</h2><br>
-                <button><a href="/brand/create">Agrega marcas</a></button>
-           <br>
-           <br>
-            </div>
-            <div class="carrusel">
-                <% brands.forEach( brand => { %> 
-                <div class="contenedor-foto-texto">
-                   
-                    <h2 ><%= brand.name %> </h2>
+    <body>
 
-                   <button><a href="brand/edit/<%= brand.id %>">Editar marca</a></button> 
-                  
-                   <form action="/brand/delete/<%= brand.id %>?_method=DELETE" method="POST">
-                    <button type="submit">Eliminar marca</button>
-                
-                </form>                   
-                
-                   
-                   
-                   
-                </div>
-                <% }) %>
-            </div>
+        <%- include ("../partials/header")%>
+            <main>
+                <div class="maincaja">
+                    <div class="contenedor">
+                        <div class="titulodeseccion">
+                            <h2>Todas las marcas</h2><br>
+                            <button><a href="/brand/create">Agrega marcas</a></button>
+                            <br>
+                            <br>
+                        </div>
+                        <div class="carrusel">
+                            <% brands.forEach( brand=> { %>
+                                <div class="contenedor-foto-texto">
 
-    </main>
+                                    <h2>
+                                        <%= brand.name %>
+                                    </h2>
+                                    <button><a href="brand/edit/<%= brand.id %>">Editar marca</a></button>
 
-    <%- include ("../partials/categories")%>
-    <%- include ("../partials/redessociales")%>
-    <%- include ("../partials/footer")%>
-  
-</body>
+                                    <form action="/brand/delete/<%= brand.id %>?_method=DELETE" method="POST">
+                                        <button type="submit">Eliminar marca</button>
+                                    </form>
+
+                                </div>
+                                <% }) %>
+                        </div>
+
+                    </div>
+
+                    <%- include ("../partials/categories")%>
+                        <%- include ("../partials/redessociales")%>
+            </main>
+            <%- include ("../partials/footer")%>
+
+    </body>
 
 </html>

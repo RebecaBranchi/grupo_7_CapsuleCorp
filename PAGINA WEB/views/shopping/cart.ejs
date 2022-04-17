@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../partials/head") %>
-<%- include("../partials/header") %>
+
     <body>
-        
-            <div >
-                 
-               <h2>¡Hola soy carrito !</h2>
-                    
-            </div>
+        <%- include("../partials/header") %>
+            <main>
+                <div>
+                    <h2>¡Hola soy carrito !</h2>
+                </div>
+                <div>
+                    <% carts.forEach(cart=> { %>
+                        <div class="contenedor-foto-texto">
+                            <div class="fotosss">
+                                <img src="/img/<%= cart.shoppingProduct.image %> " alt="" class="imagenes">
+                            </div>
+                            <h2>
+                                <%= cart.shoppingProduct.name %>
+                            </h2>
+                            <h2>
+                                <%= cart.quantity_products %>
+                            </h2>
+                        </div>
 
-            <div>
-                <% carts.forEach(cart=> { %>
-                    <div class="contenedor-foto-texto">
-                    <div class="fotosss">
-                        <img src="/img/<%= cart.shoppingProduct.image %> " alt="" class="imagenes">
-                    </div>
-                    <h2><%= cart.shoppingProduct.name %> </h2>
-                    <h2><%= cart.quantity_products %> </h2>
-                    </div>
-                    
-                 
-                <% }) %>
-            </div>
-    
+                        <% }) %>
+                </div>
 
-
-        <%- include ("../partials/redessociales")%>
-        <%- include ("../partials/footer")%>
+                <%- include ("../partials/redessociales")%>
+            </main>
+            <%- include ("../partials/footer")%>
     </body>
+
 </html>

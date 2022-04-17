@@ -1,15 +1,26 @@
+let slideIndex = 1;
+showSlides(slideIndex);
 
-const big = document.querySelector('.big');
-const point = document.querySelectorAll('.point')
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
 
-point.forEach((eachPoint, i)=>{
-    point[i].addEventListener('mouseover',()=>{
-        let position = i;
-        let operation= position * -100;
-        big.style.transform = `translateX(${operation}%)`
-        point.forEach((eachPoint, i )=>{
-            point[i].classList.remove('activo')
-        })
-        point[i].classList.add('activo')
-    })
-})
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}

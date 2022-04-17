@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <%- include ("../partials/head")%>
-
 
     <body>
         <%- include ("../partials/header")%>
-            <section class="form-registro">
-                <h4>Formulario Editar Marca</h4>
-              
+            <main>
+                <section class="form-registro">
+                    <h4>Formulario Editar Marca</h4>
+
                     <form action="/brand/update/<%=brand.id %>?_method=PUT" method="POST">
-                        <input class="control" type="text" name="name" id="name" value="<%=brand.name %>" >
-                    
-                                          
+                        <input class="control" type="text" name="name" id="name" value="<%=brand.name %>">
                         <button type="submit">Editar Marca</button>
                     </form>
-                
 
-            </section>
+                </section>
 
-
-            <%- include ("../partials/redessociales")%>
+                <%- include ("../partials/redessociales")%>
+            </main>
             <%- include ("../partials/footer")%>
 
     </body>

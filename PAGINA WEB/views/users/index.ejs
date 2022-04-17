@@ -4,111 +4,95 @@
 <%- include ("../partials/head")%>
 
     <body>
-    
-        <div id="loader" class="loader">
-            <div class="subloader">Capsule Corp</div>
-        </div>
 
-        <%- include ("../partials/header")%>
+        <%- include ("../partials/loader")%>
+            <%- include ("../partials/header")%>
 
-        <main>
-            <div class="sep"></div>
-            <div class="bannerCarrusel">
-                <div class="big">
-                    <img src="img/banners/1.png" alt="img1" class="img">
-                    <img src="img/banners/2.png" alt="img2" class="img">
-                    <img src="img/banners/3.png" alt="img3" class="img">
-                   
-                </div>
-                <ul class="points">
-                    <li class="point activo"></li>
-                    <li class="point activo"></li>
-                    <li class="point activo"></li>
-                </ul>
-                
-            </div>
-        
-            <div class="maincaja">
-                <div class="contenedor">
-                    <div class="titulodeseccion">
-                        <h2>Basado en tu ultima visita</h2>
-                    </div>
-                </div>
-                    <div class="carrusel">
-                        <% products.forEach(product=> { %>
-                            <% if (product.discount == 0 ) { %>
-
-                                <div class="contenedor-foto-texto">
-                                    <a href="/products/detail/<%= product.id %> ">
-                                        <div class="fotosss">
-                                            <img src="/img/<%= product.image %> " alt="" class="imagenes">
-                                        </div>
-                                        <div class="contenedor-texto-icono">
-                                            <div class="camionicon">
-                                                <i class="fas fa-truck" id="camionicono"></i>
-                                            </div>
-                                            <div class="contenedor-texto">
-                                                <div class="preciodescuento">
-                                                    <h3 class="precio">$ <%= product.price %>
-                                                    </h3>
-                                                    <h3 class="descuento">
-                                                        <%= product.discount %> OFF
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3 class="descripcion">
-                                            <%= product.name %>
-                                        </h3>
+                <main>
+                    <div class="sep"></div>
+                    <%- include ("../partials/banner")%>
+                        <div class="maincaja">
+                            <div class="contenedor">
+                                <div class="titulodeseccion">
+                                    <h2>Basado en tu ultima visita</h2>
                                 </div>
-                                <% } %>
-                                    <% }) %>
-                    </div>
-                    <div class="contenedor">
-                        <div class="titulodeseccion">
-                            <h2>Ofertas</h2>
-                        </div>
-                        <div class="carrusel">
-                            <% products.forEach(product=> { %>
-                                <% if (product.discount >= 5 ) { %>
+                            </div>
+                            <div class="carrusel">
+                                <% products.forEach(product=> { %>
+                                    <% if (product.discount == 0 ) { %>
 
-                                    <div class="contenedor-foto-texto">
-                                        <a href="/products/detail/<%= product.id %> ">
-                                            <div class="fotosss">
-                                                <img src="/img/<%= product.image %> " alt="" class="imagenes">
-                                            </div>
-                                            <div class="contenedor-texto-icono">
-                                                <div class="camionicon">
-                                                    <i class="fas fa-truck" id="camionicono"></i>
+                                        <div class="contenedor-foto-texto">
+                                            <a href="/products/detail/<%= product.id %> ">
+                                                <div class="fotosss">
+                                                    <img src="/img/<%= product.image %> " alt="" class="imagenes">
                                                 </div>
-                                                <div class="contenedor-texto">
-                                                    <div class="preciodescuento">
-                                                        <h3 class="precio">$ <%= product.price %>
-                                                        </h3>
-                                                        <h3 class="descuento">
-                                                            <%= product.discount %> OFF
-                                                        </h3>
+                                                <div class="contenedor-texto-icono">
+                                                    <div class="camionicon">
+                                                        <i class="fas fa-truck" id="camionicono"></i>
+                                                    </div>
+                                                    <div class="contenedor-texto">
+                                                        <div class="preciodescuento">
+                                                            <h3 class="precio">$
+                                                                <%= product.price %>
+                                                            </h3>
+                                                            <h3 class="descuento">
+                                                                <%= product.discount %> OFF
+                                                            </h3>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <h3 class="descripcion">
-                                                <%= product.name %>
-                                            </h3>
-                                    </div>
-                                    <% } %>
-                                        <% }) %>
-                        </div>
-                    </div> 
-                        
-                </div>
-            </main>
+                                                <h3 class="descripcion">
+                                                    <%= product.name %>
+                                                </h3>
+                                        </div>
+                                        <% } %>
+                                            <% }) %>
+                            </div>
+                            <div class="contenedor">
+                                <div class="titulodeseccion">
+                                    <h2>Ofertas</h2>
+                                </div>
+                                <div class="carrusel">
+                                    <% products.forEach(product=> { %>
+                                        <% if (product.discount >= 5 ) { %>
 
-            <%- include ("../partials/categories")%>
-            <%- include ("../partials/redessociales")%>
-            <%- include ("../partials/footer")%>
-            <script src="/js/carrusel.js"></script>
-            <script src="/js/loader.js"></script>
-        
+                                            <div class="contenedor-foto-texto">
+                                                <a href="/products/detail/<%= product.id %> ">
+                                                    <div class="fotosss">
+                                                        <img src="/img/<%= product.image %> " alt="" class="imagenes">
+                                                    </div>
+                                                    <div class="contenedor-texto-icono">
+                                                        <div class="camionicon">
+                                                            <i class="fas fa-truck" id="camionicono"></i>
+                                                        </div>
+                                                        <div class="contenedor-texto">
+                                                            <div class="preciodescuento">
+                                                                <h3 class="precio">$
+                                                                    <%= product.price %>
+                                                                </h3>
+                                                                <h3 class="descuento">
+                                                                    <%= product.discount %> OFF
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h3 class="descripcion">
+                                                        <%= product.name %>
+                                                    </h3>
+                                            </div>
+                                            <% } %>
+                                                <% }) %>
+                                </div>
+                            </div>
+
+                        </div>
+                </main>
+                <%- include ("../partials/categories")%>
+                    <%- include ("../partials/redessociales")%>
+                        <%- include ("../partials/footer")%>
+                            <script src="/js/carrusel.js"></script>
+                            <script src="/js/loader.js"></script>
+
     </body>
 
 </html>
