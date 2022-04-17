@@ -5,11 +5,13 @@
     <body>
         <%- include("../partials/header") %>
             <main>
+                <div class="sep"></div>
                 <div class="profilUser">
                     <img class="circular" src="/img/users/<%= user.avatar %> ">
                     <br>
                     <br>
-                    <h2>¡Hola <%= user.first_name %> !</h2>
+                    <h2>¡Hola
+                        <%= user.first_name %> !</h2>
                 </div>
                 <%- include ("../partials/redessociales")%>
             </main>

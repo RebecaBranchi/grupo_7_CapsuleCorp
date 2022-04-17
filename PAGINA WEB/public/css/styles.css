@@ -781,13 +781,12 @@ header a:hover {
     .main-navbar {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         flex-direction: row;
     }
     .main-navbar ul {
+        align-items: center;
         display: flex;
-    }
-    .main-navbar li {
-        margin: 0 5px;
     }
     .contenedor-foto-texto {
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
