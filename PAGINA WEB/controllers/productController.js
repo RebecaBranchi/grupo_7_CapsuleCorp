@@ -44,6 +44,21 @@ const productController = {
                 err => { console.log(err) }
             )
     },
+    searchProduct: (req, res) => {
+        db.Product.findAll({
+            where: {name: req.body.busqueda},
+            include: [{ association: "productscategories" },
+                { association: "productscolors" },
+                { association: "productsbrands" }
+            ]
+        })
+        .then((products) => {
+
+            res.render("products/products", { products: products });
+        }).catch(
+            err => { console.log(err) }
+        )
+    },
     detailProduct: (req, res) => {
         db.Product.findByPk(req.params.id, {
                 include: [{ association: "productscategories" },

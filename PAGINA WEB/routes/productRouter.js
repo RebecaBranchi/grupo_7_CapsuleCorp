@@ -21,6 +21,7 @@ const upload = multer({ storage: fileStorageEngine });
 router.get("/", productController.listProducts);
 router.get("/brand/:brand", productController.listBrands)
 router.get("/category/:category", productController.listCategories)
+router.get("/search", productController.searchProduct)
 
 router.get("/detail/:id", productController.detailProduct);
 router.get("/create", adminMiddleware, productController.create);
