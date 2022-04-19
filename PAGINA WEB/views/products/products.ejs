@@ -5,9 +5,7 @@
 
     <body>
 
-
         <%- include ("../partials/header")%>
-
             <main>
                 <div class="maincaja">
                     <div class="sep"></div>
@@ -28,7 +26,8 @@
                                             </div>
                                             <div class="contenedor-texto">
                                                 <div class="preciodescuento">
-                                                    <h3 class="precio">$ <%= product.price %>
+                                                    <h3 class="precio">$
+                                                        <%= product.price %>
                                                     </h3>
                                                     <h3 class="descuento">
                                                         <%= product.discount %> OFF
@@ -38,6 +37,9 @@
                                         </div>
                                         <h3>
                                             <%= product.name %>
+                                        </h3>
+                                        <h3>
+                                            <%= product.productscategories.name %>
                                         </h3>
                                         <h3 class="descripcion">
                                             <%= product.name %>

@@ -7,27 +7,31 @@
 
         <%- include ("../partials/header")%>
             <main>
+                <div class="sep"></div>
                 <div class="maincaja">
                     <div class="contenedor">
                         <div class="titulodeseccion">
                             <h2>Todas las marcas</h2><br>
-                            <button><a href="/brand/create">Agrega marcas</a></button>
-                            <br>
-                            <br>
+                            <% if (locals.isLogged && locals.admin) { %>
+                                <button><a href="/brand/create">Agrega marcas</a></button>
+                                <br>
+                                <br>
+                                <% } %>
                         </div>
                         <div class="carrusel">
                             <% brands.forEach( brand=> { %>
                                 <div class="contenedor-foto-texto">
+                                    <a href="/products/brand/<%= brand.name %>">
+                                        <h2>
+                                            <%= brand.name %>
+                                        </h2>
+                                        <% if (locals.isLogged && locals.admin) { %>
+                                            <button><a href="brand/edit/<%= brand.id %>">Editar marca</a></button>
 
-                                    <h2>
-                                        <%= brand.name %>
-                                    </h2>
-                                    <button><a href="brand/edit/<%= brand.id %>">Editar marca</a></button>
-
-                                    <form action="/brand/delete/<%= brand.id %>?_method=DELETE" method="POST">
-                                        <button type="submit">Eliminar marca</button>
-                                    </form>
-
+                                            <form action="/brand/delete/<%= brand.id %>?_method=DELETE" method="POST">
+                                                <button type="submit">Eliminar marca</button>
+                                            </form>
+                                            <% } %>
                                 </div>
                                 <% }) %>
                         </div>

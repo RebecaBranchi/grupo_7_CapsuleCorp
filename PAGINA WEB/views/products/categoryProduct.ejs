@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ("../partials/head")%>
+
+    <body>
+
+        <%- include ("../partials/header")%>
+            <main>
+                <div class="maincaja">
+                    <div class="sep"></div>
+                    <div class="contenedor">
+                        <div class="titulodeseccion">
+                            <h2>
+                                <%= products[0].name %>
+                            </h2>
+
+                            <% for( let index = 0; index < products.length; index++ ) { %>
+                                <% if (products[index].productscategory[index]) { %>
+
+                        </div>
+                        <div class="carrusel">
+
+                            <div class="contenedor-foto-texto">
+                                <a href="/products/detail/<%= products[index].productscategory[index].id %>">
+                                    <div class="fotosss">
+                                        <img src="/img/<%= products[index].productscategory[index].image %> " alt="" class="imagenes">
+                                    </div>
+                                    <div class="contenedor-texto-icono">
+                                        <div class="camionicon">
+                                            <i class="fas fa-truck" id="camionicono"></i>
+                                        </div>
+                                        <div class="contenedor-texto">
+                                            <div class="preciodescuento">
+                                                <h3 class="precio">$
+                                                    <%= products[index].productscategory[index].price %>
+                                                </h3>
+                                                <h3 class="descuento">
+                                                    <%= products[index].productscategory[index].discount %> OFF
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3>
+
+                                    </h3>
+                                    <h3>
+                                        <%= products[index].productscategory[index].name %>
+                                    </h3>
+                                    <h3 class="descripcion">
+
+                                    </h3>
+                            </div>
+                            <% } %>
+                                <% } %>
+                        </div>
+
+                    </div>
+                    <%- include ("../partials/categories")%>
+                        <%- include ("../partials/redessociales")%>
+            </main>
+            <%- include ("../partials/footer")%>
+
+    </body>
+
+</html>

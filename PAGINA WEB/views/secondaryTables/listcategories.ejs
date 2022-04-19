@@ -3,40 +3,40 @@
 <%- include ("../partials/head")%>
 
     <body>
-
         <%- include ("../partials/header")%>
             <main>
-
+                <div class="sep"></div>
                 <div class="maincaja">
                     <div class="contenedor">
                         <div class="titulodeseccion">
                             <h2>Todas las categorias</h2><br>
-                            <button><a href="/category/create">Agrega categorias</a></button>
-                            <br>
-                            <br>
+
+                            <% if (locals.isLogged && locals.admin) { %>
+                                <button><a href="/category/create">Agrega categorias</a></button>
+                                <br>
+                                <br>
+                                <% } %>
                         </div>
                         <div class="carrusel">
                             <% categories.forEach( category=> { %>
                                 <div class="contenedor-foto-texto">
+                                    <a href="/products/category/<%=category.name %>">
+                                        <h2>
+                                            <%= category.name %>
+                                        </h2>
 
-                                    <h2>
-                                        <%= category.name %>
-                                    </h2>
+                                        <% if (locals.isLogged && locals.admin) { %>
+                                            <button><a href="category/edit/<%= category.id %>">Editar categoria</a></button>
 
-                                    <button><a href="category/edit/<%= category.id %>">Editar categoria</a></button>
-
-                                    <form action="/category/delete/<%= category.id %>?_method=DELETE" method="POST">
-                                        <button type="submit">Eliminar categoria</button>
-                                    </form>
-
+                                            <form action="/category/delete/<%= category.id %>?_method=DELETE" method="POST">
+                                                <button type="submit">Eliminar categoria</button>
+                                            </form>
+                                            <% } %>
                                 </div>
                                 <% }) %>
                         </div>
-
                     </div>
-
                 </div>
-
                 <%- include ("../partials/categories")%>
                     <%- include ("../partials/redessociales")%>
             </main>

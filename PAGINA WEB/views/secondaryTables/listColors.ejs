@@ -6,39 +6,44 @@
 
         <%- include ("../partials/header")%>
             <main>
-
+                <div class="sep"></div>
                 <div class="maincaja">
                     <div class="contenedor">
                         <div class="titulodeseccion">
                             <h2>Todos los colores</h2> <br>
+                        </div>
 
+                        <% if (locals.isLogged && locals.admin) { %>
                             <button><a href="/color/create">Agrega mas colores</a></button>
                             <br>
                             <br>
-                        </div>
-                        <div class="carrusel">
-                            <% colors.forEach( color=> { %>
-                                <div class="contenedor-foto-texto">
+                            <% } %>
+                                <div class="carrusel">
+                                    <% colors.forEach( color=> { %>
+                                        <div class="contenedor-foto-texto">
 
-                                    <h2>
-                                        <%= color.name %>
-                                    </h2>
+                                            <h2>
+                                                <%= color.name %>
+                                            </h2>
+                                            <% if (locals.isLogged && locals.admin) { %>
 
-                                    <button><a href="color/edit/<%= color.id %>">Editar color</a></button>
+                                                <button><a href="color/edit/<%= color.id %>">Editar color</a></button>
 
-                                    <form action="/color/delete/<%= color.id %>?_method=DELETE" method="POST">
-                                        <button type="submit">Eliminar color</button>
+                                                <form action="/color/delete/<%= color.id %>?_method=DELETE" method="POST">
+                                                    <button type="submit">Eliminar color</button>
+                                                </form>
 
-                                    </form>
-
+                                                <% } %>
+                                        </div>
+                                        <% }) %>
                                 </div>
-                                <% }) %>
-                        </div>
 
                     </div>
 
-                    <%- include ("../partials/categories")%>
-                        <%- include ("../partials/redessociales")%>
+                </div>
+
+                <%- include ("../partials/categories")%>
+                    <%- include ("../partials/redessociales")%>
             </main>
             <%- include ("../partials/footer")%>
 

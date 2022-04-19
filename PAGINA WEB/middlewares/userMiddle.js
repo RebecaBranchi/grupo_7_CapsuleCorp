@@ -8,7 +8,7 @@ const validations = [
     .withMessage('Tienes que escribir tu nombre'),
     body('last_name')
     .notEmpty()
-    .withMessage('Tienes que escribirt tu apellido'),
+    .withMessage('Tienes que escribir tu apellido'),
     body('email')
     .notEmpty()
     .withMessage('Tienes que escribir un correo electronico')

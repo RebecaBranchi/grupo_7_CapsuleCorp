@@ -4,17 +4,18 @@
 
     <body>
         <%- include ("../partials/header")%>
-        <main>
-            <section class="form-registro">
-                <h4>Editar Color</h4>         
-                <form action="/color/update/<%=color.id %>?_method=PUT" method="POST">
-                    <input class="control" type="text" name="name" id="name" value="<%=color.name %>" >
-                    <button type="submit">Editar color</button>
-                </form>     
-            </section>
-  
-            <%- include ("../partials/redessociales")%>
-        </main>
+            <main>
+                <div class="sep"></div>
+                <section class="form-registro">
+                    <h4>Editar Color</h4>
+                    <form action="/color/update/<%=color.id %>?_method=PUT" method="POST">
+                        <input class="control" type="text" name="name" id="name" value="<%=color.name %>">
+                        <button type="submit">Editar color</button>
+                    </form>
+                </section>
+
+                <%- include ("../partials/redessociales")%>
+            </main>
             <%- include ("../partials/footer")%>
 
     </body>

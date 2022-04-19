@@ -20,7 +20,6 @@ function userLoggedMiddleware(req, res, next) {
             res.locals.isLogged = true;
             res.locals.userLogged = req.session.userLogged;
             res.locals.admin = true
-            console.log(res.locals);
 
         } else {
             res.locals.isLogged = true;
