@@ -39,7 +39,9 @@ let cols = {
    
     let config = {
         tableName: 'products',
-        timestamps: false,
+        timestamps: true,
+        createdAt: true,
+        updatedAt: true,
         
     };
   

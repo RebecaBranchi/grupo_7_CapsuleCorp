@@ -2,7 +2,6 @@ CREATE DATABASE capsulecorp_db;
 USE capsulecorp_db;
 
 
-
 CREATE TABLE `users` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `first_name` VARCHAR(30) NOT NULL,
@@ -12,6 +11,8 @@ CREATE TABLE `users` (
    `password` VARCHAR(255) NOT NULL,
    `adress` VARCHAR(255) NOT NULL,
    `category_id` INT NOT NULL,
+   `createdAt` DATETIME NOT NULL,
+   `updatedAt` DATETIME NOT NULL,
    PRIMARY KEY (`id`)
 );
 
@@ -26,6 +27,8 @@ CREATE TABLE `products` (
    `category_id` INT NOT NULL,
    `color_id` INT NOT NULL,
    `brand_id` INT NOT NULL,
+   `createdAt` DATETIME NOT NULL,
+   `updatedAt` DATETIME NOT NULL,
    PRIMARY KEY (`id`)
 );
 

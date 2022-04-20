@@ -40,6 +40,7 @@ module.exports = (sequelize, dataTypes) => {
             },
            
             category_id: dataTypes.BIGINT(10),
+        
 
 
 
@@ -48,7 +49,10 @@ module.exports = (sequelize, dataTypes) => {
        
         let config = {
             tableName: 'users',
-            timestamps: false,
+            timestamps: true,
+            createdAt: true,
+            updatedAt: true,
+
          
         };
       
