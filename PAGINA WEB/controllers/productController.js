@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
-const db = require("../database/models")
+const db = require("../database/models");
+const { Op } = require("sequelize");
 
 const productController = {
     listProducts: (req, res) => {
@@ -45,19 +46,32 @@ const productController = {
             )
     },
     searchProduct: (req, res) => {
-        db.Product.findAll({
-            where: {name: req.body.busqueda},
-            include: [{ association: "productscategories" },
-                { association: "productscolors" },
-                { association: "productsbrands" }
-            ]
-        })
-        .then((products) => {
 
-            res.render("products/products", { products: products });
-        }).catch(
-            err => { console.log(err) }
-        )
+        db.Product.findAll({
+                where: {
+                    [Op.or]: [{
+                            name: {
+                                [Op.like]: `%${req.query.busqueda}%`
+                            }
+                        },
+                        {
+                            description: {
+                                [Op.like]: `%${req.query.busqueda}%`
+                            }
+                        }
+                    ]
+                },
+                include: [{ association: "productscategories" },
+                    { association: "productscolors" },
+                    { association: "productsbrands" }
+                ]
+            })
+            .then((products) => {
+              
+                res.render("products/searchP", { products: products });
+            }).catch(
+                err => { console.log(err) }
+            )
     },
     detailProduct: (req, res) => {
         db.Product.findByPk(req.params.id, {
