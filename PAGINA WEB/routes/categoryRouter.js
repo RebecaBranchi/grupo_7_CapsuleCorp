@@ -24,7 +24,7 @@ router.get("/", categoriesController.listCategories);
 
 
 router.get("/create", adminMiddleware, categoriesController.create);
-router.post("/create",upload.single('image'), categoryValidator ,adminMiddleware,  categoriesController.store);
+router.post("/create",adminMiddleware, upload.single('image'), categoryValidator ,adminMiddleware,  categoriesController.store);
 
 router.get("/edit/:id", adminMiddleware, categoriesController.editCategory);
 router.put("/update/:id", adminMiddleware, categoriesController.updateCategory);
