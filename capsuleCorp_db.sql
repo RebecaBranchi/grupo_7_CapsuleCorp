@@ -35,7 +35,7 @@ CREATE TABLE `products` (
 CREATE TABLE `products_categories` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `name` VARCHAR(50) NOT NULL,
-   `image` VARCHAR(50) NOT NULL,
+   `image` VARCHAR(100) NOT NULL,
    PRIMARY KEY (`id`)
 );
 
@@ -71,6 +71,7 @@ CREATE TABLE `payment_status` (
 CREATE TABLE `products_brands` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `name` VARCHAR(100) NOT NULL,
+   `image` VARCHAR(100) NOT NULL,
    PRIMARY KEY (`id`)
 );
 

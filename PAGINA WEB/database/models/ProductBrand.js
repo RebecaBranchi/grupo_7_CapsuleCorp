@@ -8,12 +8,14 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-
         name: {
             type: dataTypes.STRING(100),
             allowNull: false
-        }
-
+        },
+        image: {
+            type: dataTypes.STRING(100),
+            allowNull: false
+        },
 
     };
 

@@ -33,6 +33,7 @@ let cols = {
         category_id: dataTypes.BIGINT(10),
         color_id: dataTypes.BIGINT(10),
         brand_id: dataTypes.BIGINT(10),
+       
       
        
     };

@@ -12,8 +12,11 @@ module.exports = (sequelize, dataTypes) => {
         name: {
             type: dataTypes.STRING(100),
             allowNull: false
-        }
-
+        },
+        image: {
+            type: dataTypes.STRING(100),
+            allowNull: false
+        },
 
     };
 
@@ -21,7 +24,6 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'products_categories',
         timestamps: false,
     }
-
 
     const ProductCategory = sequelize.define(alias, cols, config);
 
@@ -32,7 +34,6 @@ module.exports = (sequelize, dataTypes) => {
             as: "productscategory",
             foreignKey: "category_id"
         })
-
 
     }
 

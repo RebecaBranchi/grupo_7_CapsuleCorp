@@ -42,7 +42,7 @@ const categoriesController = {
 
         db.ProductCategory.create({
             name: req.body.name,
-            image: req.body.filename
+            image: req.file.filename
             
         })
             res.redirect("/category")
