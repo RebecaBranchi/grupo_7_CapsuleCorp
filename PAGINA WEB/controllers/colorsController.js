@@ -3,80 +3,83 @@ const path = require('path');
 
 const db = require("../database/models")
 
-const { validationResult } = require ("express-validator");
+const { validationResult } = require("express-validator");
 
 
 const colorsController = {
 
-    listColors: (req,res)=>{
+    listColors: (req, res) => {
         db.ProductColor.findAll()
-    .then((colors)=>{
-             res.render("secondaryTables/listColors", {colors});
-        }).catch(
-          err => { console.log(err)}
-        )
-    },
-     
- 
-   
-    create: (req,res)=>{
-           
-    return res.render("secondaryTables/createColors");
-           
+            .then((colors) => {
+                res.render("secondaryTables/listColors", { colors });
+            }).catch(
+                err => { console.log(err) }
+            )
     },
 
- 
-     store: (req,res)=>{
+
+
+    create: (req, res) => {
+
+        return res.render("secondaryTables/createColors");
+
+    },
+
+
+    store: (req, res) => {
 
         const resultValidation = validationResult(req);
-              
+
         if (resultValidation.errors.length > 0) {
-          
-                res.render('secondaryTables/createColors', {
-                    errors: resultValidation.mapped(),
-                    oldData :req.body,
-                 
-                })
-          
-            }else{ 
+
+            res.render('secondaryTables/createColors', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+
+            })
+
+        } else {
 
 
-        db.ProductColor.create({
-            name: req.body.name,
-            
-        })
+            db.ProductColor.create({
+                name: req.body.name,
+
+            })
             res.redirect("/color")
-      }},
+        }
+    },
 
 
 
 
-     editColor:(req,res)=>{
+    editColor: (req, res) => {
         let id = req.params.id
-       db.ProductColor.findByPk(id)
-       .then((color)=>{
-              return res.render("secondaryTables/editColors",{color});
-          }).catch(  err => { console.log(err)})
-       
-     },
+        db.ProductColor.findByPk(id)
+            .then((color) => {
+                return res.render("secondaryTables/editColors", { color });
+            }).catch(err => { console.log(err) })
 
-     updateColor: (req,res)=>{
+    },
+
+    updateColor: (req, res) => {
         db.ProductColor.update({
             name: req.body.name,
-            },{where:{id:req.params.id}})
-            res.redirect("/color")
-        }, 
-     
-     
-        
+        }, { where: { id: req.params.id } })
+        res.redirect("/color")
+    },
 
-    
-    delete: (req,res )=> {
-  db.ProductColor.destroy({where: {
-      id:req.params.id
-  }})
-  res.redirect("/color")
-       }
-    
+
+
+
+
+    delete: (req, res) => {
+        db.ProductColor.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/color")
     }
+
+}
 module.exports = colorsController

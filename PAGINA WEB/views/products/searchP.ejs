@@ -1,9 +1,6 @@
-
-
 <%- include ("../partials/head")%>
 
     <body>
-
         <%- include ("../partials/header")%>
             <main>
                 <div class="maincaja">
@@ -14,58 +11,53 @@
                         </div>
                         <div class="carrusel">
                             <% if (products.length > 0) { %>
-                             
+                                <% products.forEach(product=> { %>
 
- 
-
-
-                            <% products.forEach(product=> { %>
-
-                                <div class="contenedor-foto-texto">
-                                    <a href="/products/detail/<%= product.id %> ">
-                                        <div class="fotosss">
-                                            <img src="/img/product/<%= product.image %> " alt="" class="imagenes">
-                                        </div>
-                                        <div class="contenedor-texto-icono">
-                                            <div class="camionicon">
-                                                <i class="fas fa-truck" id="camionicono"></i>
+                                    <div class="contenedor-foto-texto">
+                                        <a href="/products/detail/<%= product.id %> ">
+                                            <div class="fotosss">
+                                                <img src="/img/product/<%= product.image %> " alt="" class="imagenes">
                                             </div>
-                                            <div class="contenedor-texto">
-                                                <div class="preciodescuento">
-                                                    <h3 class="precio">$
-                                                        <%= product.price %>
-                                                    </h3>
-                                                    <h3 class="descuento">
-                                                        <%= product.discount %> OFF
-                                                    </h3>
+                                            <div class="contenedor-texto-icono">
+                                                <div class="camionicon">
+                                                    <i class="fas fa-truck" id="camionicono"></i>
+                                                </div>
+                                                <div class="contenedor-texto">
+                                                    <div class="preciodescuento">
+                                                        <h3 class="precio">$
+                                                            <%= product.price %>
+                                                        </h3>
+                                                        <h3 class="descuento">
+                                                            <%= product.discount %> OFF
+                                                        </h3>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <h3>
-                                            <%= product.name %>
-                                        </h3>
-                                        <h3>
-                                            <%= product.productscategories.name %>
-                                        </h3>
-                                        <h3 class="descripcion">
-                                            <%= product.name %>
-                                        </h3>
-                                </div>
-                                <% }) %>
-                                <% } else { %>
-
-                                    <div><h3>No se encontro ningun producto</h3></div>
-
-                                <% } %>
+                                            <h3>
+                                                <%= product.name %>
+                                            </h3>
+                                            <h3>
+                                                <%= product.productscategories.name %>
+                                            </h3>
+                                            <h3 class="descripcion">
+                                                <%= product.name %>
+                                            </h3>
+                                    </div>
+                                    <% }) %>
+                                        <% } else { %>
+                                            <div>
+                                                <h3>No se encontro ningun producto</h3>
+                                            </div>
+                                            <% } %>
                         </div>
 
                     </div>
-                    <%- include ("../partials/categories")%>
-                        <%- include ("../partials/redessociales")%>
+                    <%- include ("../partials/brands",{brands})%>
+                        <%- include ("../partials/categories",{categories})%>
+                            <%- include ("../partials/redessociales")%>
             </main>
             <%- include ("../partials/footer")%>
 
-
     </body>
 
-</html>
+    </html>

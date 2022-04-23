@@ -1,4 +1,3 @@
-
 <%- include ("../partials/head")%>
 
     <body>
@@ -14,15 +13,14 @@
                                 <%= errors.name.msg %>
                             </div>
                             <% } %>
-                            <input type="file" name="image" id="image" placeholder="Imagen" class="control">
-                            <% if (locals.errors && errors.image) { %>
-                                <div class="text-danger">
-                                    <%= errors.image.msg %>
-                                </div>
-                                <% } %>
+                                <input type="file" name="image" id="image" placeholder="Imagen" class="control">
+                                <% if (locals.errors && errors.image) { %>
+                                    <div class="text-danger">
+                                        <%= errors.image.msg %>
+                                    </div>
+                                    <% } %>
 
-
-                                <button type="submit">crear</button>
+                                        <button type="submit">crear</button>
                     </form>
                 </section>
 
@@ -32,4 +30,4 @@
 
     </body>
 
-</html>
+    </html>

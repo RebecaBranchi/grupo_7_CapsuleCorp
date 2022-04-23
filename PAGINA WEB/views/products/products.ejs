@@ -1,5 +1,3 @@
-
-
 <%- include ("../partials/head")%>
 
     <body>
@@ -8,7 +6,7 @@
             <main>
                 <div class="sep"></div>
                 <div class="maincaja">
-                 
+
                     <div class="contenedor">
                         <div class="titulodeseccion">
                             <h2>Todos los productos</h2>
@@ -49,12 +47,13 @@
                         </div>
 
                     </div>
-                    <%- include ("../partials/categories")%>
-                        <%- include ("../partials/redessociales")%>
+                    <%- include ("../partials/brands", {brands})%>
+                        <%- include ("../partials/categories", {categories})%>
+                            <%- include ("../partials/redessociales")%>
             </main>
             <%- include ("../partials/footer")%>
 
 
     </body>
 
-</html>
+    </html>

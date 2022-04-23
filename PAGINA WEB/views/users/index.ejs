@@ -1,4 +1,3 @@
-
 <%- include ("../partials/head")%>
 
     <body>
@@ -74,7 +73,7 @@
                                                         </div>
                                                     </div>
                                                     <h3 class="descripcion">
-                                                        <%= product.name %>
+                                                        <%= product.description %>
                                                     </h3>
                                             </div>
                                             <% } %>
@@ -84,12 +83,14 @@
 
                         </div>
                 </main>
-                <%- include ("../partials/categories")%>
-                    <%- include ("../partials/redessociales")%>
-                        <%- include ("../partials/footer")%>
-                            <script src="/js/carrusel.js"></script>
-                            <script src="/js/loader.js"></script>
+                <%- include ("../partials/brands", {brands})%>
+                    <%- include ("../partials/categories", {categories})%>
+
+                        <%- include ("../partials/redessociales")%>
+                            <%- include ("../partials/footer")%>
+                                <script src="/js/carrusel.js"></script>
+                                <script src="/js/loader.js"></script>
 
     </body>
 
-</html>
+    </html>

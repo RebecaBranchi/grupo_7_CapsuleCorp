@@ -1,4 +1,3 @@
-
 <%- include ("../partials/head")%>
 
     <body>
@@ -12,9 +11,7 @@
                 <form action="/users/login" method="POST" class="form-registro">
 
                     <label><b>Correo electrónico</b></label>
-                    <input type="text" name="email" id="emailLogin"
-                        class="control <%= locals.errors && errors.email ? 'is-invalid': null %>"
-                        value="<%= locals.oldData ? oldData.email :null %>">
+                    <input type="text" name="email" id="emailLogin" class="control <%= locals.errors && errors.email ? 'is-invalid': null %>" value="<%= locals.oldData ? oldData.email :null %>">
                     <% if (locals.errors && errors.email) { %>
                         <div class="text-danger">
                             <p class="errorEmail">
@@ -33,4 +30,4 @@
             <script src="/js/formLoginEmail.js"></script>
     </body>
 
-</html>
+    </html>

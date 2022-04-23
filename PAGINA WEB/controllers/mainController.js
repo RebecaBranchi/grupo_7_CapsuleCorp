@@ -1,25 +1,24 @@
 const fs = require('fs');
 const path = require('path');
 
-const db = require ("../database/models")
+const db = require("../database/models")
 
 
-const getHome = (req,res)=>{
+const getHome = (req, res) => {
 
- db.Product.findAll()
-.then(products=>{  
-
-    res.render("users/index",{products})
-})
-.catch(  err => { console.log(err)})
-
-
+    let Product = db.Product.findAll()
+    let Categ = db.ProductCategory.findAll();
+    let Col = db.ProductColor.findAll();
+    let Bran = db.ProductBrand.findAll();
+    Promise
+        .all([Product, Categ, Col, Bran])
+        .then(([products, categories, colors, brands]) => {
+            return res.render("users/index", { products, categories, colors, brands });
+        }).catch(err => { console.log(err) })
 
 };
 
-
-
-module.exports ={
+module.exports = {
     getHome,
-    
+
 }

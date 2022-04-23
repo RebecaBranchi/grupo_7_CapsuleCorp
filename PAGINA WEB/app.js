@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const bodyParser = require('body-parser')
-const cookies= require('cookie-parser');
+const cookies = require('cookie-parser');
 const multer = require("multer");
 const session = require('express-session');
 const bcrypt = require('bcryptjs');
@@ -16,7 +16,7 @@ const shoppingRouter = require("./routes/shoppingRouter");
 const colorRouter = require("./routes/colorRouter");
 const categoryRouter = require("./routes/categoryRouter");
 const brandRouter = require("./routes/brandRouter");
-const apiRouter = require ("./routes/api/apiRouter")
+const apiRouter = require("./routes/api/apiRouter")
 
 //Middleware///
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
@@ -25,7 +25,7 @@ const userLoginMiddleware = require('./middlewares/userLoginMiddleware');
 
 
 // Req.body //
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //Form Put and delete
@@ -42,9 +42,9 @@ app.set('views', path.join(__dirname, '/views'));
 
 
 app.use(session({
-	secret: "Shhh, It's a secret",
-	resave: false,
-	saveUninitialized: false,
+    secret: "Shhh, It's a secret",
+    resave: false,
+    saveUninitialized: false,
 }));
 app.use(cookies());
 
@@ -55,12 +55,12 @@ app.use(userLoggedMiddleware);
 ///Routes ///
 app.use("/", mainRouter);
 app.use("/products", productRouter);
-app.use("/users", usersRouter );
-app.use("/shopping", shoppingRouter );
-app.use("/color",colorRouter);
-app.use("/category",categoryRouter);
-app.use("/brand",brandRouter);
-app.use("/api",apiRouter)
+app.use("/users", usersRouter);
+app.use("/shopping", shoppingRouter);
+app.use("/color", colorRouter);
+app.use("/category", categoryRouter);
+app.use("/brand", brandRouter);
+app.use("/api", apiRouter)
 
 
 app.use(userLoginMiddleware)

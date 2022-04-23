@@ -1,4 +1,3 @@
-
 <%- include ("../partials/head")%>
 
     <body>
@@ -9,8 +8,7 @@
                     <h4>Formulario Editar</h4>
                     <form action="/products/update/<%= product.id %>?_method=PUT" method="POST">
                         <input class="control" type="text" name="name" id="name" value="<%=product.name %>">
-                        <input class="control" type="text" name="description" id="description"
-                            value="<%=product.description%>">
+                        <input class="control" type="text" name="description" id="description" value="<%=product.description%>">
                         <input class="control" type="file" name="image" id="image">
 
                         <input class="control" type="number" name="stock" id="stock" value=<%=product.stock %>>
@@ -88,4 +86,4 @@
 
     </body>
 
-</html>
+    </html>

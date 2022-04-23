@@ -6,15 +6,19 @@ const { Op } = require("sequelize");
 
 const productController = {
     listProducts: (req, res) => {
-        db.Product.findAll({
-                include: [{ association: "productscategories" },
-                    { association: "productscolors" },
-                    { association: "productsbrands" }
-                ]
-            })
-            .then((products) => {
-
-                res.render("products/products", { products: products });
+        let Product = db.Product.findAll({
+            include: [{ association: "productscategories" },
+                { association: "productscolors" },
+                { association: "productsbrands" }
+            ]
+        });
+        let Categ = db.ProductCategory.findAll();
+        let Col = db.ProductColor.findAll();
+        let Bran = db.ProductBrand.findAll();
+        Promise
+            .all([Product, Categ, Col, Bran])
+            .then(([products, categories, colors, brands]) => {
+                res.render("products/products", { products, categories, colors, brands });
             }).catch(
                 err => { console.log(err) }
             )
@@ -46,29 +50,32 @@ const productController = {
             )
     },
     searchProduct: (req, res) => {
-
-        db.Product.findAll({
-                where: {
-                    [Op.or]: [{
-                            name: {
-                                [Op.like]: `%${req.query.busqueda}%`
-                            }
-                        },
-                        {
-                            description: {
-                                [Op.like]: `%${req.query.busqueda}%`
-                            }
+        let Product = db.Product.findAll({
+            where: {
+                [Op.or]: [{
+                        name: {
+                            [Op.like]: `%${req.query.busqueda}%`
                         }
-                    ]
-                },
-                include: [{ association: "productscategories" },
-                    { association: "productscolors" },
-                    { association: "productsbrands" }
+                    },
+                    {
+                        description: {
+                            [Op.like]: `%${req.query.busqueda}%`
+                        }
+                    }
                 ]
-            })
-            .then((products) => {
-              
-                res.render("products/searchP", { products: products });
+            },
+            include: [{ association: "productscategories" },
+                { association: "productscolors" },
+                { association: "productsbrands" }
+            ]
+        })
+        let Categ = db.ProductCategory.findAll();
+        let Col = db.ProductColor.findAll();
+        let Bran = db.ProductBrand.findAll();
+        Promise
+            .all([Product, Categ, Col, Bran])
+            .then(([products, categories, colors, brands]) => {
+                res.render("products/searchP", { products, categories, colors, brands });
             }).catch(
                 err => { console.log(err) }
             )

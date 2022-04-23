@@ -1,11 +1,11 @@
-const express = require ("express");
+const express = require("express");
 const router = express.Router();
 const path = require("path");
-const apiController = require ("../../controllers/apiController/apiController");
+const apiController = require("../../controllers/apiController/apiController");
 
 
 
-router.get("/products",apiController.list);
+router.get("/products", apiController.list);
 
 router.get("/create");
 router.post("/create");

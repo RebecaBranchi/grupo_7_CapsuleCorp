@@ -1,30 +1,16 @@
-
-        <div class="categoriaspopulares">
-            <h3> Categorias </h3>
+<% if (categories.length >0) { %>
+    <div class="categoriaspopulares">
+        <h3> Categorias </h3>
         <div class="categoria">
-            <div class="subcategoria">
-                <img src="/img/category/_notebook.png" alt="" class="category" >
-                <div class="categoriatexto">Hardware Interno</div>
-            </div>
-            <div class="subcategoria">
-                <img src="/img/category/arma_tu_pc.png" alt="" class="category" >
-                <div class="categoriatexto">Memoria</div>
-            </div>
-            <div class="subcategoria">
-                <img src="/img/category/impresoras.jpg" alt=""class="category"  >
-                <div class="categoriatexto">Impresoras</div>
-            </div>
-            <div class="subcategoria">
-                <img src="/img/category/Computadoras.png" alt=""class="category"  >
-                <div class="categoriatexto">Hardware Externo</div>
-            </div>
-            <div class="subcategoria">
-                <img src="/img/category/gadget.png" alt="" class="category"  >
-                <div class="categoriatexto">Gadget</div>
-            </div>
-            <div class="subcategoria">
-                <img src="/img/category/gammer.png" alt="" class="category"  >
-                <div class="categoriatexto">Consolas y Videojuegos</div>
-            </div>
+            <% categories.forEach( category => { %>
+                <a href="/products/category/<%=category.name %>">
+                    <div class="subcategoria">
+                        <img src="/img/category/<%= category.image %> " alt="" class="category">
+                        <div class="categoriatexto">
+                            <%= category.name  %>
+                        </div>
+                    </div>
+                    <% }) %>
         </div>
     </div>
+    <% } %>
