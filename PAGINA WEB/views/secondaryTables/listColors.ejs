@@ -9,39 +9,39 @@
                     <div class="contenedor">
                         <div class="titulodeseccion">
                             <h2>Todos los colores</h2> <br>
+
+                            <% if (locals.isLogged && locals.admin) { %>
+                                <button><a href="/color/create">Agrega colores</a></button>
+                                <br>
+                                <br>
+                                <% } %>
+
                         </div>
+                        <div class="carrusel">
+                            <% colors.forEach( color=> { %>
+                                <div class="contenedor-foto-texto">
 
-                        <% if (locals.isLogged && locals.admin) { %>
-                            <button><a href="/color/create">Agrega mas colores</a></button>
-                            <br>
-                            <br>
-                            <% } %>
-                                <div class="carrusel">
-                                    <% colors.forEach( color=> { %>
-                                        <div class="contenedor-foto-texto">
+                                    <h2>
+                                        <%= color.name %>
+                                    </h2>
+                                    <% if (locals.isLogged && locals.admin) { %>
 
-                                            <h2>
-                                                <%= color.name %>
-                                            </h2>
-                                            <% if (locals.isLogged && locals.admin) { %>
+                                        <button><a href="color/edit/<%= color.id %>">Editar color</a></button>
 
-                                                <button><a href="color/edit/<%= color.id %>">Editar color</a></button>
+                                        <form action="/color/delete/<%= color.id %>?_method=DELETE" method="POST">
+                                            <button type="submit">Eliminar color</button>
+                                        </form>
 
-                                                <form action="/color/delete/<%= color.id %>?_method=DELETE" method="POST">
-                                                    <button type="submit">Eliminar color</button>
-                                                </form>
-
-                                                <% } %>
-                                        </div>
-                                        <% }) %>
+                                        <% } %>
                                 </div>
+                                <% }) %>
+                        </div>
 
                     </div>
 
                 </div>
 
-                <%- include ("../partials/categories")%>
-                    <%- include ("../partials/redessociales")%>
+                <%- include ("../partials/redessociales")%>
             </main>
             <%- include ("../partials/footer")%>
 

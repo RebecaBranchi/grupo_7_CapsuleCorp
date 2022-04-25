@@ -24,12 +24,13 @@
             <ul class="right-navbar">
                 <li><a href="/shopping/cart">Mis compras <i class="fas fa-shopping-bag"></i></a></li>
                 <li><a href="/users/logout">Cerrar sesión <i class="far fa-address-card"></i></a></li>
-                <li><img src="/img/users/<%= locals.userLogged.avatar %>"></li>
+
                 <li>
                     <a href="/users/profile">
                         <%= locals.userLogged.first_name %>
                     </a>
                 </li>
+                <li><img src="/img/users/<%= locals.userLogged.avatar %>"></li>
             </ul>
             <% } else if (locals.isLogged && locals.admin) { %>
                 <ul class="left-navbar">
@@ -41,12 +42,13 @@
                 </ul>
                 <ul class="right-navbar">
                     <li><a href="/users/logout">Cerrar sesión <i class="far fa-address-card"></i></a></li>
-                    <li><img src="/img/users/<%= locals.userLogged.avatar %>"></li>
+
                     <li>
                         <a href="/users/profile">
                             <%= locals.userLogged.first_name %>
                         </a>
                     </li>
+                    <li><img class="imgProfile" src="/img/users/<%= locals.userLogged.avatar %>"></li>
                 </ul>
                 <% } else { %>
                     <ul class="left-navbar">

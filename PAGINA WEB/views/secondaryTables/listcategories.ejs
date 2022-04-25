@@ -19,6 +19,10 @@
                             <% categories.forEach( category=> { %>
                                 <div class="contenedor-foto-texto">
                                     <a href="/products/category/<%=category.name %>">
+
+                                        <div class="fotosss">
+                                            <img src="/img/category/<%= category.image %> " alt="" class="imagenes">
+                                        </div>
                                         <h2>
                                             <%= category.name %>
                                         </h2>

@@ -3,14 +3,17 @@
         <h3> Categorias </h3>
         <div class="categoria">
             <% categories.forEach( category => { %>
-                <a href="/products/category/<%=category.name %>">
-                    <div class="subcategoria">
+
+                <div class="subcategoria">
+                    <a href="/products/category/<%=category.name %>">
                         <img src="/img/category/<%= category.image %> " alt="" class="category">
                         <div class="categoriatexto">
                             <%= category.name  %>
                         </div>
-                    </div>
-                    <% }) %>
+                    </a>
+                </div>
+
+                <% }) %>
         </div>
     </div>
     <% } %>
