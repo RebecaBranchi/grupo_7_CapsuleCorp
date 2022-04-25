@@ -1,45 +1,46 @@
 <%- include ("../partials/head")%>
 
     <body>
-
         <%- include ("../partials/header")%>
             <main>
                 <div class="sep"></div>
-                <div class="maincaja">
-                    <div class="contenedor">
-                        <div class="titulodeseccion">
-                            <h2>Todos los colores</h2> <br>
+                <div class="categoriaspopulares">
+                    <br/>
+                    <h2>Todos los colores</h2><br/>
+                    <div class="categoria">
+                        <% if (locals.isLogged && locals.admin) { %>
+                            <div class="subcategoria">
+                                <button class="create"><a href="/color/create">Agrega colores</a></button>
+                            </div>
+                            <% } %>
 
-                            <% if (locals.isLogged && locals.admin) { %>
-                                <button><a href="/color/create">Agrega colores</a></button>
-                                <br>
-                                <br>
-                                <% } %>
-
-                        </div>
-                        <div class="carrusel">
-                            <% colors.forEach( color=> { %>
-                                <div class="contenedor-foto-texto">
-
-                                    <h2>
-                                        <%= color.name %>
-                                    </h2>
-                                    <% if (locals.isLogged && locals.admin) { %>
-
-                                        <button><a href="color/edit/<%= color.id %>">Editar color</a></button>
-
-                                        <form action="/color/delete/<%= color.id %>?_method=DELETE" method="POST">
-                                            <button type="submit">Eliminar color</button>
-                                        </form>
-
-                                        <% } %>
-                                </div>
-                                <% }) %>
-                        </div>
+                                <% colors.forEach( color => { %>
+                                    <div class="subcategoria">
+                                        <div class="foto-nombre">
+                                            <a href="/products/color/<%= color.name %>">
+                                                <div class="text-color">
+                                                    <h2>
+                                                        <%= color.name  %>
+                                                    </h2>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <% if (locals.isLogged && locals.admin) { %>
+                                            <div class="buttonCM">
+                                                <button class="edit"><a href="color/edit/<%= color.id %>">Editar</a></button>
+                                                <form action="/color/delete/<%= color.id %>?_method=DELETE" method="POST">
+                                                    <button class="delete" type="submit">Eliminar</button>
+                                                </form>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                    <% }) %>
 
                     </div>
-
                 </div>
+                </div>
+
+
 
                 <%- include ("../partials/redessociales")%>
             </main>

@@ -1,46 +1,48 @@
 <%- include ("../partials/head")%>
 
     <body>
-
         <%- include ("../partials/header")%>
             <main>
                 <div class="sep"></div>
-                <div class="maincaja">
-                    <div class="contenedor">
-                        <div class="titulodeseccion">
-                            <h2>Todas las marcas</h2><br>
-                            <% if (locals.isLogged && locals.admin) { %>
-                                <button><a href="/brand/create">Agrega marcas</a></button>
-                                <br>
-                                <br>
-                                <% } %>
-                        </div>
-                        <div class="carrusel">
-                            <% brands.forEach( brand=> { %>
-                                <div class="contenedor-foto-texto">
-                                    <a href="/products/brand/<%= brand.name %>">
-                                        <div class="fotosss">
-                                            <img src="/img/brand/<%= brand.image %> " alt="" class="imagenes">
+                <div class="categoriaspopulares">
+                    <br/>
+                    <h2>Todas las marcas</h2><br/>
+
+                    <div class="categoria">
+                        <% if (locals.isLogged && locals.admin) { %>
+                            <div class="subcategoria">
+                                <button class="create"><a href="/brand/create">Agrega marcas</a></button>
+                            </div>
+                            <% } %>
+
+                                <% brands.forEach( brand => { %>
+                                    <div class="subcategoria">
+                                        <div class="foto-nombre">
+                                            <a href="/products/brand/<%= brand.name %>">
+                                                <img src="/img/brand/<%= brand.image %> " alt="" class="category">
+                                                <div class="categoriatexto">
+                                                    <%= brand.name  %>
+                                                </div>
+                                            </a>
                                         </div>
-
-                                        <h2>
-                                            <%= brand.name %>
-                                        </h2>
                                         <% if (locals.isLogged && locals.admin) { %>
-                                            <button><a href="brand/edit/<%= brand.id %>">Editar marca</a></button>
-
-                                            <form action="/brand/delete/<%= brand.id %>?_method=DELETE" method="POST">
-                                                <button type="submit">Eliminar marca</button>
-                                            </form>
+                                            <div class="buttonCM">
+                                                <button class="edit"><a href="brand/edit/<%= brand.id %>">Editar</a></button>
+                                                <form action="/brand/delete/<%= brand.id %>?_method=DELETE" method="POST">
+                                                    <button class="delete" type="submit">Eliminar</button>
+                                                </form>
+                                            </div>
                                             <% } %>
-                                </div>
-                                <% }) %>
-                        </div>
+                                    </div>
+                                    <% }) %>
 
                     </div>
+                </div>
+                </div>
 
 
-                    <%- include ("../partials/redessociales")%>
+
+                <%- include ("../partials/redessociales")%>
             </main>
             <%- include ("../partials/footer")%>
 

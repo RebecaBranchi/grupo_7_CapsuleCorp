@@ -4,41 +4,42 @@
         <%- include ("../partials/header")%>
             <main>
                 <div class="sep"></div>
-                <div class="maincaja">
-                    <div class="contenedor">
-                        <div class="titulodeseccion">
-                            <h2>Todas las categorias</h2><br>
+                <div class="categoriaspopulares">
+                    <br/>
+                    <h2>Todas las categorias</h2><br/>
+                    <div class="categoria">
+                        <% if (locals.isLogged && locals.admin) { %>
+                            <div class="subcategoria">
+                                <button class="create"><a href="/category/create">Agrega categorias</a></button>
+                            </div>
+                            <% } %>
 
-                            <% if (locals.isLogged && locals.admin) { %>
-                                <button><a href="/category/create">Agrega categorias</a></button>
-                                <br>
-                                <br>
-                                <% } %>
-                        </div>
-                        <div class="carrusel">
-                            <% categories.forEach( category=> { %>
-                                <div class="contenedor-foto-texto">
-                                    <a href="/products/category/<%=category.name %>">
-
-                                        <div class="fotosss">
-                                            <img src="/img/category/<%= category.image %> " alt="" class="imagenes">
+                                <% categories.forEach( category => { %>
+                                    <div class="subcategoria">
+                                        <div class="foto-nombre">
+                                            <a href="/products/category/<%= category.name %>">
+                                                <img src="/img/category/<%= category.image %> " alt="" class="category">
+                                                <div class="categoriatexto">
+                                                    <%= category.name  %>
+                                                </div>
+                                            </a>
                                         </div>
-                                        <h2>
-                                            <%= category.name %>
-                                        </h2>
-
                                         <% if (locals.isLogged && locals.admin) { %>
-                                            <button><a href="category/edit/<%= category.id %>">Editar categoria</a></button>
-
-                                            <form action="/category/delete/<%= category.id %>?_method=DELETE" method="POST">
-                                                <button type="submit">Eliminar categoria</button>
-                                            </form>
+                                            <div class="buttonCM">
+                                                <button class="edit"><a href="category/edit/<%= category.id %>">Editar</a></button>
+                                                <form action="/category/delete/<%= category.id %>?_method=DELETE" method="POST">
+                                                    <button class="delete" type="submit">Eliminar</button>
+                                                </form>
+                                            </div>
                                             <% } %>
-                                </div>
-                                <% }) %>
-                        </div>
+                                    </div>
+                                    <% }) %>
+
                     </div>
                 </div>
+                </div>
+
+
 
                 <%- include ("../partials/redessociales")%>
             </main>

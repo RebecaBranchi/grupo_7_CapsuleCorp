@@ -450,7 +450,7 @@ header a:hover {
 /*-------FIN FORMULARIO REGISTRO-----*/
 
 
-/*----INICIO DE CATEGORIAS*/
+/*----INICIO DE MARCAS Y CATEGORIAS PARCIALES*/
 
 .categoriaspopulares {
     font-size: 22px;
@@ -482,20 +482,33 @@ header a:hover {
 }
 
 .subcategoria {
-    display: block;
-    width: 100px;
-    height: 100px;
+    display: flex;
     text-align: center;
     border-radius: 15px;
     position: relative;
-    padding: 10px;
+    padding: 5px;
     background-color: #fff;
 }
 
 .category {
-    width: 100%;
+    width: 100px;
+    height: 100px;
     margin: auto;
     display: block;
+}
+
+.text-color {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    line-height: 300%;
+}
+
+.foto-nombre {
+    position: relative;
 }
 
 .categoriatexto {
@@ -504,9 +517,8 @@ header a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    text-align: center;
+    line-height: 600%;
     font-size: 18px;
     opacity: 0;
     color: #FFF;
@@ -519,8 +531,93 @@ header a:hover {
     border-radius: 15px;
 }
 
+.buttonCM button {
+    border-radius: 20px;
+    width: 95%;
+    padding: 5px;
+    margin: 5px
+}
 
-/*----FIN DE CATEGORIAS*/
+.buttonCM a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.create a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.create {
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+    background-color: #3d94f6;
+    border-radius: 6px;
+    border: 1px solid #337fed;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #1570cd;
+    margin: 10px;
+}
+
+.create:hover {
+    background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+    background-color: #1e62d0;
+}
+
+.create:active {
+    position: relative;
+    top: 1px;
+}
+
+.buttonCM .edit {
+    box-shadow: inset 0px 39px 0px -24px #3dc21b;
+    background-color: #44c767;
+    border-radius: 4px;
+    border: 1px solid #18ab29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.buttonCM .edit:hover {
+    background-color: #5cbf2a;
+}
+
+.buttonCM .edit:active {
+    position: relative;
+    top: 1px;
+}
+
+.buttonCM .delete {
+    box-shadow: inset 0px 39px 0px -24px #e67a73;
+    background-color: #e4685d;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #b23e35;
+}
+
+.buttonCM .delete:hover {
+    background-color: #eb675e;
+}
+
+.buttonCM .delete:active {
+    position: relative;
+    top: 1px;
+}
+
+
+/*----FIN DE MARCAS Y CATEGORIAS PARCIALES*/
 
 
 /*----- INICIO DE PERFIL---*/
@@ -555,6 +652,9 @@ header a:hover {
 
 
 /*----- FIN DE PERFIL---*/
+
+
+/*--------- INICIO CAJA PRODUCTOS Y LISTADOS DE CATEGORIAS Y MARCAS---*/
 
 .contenedor {
     width: 90vw;
@@ -665,6 +765,9 @@ header a:hover {
     display: flex;
     align-items: baseline;
 }
+
+
+/*---- FIN CAJA PRODUCTOS Y LISTADOS DE CATEGORIAS Y MARCAS---*/
 
 
 /* --- INICIO DE REDES SOCIALES ----*/
