@@ -539,6 +539,8 @@ header a:hover {
     opacity: 1;
     background-color: black;
     border-radius: 15px;
+    -webkit-box-shadow: 0 0 15px 5px #f0f;
+    box-shadow: 0 0 15px 5px #f0f;
 }
 
 .buttonCM button {
@@ -684,7 +686,7 @@ header a:hover {
     justify-content: space-around;
     width: 90vw;
     margin: auto;
-    gap: 30px 15px;
+    gap: 30px 20px;
     margin-top: 20px;
     margin-bottom: 30px;
     padding: 20px;
@@ -704,6 +706,12 @@ header a:hover {
     border-radius: 20px;
     background-color: #ffffff;
     margin: auto;
+    position: relative;
+}
+
+.contenedor-foto-texto:hover {
+    -webkit-box-shadow: 0 0 10px 5px #f0f;
+    box-shadow: 0 0 10px 5px #f0f;
 }
 
 .contenedor-texto {
@@ -713,6 +721,33 @@ header a:hover {
     justify-content: space-around;
     padding: 20px 0;
     font-size: 1.5em;
+    color: #000;
+}
+
+.nombre {
+    display: flex;
+    width: 330px;
+    height: 335px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.5em;
+    border-radius: 20px 20px 0 0;
+    opacity: 0;
+    background-color: #000;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    color: #fff;
+}
+
+.nombre:hover {
+    opacity: 1;
+}
+
+.nombre h3 {
+    transform: rotate(-45deg);
 }
 
 .descripcion {
@@ -742,6 +777,7 @@ header a:hover {
     position: absolute;
     right: 20px;
     top: -15px;
+    z-index: 50;
 }
 
 #camionicono {
@@ -758,12 +794,11 @@ header a:hover {
 
 .imagenes {
     border-radius: 20px 20px 0 0;
-    width: 360px;
-    height: 360px
+    width: 330px;
+    height: 330px;
 }
 
 .texto-icono {
-    padding-left: 15px;
     border-top: solid 5px rgb(14, 14, 15);
     position: relative;
 }
@@ -893,9 +928,6 @@ header a:hover {
     }
     .contenedor-foto-texto {
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
-    .maincaja {
-        margin: 0;
     }
     .formulario-registro {
         margin-top: 0px;

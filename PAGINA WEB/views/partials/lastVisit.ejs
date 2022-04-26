@@ -5,29 +5,33 @@
 </div>
 <div class="carrusel">
     <% products.forEach(product=> { %>
+        <% if (product.discount <= 5 ) { %>
+            <div class="contenedor-foto-texto">
+                <a href="/products/detail/<%= product.id %> ">
+                        <img src="/img/product/<%= product.image %> " alt="" class="imagenes">
+                    <div class="contenedor-texto-icono">
+                        <div class="camionicon">
+                            <i class="fas fa-truck" id="camionicono"></i>
+                        </div>
+                        <div class="contenedor-texto">
+                            <h3 class="precio">$
+                                <%= product.price %>
+                            </h3>
+                            <h3 class="descuento">
+                                <%= product.discount %>% OFF
+                            </h3>
 
-        <div class="contenedor-foto-texto">
-            <a href="/products/detail/<%= product.id %> ">
-                <div class="fotosss">
-                    <img src="/img/product/<%= product.image %> " alt="" class="imagenes">
-                </div>
-                <div class="contenedor-texto-icono">
-                    <div class="camionicon">
-                        <i class="fas fa-truck" id="camionicono"></i>
+                        </div>
                     </div>
-                    <div class="contenedor-texto">
-                        <h3 class="precio">$
-                            <%= product.price %>
-                        </h3>
-                        <h3 class="descuento">
-                            <%= product.discount %> OFF
+                    <div class="nombre">
+                        <h3>
+                            <%= product.name %>
                         </h3>
                     </div>
-                </div>
-                <h3 class="descripcion">
-                    <%= product.description %>
-                </h3>
-            </a>
-        </div>
-        <% }) %>
+
+                </a>
+
+            </div>
+            <% } %>
+                <% }) %>
 </div>

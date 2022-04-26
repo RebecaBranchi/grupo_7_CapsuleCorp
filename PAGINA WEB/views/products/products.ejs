@@ -5,52 +5,45 @@
         <%- include ("../partials/header")%>
             <main>
                 <div class="sep"></div>
-                <div class="maincaja">
-
-                    <div class="contenedor">
-                        <div class="titulodeseccion">
-                            <br/>
-                            <h2>Todos los productos</h2> <br/>
-                        </div>
-                        <div class="carrusel">
-                            <% products.forEach(product=> { %>
-                                <div class="contenedor-foto-texto">
-                                    <a href="/products/detail/<%= product.id %> ">
-                                        <div class="fotosss">
-                                            <img src="/img/product/<%=product.image%>" alt="" class="imagenes">
-                                        </div>
-                                        <div class="contenedor-texto-icono">
-                                            <div class="camionicon">
-                                                <i class="fas fa-truck" id="camionicono"></i>
-                                            </div>
-                                            <div class="contenedor-texto">
-                                                <div class="preciodescuento">
-                                                    <h3 class="precio">$
-                                                        <%= product.price %>
-                                                    </h3>
-                                                    <h3 class="descuento">
-                                                        <%= product.discount %> OFF
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3>
-                                            <%= product.name %>
-                                        </h3>
-                                        <h3>
-                                            <%= product.productscategories.name %>
-                                        </h3>
-                                        <h3 class="descripcion">
-                                            <%= product.name %>
-                                        </h3>
-                                </div>
-                                <% }) %>
-                        </div>
-
+                <div class="contenedor">
+                    <div class="titulodeseccion">
+                        <h2>Todos los productos</h2>
                     </div>
-                    <%- include ("../partials/brands", {brands})%>
-                        <%- include ("../partials/categories", {categories})%>
-                            <%- include ("../partials/redessociales")%>
+                </div>
+                <div class="carrusel">
+                    <% products.forEach(product=> { %>
+
+                        <div class="contenedor-foto-texto">
+                            <a href="/products/detail/<%= product.id %> ">
+                                <div class="fotosss">
+                                    <img src="/img/product/<%= product.image %> " alt="" class="imagenes">
+                                </div>
+                                <div class="contenedor-texto-icono">
+                                    <div class="camionicon">
+                                        <i class="fas fa-truck" id="camionicono"></i>
+                                    </div>
+                                    <div class="contenedor-texto">
+                                        <h3 class="precio">$
+                                            <%= product.price %>
+                                        </h3>
+                                        <h3 class="descuento">
+                                            <%= product.discount %> OFF
+                                        </h3>
+                                    </div>
+                                </div>
+                                <h3 class="descripcion">
+                                    <%= product.description %>
+                                </h3>
+                            </a>
+
+                        </div>
+                        <% }) %>
+                </div>
+
+
+                <%- include ("../partials/brands", {brands})%>
+                    <%- include ("../partials/categories", {categories})%>
+                        <%- include ("../partials/redessociales")%>
             </main>
             <%- include ("../partials/footer")%>
 

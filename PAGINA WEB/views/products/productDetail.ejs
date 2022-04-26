@@ -3,46 +3,47 @@
     <body>
         <%- include ("../partials/header")%>
             <div class="sep"></div>
-            <main class="maincaja">
+            <main>
 
                 <div class="contenedor">
                     <div class="titulodeseccion">
                         <h2>Detalle Producto</h2>
                     </div>
-                    <div class="carrusel">
+                </div>
+                <div class="carrusel">
 
-                        <div class="contenedor-foto-texto">
-                            <div class="fotosss">
-                                <img src="/img/product/<%= product.image %> " alt="" class="imagenes">
+                    <div class="contenedor-foto-texto">
+                        <div class="fotosss">
+                            <img src="/img/product/<%= product.image %> " alt="" class="imagenes">
+                        </div>
+                        <div class="contenedor-texto-icono">
+                            <div class="camionicon">
+                                <i class="fas fa-truck" id="camionicono"></i>
                             </div>
-                            <div class="contenedor-texto-icono">
-                                <div class="camionicon">
-                                    <i class="fas fa-truck" id="camionicono"></i>
-                                </div>
-                                <div class="contenedor-texto">
-                                    <div class="preciodescuento">
-                                        <h3 class="precio">$
-                                            <%= product.price %>
-                                        </h3>
-                                        <h3 class="descuento">
-                                            <%= product.discount %> %OFF
-                                        </h3>
-                                    </div>
+                            <div class="contenedor-texto">
+                                <div class="preciodescuento">
+                                    <h3 class="precio">$
+                                        <%= product.price %>
+                                    </h3>
+                                    <h3 class="descuento">
+                                        <%= product.discount %> %OFF
+                                    </h3>
                                 </div>
                             </div>
-                            <h3>
-                                <%= product.name %>
-                            </h3> <br>
-                            <h3>
-                                <%= product.productscolors.name%>
-                            </h3>
+                        </div>
+                        <h3>
+                            <%= product.name %>
+                        </h3> <br>
+                        <h3>
+                            <%= product.productscolors.name%>
+                        </h3>
 
-                            <% if (locals.isLogged && !locals.admin) { %>
+                        <% if (locals.isLogged && !locals.admin) { %>
 
-                                <div>
-                                    <form action="/shopping/add/<%= product.id %> " method="POST">
+                            <div>
+                                <form action="/shopping/add/<%= product.id %> " method="POST">
 
-                                        <select name="stock" id="" class="control" required>
+                                    <select name="stock" id="" class="control" required>
                                     <option value="" disabled selected> cantidad </option>
 
                                     <% for( let i=1; i <=product.stock; i++ ) { %>
@@ -52,21 +53,20 @@
                                         </option>
                                         <% } %>
                                 </select>
-                                        <button type="submit">Agregar a carrito</button>
-                                    </form>
-                                    <% } else if (locals.isLogged && locals.admin) { %>
-                                        <button type="submit"> <a href="/products/edit/<%= product.id %>">EDITAR
+                                    <button type="submit">Agregar a carrito</button>
+                                </form>
+                                <% } else if (locals.isLogged && locals.admin) { %>
+                                    <button type="submit"> <a href="/products/edit/<%= product.id %>">EDITAR
                                         PRODUCTO</a></button>
-                                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                                            <button type="submit">BORRAR PRODUCTO</button>
-                                        </form>
+                                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                        <button type="submit">BORRAR PRODUCTO</button>
+                                    </form>
 
-                                </div>
+                            </div>
 
-                                <% } %>
-                        </div>
-
+                            <% } %>
                     </div>
+
                 </div>
 
                 <%- include ("../partials/redessociales")%>
