@@ -2,70 +2,90 @@
 
     <body>
         <%- include ("../partials/header")%>
-            <div class="sep"></div>
             <main>
-
+                <div class="sep"></div>
+                <br/>
                 <div class="contenedor">
                     <div class="titulodeseccion">
-                        <h2>Detalle Producto</h2>
+                        <h2>Detalle del producto:
+                            <%= product.name %>
+                        </h2>
                     </div>
                 </div>
                 <div class="carrusel">
-
                     <div class="contenedor-foto-texto">
-                        <div class="fotosss">
+                        <div class="foto-descripcion">
                             <img src="/img/product/<%= product.image %> " alt="" class="imagenes">
-                        </div>
-                        <div class="contenedor-texto-icono">
-                            <div class="camionicon">
-                                <i class="fas fa-truck" id="camionicono"></i>
-                            </div>
-                            <div class="contenedor-texto">
-                                <div class="preciodescuento">
+                            <div class="descripcion-precio-descuento">
+                                <h3 class="name"></h3>
+                                <h3 class="descripcion">
+                                    <%= product.description %>
+                                </h3>
+                                <h3 class="color">
+                                    Color
+                                    <%= product.productscolors.name%>
+                                </h3>
+                                <div class="precio-descuento">
                                     <h3 class="precio">$
                                         <%= product.price %>
                                     </h3>
-                                    <h3 class="descuento">
-                                        <%= product.discount %> %OFF
-                                    </h3>
+                                    <% if (product.discount > 0 ) { %>
+                                        <h3 class="descuento">
+                                            <%= product.discount %>% OFF
+                                        </h3>
+                                        <% } %>
                                 </div>
+
+                                <h3>$
+                                    <%= product.price- ( product.price  *(product.discount/100)) %>
+                                </h3>
+
+                                <% if (locals.isLogged && !locals.admin) { %>
+                                    <form action="/shopping/add/<%= product.id %> " method="POST">
+                                        <label for="stock">Cantidad   </label>
+                                        <select name="stock" id="stock" class="select" required>
+                                                                                    <% for( let i=1; i <=product.stock; i++ ) { %>
+                                                                        <option value="<%= i %>">
+                                                                            <%= i %>
+                                                                        </option>
+                                                                        <% } %>
+                                                                </select>
+                                        <button class="addCart" type="submit">Agregar a carrito</button>
+                                    </form>
+                                    <form action="#">
+                                        <button class="buy" type="submit">Comprar</button>
+                                    </form>
+                                    <% } else if (locals.isLogged && locals.admin) { %>
+
+                                        <div class="buttonCM">
+                                            <button class="edit" type="submit"> <a href="/products/edit/<%= product.id %>">EDITAR</a></button>
+                                            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                                <button class="delete" type="submit">BORRAR</button>
+                                            </form>
+                                        </div>
+                                        <% } %>
+
+
                             </div>
                         </div>
-                        <h3>
-                            <%= product.name %>
-                        </h3> <br>
-                        <h3>
-                            <%= product.productscolors.name%>
-                        </h3>
 
-                        <% if (locals.isLogged && !locals.admin) { %>
 
-                            <div>
-                                <form action="/shopping/add/<%= product.id %> " method="POST">
 
-                                    <select name="stock" id="" class="control" required>
-                                    <option value="" disabled selected> cantidad </option>
 
-                                    <% for( let i=1; i <=product.stock; i++ ) { %>
-
-                                        <option value="<%= i %>">
-                                            <%= i %>
-                                        </option>
-                                        <% } %>
-                                </select>
-                                    <button type="submit">Agregar a carrito</button>
-                                </form>
-                                <% } else if (locals.isLogged && locals.admin) { %>
-                                    <button type="submit"> <a href="/products/edit/<%= product.id %>">EDITAR
-                                        PRODUCTO</a></button>
-                                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                                        <button type="submit">BORRAR PRODUCTO</button>
-                                    </form>
-
-                            </div>
-
-                            <% } %>
                     </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+                </div>
 
                 </div>
 

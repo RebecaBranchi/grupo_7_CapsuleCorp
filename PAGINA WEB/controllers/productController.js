@@ -31,7 +31,7 @@ const productController = {
                 include: [{ association: "productsbrand" }]
             })
             .then((products) => {
-                res.render("products/brandProduct", { products: products });
+                res.render("products/brandProduct", { products: products[0].dataValues.productsbrand });
             }).catch(
                 err => { console.log(err) }
             )
@@ -44,7 +44,7 @@ const productController = {
                 include: [{ association: "productscategory" }]
             })
             .then((products) => {
-                res.render("products/categoryProduct", { products: products });
+                res.render("products/categoryProduct", { products: products[0].dataValues.productscategory });
             }).catch(
                 err => { console.log(err) }
             )

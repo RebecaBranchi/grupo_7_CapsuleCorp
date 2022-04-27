@@ -1,6 +1,6 @@
 <div class="contenedor">
     <div class="titulodeseccion">
-        <h2>Ofertas</h2>
+        <h2>Basado en tu ultima visita</h2>
     </div>
 </div>
 <div class="carrusel">
@@ -8,9 +8,7 @@
         <% if (product.discount > 5 ) { %>
             <div class="contenedor-foto-texto">
                 <a href="/products/detail/<%= product.id %> ">
-                    <div class="fotosss">
                         <img src="/img/product/<%= product.image %> " alt="" class="imagenes">
-                    </div>
                     <div class="contenedor-texto-icono">
                         <div class="camionicon">
                             <i class="fas fa-truck" id="camionicono"></i>
@@ -20,13 +18,17 @@
                                 <%= product.price %>
                             </h3>
                             <h3 class="descuento">
-                                <%= product.discount %> OFF
+                                <%= product.discount %>% OFF
                             </h3>
+
                         </div>
                     </div>
-                    <h3 class="descripcion">
-                        <%= product.description %>
-                    </h3>
+                    <div class="nombre">
+                        <h3>
+                            <%= product.name %>
+                        </h3>
+                    </div>
+
                 </a>
 
             </div>

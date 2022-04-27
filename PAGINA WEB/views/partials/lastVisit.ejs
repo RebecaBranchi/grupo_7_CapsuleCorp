@@ -17,10 +17,11 @@
                             <h3 class="precio">$
                                 <%= product.price %>
                             </h3>
+                            <% if (product.discount > 0  ) { %>
                             <h3 class="descuento">
                                 <%= product.discount %>% OFF
                             </h3>
-
+                            <% } %>
                         </div>
                     </div>
                     <div class="nombre">

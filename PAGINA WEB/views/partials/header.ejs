@@ -30,7 +30,7 @@
                         <%= locals.userLogged.first_name %>
                     </a>
                 </li>
-                <li><img src="/img/users/<%= locals.userLogged.avatar %>"></li>
+                <li><img class="imgProfile" src="/img/users/<%= locals.userLogged.avatar %>"></li>
             </ul>
             <% } else if (locals.isLogged && locals.admin) { %>
                 <ul class="left-navbar">
