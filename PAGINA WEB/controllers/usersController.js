@@ -139,6 +139,18 @@ const userController = {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
+    },
+
+    deleteUser: (req, res) => {
+        let id = req.params.id
+        req.session.destroy();
+        res.clearCookie('userEmail');
+        db.User.destroy({
+            where: {
+                id: id
+            }
+        }).catch(err => { console.log(err) })
+        res.redirect("/")
     }
 }
 

@@ -4,16 +4,34 @@
         <%- include("../partials/header") %>
             <main>
                 <div class="sep"></div>
-                <div class="profilUser">
-                    <img class="circular" src="/img/users/<%= user.avatar %> ">
-                    <br>
-                    <br>
-                    <h2>¡Hola
-                        <%= user.first_name %> !</h2>
+                <br/>
+
+                <div class="carrusel">
+                    <div class="profilUser">
+
+                        <h2>¡Hola
+                            <%= user.first_name %> !</h2>
+                        <img class="circular" src="/img/users/<%= user.avatar %> ">
+
+                        <div class="buttonCM">
+                            <button class="edit" type="submit"> <a href="/users/edit/<%=user.id%>">Editar perfil</a></button>
+
+                            <form action="/users/delete/<%=user.id%>?_method=DELETE" method="POST">
+                                <button class="delete" type="submit">Eliminar mi cuenta</button>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
-                <%- include ("../partials/redessociales")%>
+
+                </div>
+
+                </div>
+
+
             </main>
-            <%- include ("../partials/footer")%>
+            <%- include ("../partials/redessociales")%>
+                <%- include ("../partials/footer")%>
     </body>
 
     </html>

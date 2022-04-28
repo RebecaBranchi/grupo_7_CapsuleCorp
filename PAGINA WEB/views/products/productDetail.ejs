@@ -6,16 +6,17 @@
                 <div class="sep"></div>
                 <br/>
                 <div class="contenedor">
-                    <div class="titulodeseccion">
-                        <h2>Detalle del producto:
-                            <%= product.name %>
-                        </h2>
-                    </div>
+                    <% if (product) { %>
+                        <div class="titulodeseccion">
+                            <h2>Detalle del producto:
+                                <%= product.name %>
+                            </h2>
+                        </div>
                 </div>
                 <div class="carrusel">
                     <div class="contenedor-foto-texto">
                         <div class="foto-descripcion">
-                            <img src="/img/product/<%= product.image %> " alt="" class="imagenes">
+                            <img src="/img/product/<%= product.image %> " alt="" class="imagenes2">
                             <div class="descripcion-precio-descuento">
                                 <h3 class="name"></h3>
                                 <h3 class="descripcion">
@@ -64,22 +65,25 @@
                                             </form>
                                         </div>
                                         <% } %>
-
-
                             </div>
                         </div>
 
-
-
-
+                    </div>
+                    <% } else { %>
+                </div>
+                <div class="carrusel">
+                    <div class="notFound">
+                        <h3>No se encontro ningun producto</h3>
+                    </div>
+                </div>
+                <% } %>
                     </div>
 
-                </div>
 
-                <%- include ("../partials/redessociales")%>
             </main>
+            <%- include ("../partials/redessociales")%>
 
-            <%- include ("../partials/footer")%>
+                <%- include ("../partials/footer")%>
 
 
     </body>

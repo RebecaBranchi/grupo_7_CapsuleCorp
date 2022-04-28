@@ -31,7 +31,7 @@ const productController = {
                 include: [{ association: "productsbrand" }]
             })
             .then((products) => {
-                res.render("products/brandProduct", { products: products[0].dataValues.productsbrand });
+                res.render("products/brandProduct", { products: products[0].dataValues.productsbrand, brand: products[0].dataValues });
             }).catch(
                 err => { console.log(err) }
             )
@@ -44,7 +44,7 @@ const productController = {
                 include: [{ association: "productscategory" }]
             })
             .then((products) => {
-                res.render("products/categoryProduct", { products: products[0].dataValues.productscategory });
+                res.render("products/categoryProduct", { products: products[0].dataValues.productscategory, category: products[0].dataValues });
             }).catch(
                 err => { console.log(err) }
             )
@@ -75,11 +75,26 @@ const productController = {
         Promise
             .all([Product, Categ, Col, Bran])
             .then(([products, categories, colors, brands]) => {
-                res.render("products/searchP", { products, categories, colors, brands });
+                res.render("products/searchP", { products, categories, colors, brands, search: req.query.busqueda });
             }).catch(
                 err => { console.log(err) }
             )
     },
+    IdProduct: (req, res) => {
+        db.Product.findByPk(req.query.id, {
+                include: [{ association: "productscategories" },
+                    { association: "productscolors" },
+                    { association: "productsbrands" }
+                ]
+            })
+            .then((product) => {
+
+                res.render("products/productDetail", { product: product });
+            }).catch(
+                err => { console.log(err) }
+            )
+    },
+
     detailProduct: (req, res) => {
         db.Product.findByPk(req.params.id, {
                 include: [{ association: "productscategories" },

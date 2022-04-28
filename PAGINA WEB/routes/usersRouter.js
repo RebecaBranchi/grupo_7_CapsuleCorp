@@ -38,4 +38,6 @@ router.get("/register", guesmiddleware, usersController.register);
 router.post("/register", uploadFile.single('avatar'), validationsRegister, usersController.processRegister);
 router.get("/profile", authMiddLeware, usersController.profile);
 router.get("/logout", usersController.logout);
+// eliminar un usuario
+router.delete("/delete/:id", usersController.deleteUser);
 module.exports = router

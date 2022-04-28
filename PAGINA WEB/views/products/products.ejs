@@ -5,11 +5,20 @@
         <%- include ("../partials/header")%>
             <main>
                 <div class="sep"></div>
+                <br/>
                 <div class="contenedor">
-                    <br/>
+
                     <div class="titulodeseccion">
                         <h2>Todos los productos</h2>
                     </div>
+
+                    <%  if (locals.isLogged && locals.admin) { %>
+                        <div>
+                            <form action="/products/id" method="GET">
+                                <input type="search" name="id" placeholder="Buscar por codigo" class="buscar">
+                            </form>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="carrusel">
                     <% products.forEach(product=> { %>

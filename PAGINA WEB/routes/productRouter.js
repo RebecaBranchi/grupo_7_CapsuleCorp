@@ -22,6 +22,7 @@ router.get("/", productController.listProducts);
 router.get("/brand/:brand", productController.listBrands)
 router.get("/category/:category", productController.listCategories)
 router.get("/search", productController.searchProduct)
+router.get("/id", productController.IdProduct)
 
 router.get("/detail/:id", productController.detailProduct);
 router.get("/create", adminMiddleware, productController.create);

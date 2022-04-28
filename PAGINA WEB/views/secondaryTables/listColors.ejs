@@ -17,13 +17,13 @@
                                 <% colors.forEach( color => { %>
                                     <div class="subcategoria">
                                         <div class="foto-nombre">
-                                            <a href="/products/color/<%= color.name %>">
-                                                <div class="text-color">
-                                                    <h3>
-                                                        <%= color.name  %>
-                                                    </h3>
-                                                </div>
-                                            </a>
+
+                                            <div class="text-color">
+                                                <h3>
+                                                    <%= color.name  %>
+                                                </h3>
+                                            </div>
+
                                         </div>
                                         <% if (locals.isLogged && locals.admin) { %>
                                             <div class="buttonCM">
