@@ -12,14 +12,14 @@
                     <form action="/users/register" method="POST" enctype="multipart/form-data">
                         <div id="errors"></div>
                         <label>Ingresá tu nombre</label>
-                        <input type="text" name="first_name" id="first_name" class="control <%= locals.errors && errors.first_name ? 'is-invalid': null %>" value="<%= locals.oldData ? oldData.first_name :null %> ">
+                        <input type="text" name="first_name" id="first_name" class="control <%= locals.errors && errors.first_name ? 'is-invalid': null %>" value="<%= locals.oldData ? oldData.first_name :null %>">
                         <% if (locals.errors && errors.first_name) { %>
                             <div class="text-danger">
                                 <%= errors.first_name.msg %>
                             </div>
                             <% } %>
                                 <label>Ingresá tu apellido</label>
-                                <input type="text" name="last_name" id="last_name" class="control <%= locals.errors && errors.last_name ? 'is-invalid': null %>" value="<%= locals.oldData ? oldData.last_name :null %> ">
+                                <input type="text" name="last_name" id="last_name" class="control <%= locals.errors && errors.last_name ? 'is-invalid': null %>" value="<%= locals.oldData ? oldData.last_name :null %>">
                                 <% if (locals.errors && errors.last_name) { %>
                                     <div class="text-danger">
                                         <%= errors.last_name.msg %>

@@ -11,6 +11,9 @@ function userLoggedMiddleware(req, res, next) {
         db.User.findOne({ where: { email: emailInCookie } })
             .then((userFromCookie) => {
 
+
+                delete userFromCookie.dataValues.password
+                delete userFromCookie._previousDataValues.password
                 req.session.userLogged = userFromCookie;
 
             })

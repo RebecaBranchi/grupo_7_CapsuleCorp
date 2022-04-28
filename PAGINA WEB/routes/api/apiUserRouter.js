@@ -6,12 +6,13 @@ const apiUserController = require("../../controllers/apiController/apiUserContro
 
 
 router.get("/", apiUserController.listUsers);
-/*
+
 router.get("/search", apiUserController.searchUsers);
-router.get("/:id", apiUserController.UserId)
-router.post("/", apiUserController.storeUser);
+router.get("/:id", apiUserController.userId)
 
 
-router.put("/update/:id");*/
+router.post("/", apiUserController.registerUser);
+
+router.put("/update/:id");
 
 module.exports = router
