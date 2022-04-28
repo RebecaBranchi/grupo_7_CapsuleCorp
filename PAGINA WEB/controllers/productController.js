@@ -151,8 +151,10 @@ const productController = {
                 category_id: req.body.category,
                 color_id: req.body.color,
                 brand_id: req.body.brand
+            }).then(() => {
+                res.redirect("/products")
+
             })
-            res.redirect("/products")
         }
 
     },
