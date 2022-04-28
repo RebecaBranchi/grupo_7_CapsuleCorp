@@ -8,7 +8,7 @@
         <% if (product.discount > 5 ) { %>
             <div class="contenedor-foto-texto">
                 <a href="/products/detail/<%= product.id %> ">
-                        <img src="/img/product/<%= product.image %> " alt="" class="imagenes">
+                        <img src="/img/product/<%= product.image %> " alt="<%= product.name %>" class="imagenes">
                     <div class="contenedor-texto-icono">
                         <div class="camionicon">
                             <i class="fas fa-truck" id="camionicono"></i>
