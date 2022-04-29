@@ -8,7 +8,7 @@ const guesmiddleware = require('../middlewares/guesmiddleware');
 const authMiddLeware = require('../middlewares/authMiddleware');
 const validationsLogin = require('../middlewares/userLoginMiddleware')
 const validationsPass = require('../middlewares/userPassMiddleware')
-const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware")
+
 
 
 
@@ -27,7 +27,7 @@ const uploadFile = multer({ storage });
 const usersController = require("../controllers/usersController")
 
 // formulario login
-router.get("/login", usersController.login);
+router.get("/login", guesmiddleware, usersController.login);
 router.post("/login", validationsLogin, usersController.loginProcess);
 router.post("/pass", validationsPass, usersController.loginPass);
 
