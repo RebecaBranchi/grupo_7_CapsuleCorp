@@ -8,6 +8,8 @@ const trolleyController = require("../controllers/trolleyController")
 
 router.get("/cart", authMiddLeware, trolleyController.shopping);
 
-router.post("/add/:id", authMiddLeware, trolleyController.add)
+router.post("/add/:id", authMiddLeware, trolleyController.add);
+
+router.delete("/delete/:id", trolleyController.delete);
 
 module.exports = router

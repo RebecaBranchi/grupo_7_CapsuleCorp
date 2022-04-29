@@ -153,7 +153,6 @@ const productController = {
                 brand_id: req.body.brand
             }).then(() => {
                 res.redirect("/products")
-
             })
         }
 
@@ -174,29 +173,33 @@ const productController = {
     updateProduct: (req, res) => {
         if (req.file) {
             db.Product.update({
-                name: req.body.name,
-                description: req.body.description,
-                image: req.file.filename,
-                stock: req.body.stock,
-                price: req.body.price,
-                discount: req.body.discount,
-                category_id: req.body.category,
-                color_id: req.body.color,
-                brand_id: req.body.brand
-            }, { where: { id: req.params.id } })
-            res.redirect("/products")
+                    name: req.body.name,
+                    description: req.body.description,
+                    image: req.file.filename,
+                    stock: req.body.stock,
+                    price: req.body.price,
+                    discount: req.body.discount,
+                    category_id: req.body.category,
+                    color_id: req.body.color,
+                    brand_id: req.body.brand
+                }, { where: { id: req.params.id } })
+                .then(() => {
+                    res.redirect("/products")
+                })
         } else {
             db.Product.update({
-                name: req.body.name,
-                description: req.body.description,
-                stock: req.body.stock,
-                price: req.body.price,
-                discount: req.body.discount,
-                category_id: req.body.category,
-                color_id: req.body.color,
-                brand_id: req.body.brand
-            }, { where: { id: req.params.id } })
-            res.redirect("/products")
+                    name: req.body.name,
+                    description: req.body.description,
+                    stock: req.body.stock,
+                    price: req.body.price,
+                    discount: req.body.discount,
+                    category_id: req.body.category,
+                    color_id: req.body.color,
+                    brand_id: req.body.brand
+                }, { where: { id: req.params.id } })
+                .then(() => {
+                    res.redirect("/products")
+                })
         }
     },
     delete: (req, res) => {

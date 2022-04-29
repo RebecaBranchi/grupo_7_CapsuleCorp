@@ -51,6 +51,7 @@ app.use(cookies());
 
 
 app.use(userLoggedMiddleware);
+app.use(userLoginMiddleware)
 
 
 ///Routes ///

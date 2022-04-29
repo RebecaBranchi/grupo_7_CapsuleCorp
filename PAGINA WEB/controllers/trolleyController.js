@@ -14,14 +14,25 @@ const trolleyController = {
                 include: [{ association: "shoppingProduct" }]
             })
             .then((carts) => {
-                res.render('shopping/cart', { carts })
+                res.render('shopping/cart', { carts, user: req.session.userLogged.dataValues })
             }).catch(err => { console.log(err) })
     },
     add: (req, res) => {
         db.ShoppingCart.create({
-            order_id: req.session.userLogged.id,
-            product_id: req.params.id,
-            quantity_products: req.body.stock,
+                order_id: req.session.userLogged.id,
+                product_id: req.params.id,
+                quantity_products: req.body.stock,
+            })
+            .then(() => {
+
+                res.redirect("/shopping/cart")
+            })
+    },
+    delete: (req, res) => {
+        db.ShoppingCart.destroy({
+            where: {
+                id: req.params.id
+            }
         })
         res.redirect("/shopping/cart")
     }

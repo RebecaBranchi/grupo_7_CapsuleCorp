@@ -11,22 +11,42 @@
 
                         <h2>¡Hola
                             <%= user.first_name %> !</h2>
-                        <img class="circular" src="/img/users/<%= user.avatar %> ">
+                        <div class="avatarProfile">
 
-                        <div class="buttonCM">
-                            <button class="edit" type="submit"> <a href="/users/edit/<%=user.id%>">Editar perfil</a></button>
-
+                            <img class="circular" src="/img/users/<%= user.avatar %>">
+                        </div>
+                        <div class="buttonCM buttonProfile">
                             <form action="/users/delete/<%=user.id%>?_method=DELETE" method="POST">
                                 <button class="delete" type="submit">Eliminar mi cuenta</button>
                             </form>
+                            <button class="edit" type="submit"> <a href="/users/edit/<%=user.id%>">Editar perfil</a></button>
                         </div>
+
                     </div>
 
-                </div>
+                    <div class="profilUser2">
+
+                        <h2>
+                            <%= user.first_name %>
+                                <%= user.last_name %>
+                        </h2>
+                        <h2>
+                            <%= user.email %>
+                        </h2>
+                        <h2>
+                            <%= user.adress %>
+                        </h2>
+
+
+                    </div>
+
+
 
                 </div>
 
-                </div>
+
+
+
 
 
             </main>
