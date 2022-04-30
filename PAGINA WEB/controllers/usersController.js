@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const db = require("../database/models");
+
 const userController = {
     register: (req, res) => {
         res.render('users/register');
@@ -130,9 +131,15 @@ const userController = {
     },
 
     profile: (req, res) => {
-        return res.render('users/profile', {
-            user: req.session.userLogged
-        });
+        db.Product.findAll()
+
+        .then((products) => {
+
+            return res.render('users/profile', {
+                user: req.session.userLogged,
+
+            });
+        })
     },
 
     logout: (req, res) => {

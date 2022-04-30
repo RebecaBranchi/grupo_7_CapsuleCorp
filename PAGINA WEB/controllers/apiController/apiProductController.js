@@ -18,15 +18,13 @@ const apiProductController = {
             .then((products) => {
                 let productCategory = []
                 products.forEach(product => {
-                    productCategory.push(product.productscategories.name)
+                    productCategory.push(`${product.productscategories.name}`)
                 });
                 let countCategory = productCategory.reduce((a, d) => (a[d] ? a[d] += 1 : a[d] = 1, a), {});
 
                 products.forEach(product => {
                     product.dataValues.image = direccion + product.dataValues.image
-
                 });
-
 
                 if (products.length > 0) {
                     return res.status(200).json({

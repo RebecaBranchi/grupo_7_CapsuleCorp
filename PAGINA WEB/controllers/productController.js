@@ -4,8 +4,12 @@ const { validationResult } = require('express-validator');
 const db = require("../database/models");
 const { Op } = require("sequelize");
 
+
+
 const productController = {
+
     listProducts: (req, res) => {
+
         let Product = db.Product.findAll({
             include: [{ association: "productscategories" },
                 { association: "productscolors" },

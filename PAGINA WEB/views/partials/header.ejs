@@ -22,8 +22,28 @@
         <% if (locals.isLogged && !locals.admin) { %>
             <ul class="left-navbar">
                 <li><a href="/products">Productos</a></li>
-                <li><a href="/brand">Marcas</a></li>
-                <li><a href="/ayuda">Ayuda</a></li>
+                <li class="dropdown">
+                    <a class="dropbtn" href="/brand">Marcas</a>
+                    <div class="dropdown-content">
+                        <% productBrand.forEach(element => { %>
+                            <a href="/products/brand/<%= element.name %> ">
+                                <%= element.name %> :
+                                    <%= element.cantidad %>
+                            </a>
+                            <% }) %>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropbtn" href="/category">Categorias</a>
+                    <div class="dropdown-content">
+                        <% productCat.forEach(element => { %>
+                            <a href="/products/category/<%= element.name %> ">
+                                <%= element.name %> :
+                                    <%= element.cantidad %>
+                            </a>
+                            <% }) %>
+                    </div>
+                </li>
             </ul>
             <ul class="right-navbar">
                 <li><a href="/shopping/cart">Mis compras <i class="fas fa-shopping-bag"></i></a></li>
@@ -39,8 +59,28 @@
             <% } else if (locals.isLogged && locals.admin) { %>
                 <ul class="left-navbar">
                     <li><a href="/products">Productos</a></li>
-                    <li><a href="/brand">Marcas</a></li>
-                    <li><a href="/category">Categorias</a></li>
+                    <li class="dropdown">
+                        <a class="dropbtn" href="/brand">Marcas</a>
+                        <div class="dropdown-content">
+                            <% productBrand.forEach(element => { %>
+                                <a href="/products/brand/<%= element.name %> ">
+                                    <%= element.name %> :
+                                        <%= element.cantidad %>
+                                </a>
+                                <% }) %>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropbtn" href="/category">Categorias</a>
+                        <div class="dropdown-content">
+                            <% productCat.forEach(element => { %>
+                                <a href="/products/category/<%= element.name %>">
+                                    <%= element.name %> :
+                                        <%= element.cantidad %>
+                                </a>
+                                <% }) %>
+                        </div>
+                    </li>
                     <li><a href="/color">Colores</a></li>
 
                 </ul>
@@ -57,8 +97,28 @@
                 <% } else { %>
                     <ul class="left-navbar">
                         <li><a href="/products">Productos</a></li>
-                        <li><a href="/brand">Marcas</a></li>
-                        <li><a href="/ayuda">Ayuda</a></li>
+                        <li class="dropdown">
+                            <a class="dropbtn" href="/brand">Marcas</a>
+                            <div class="dropdown-content">
+                                <% productBrand.forEach(element => { %>
+                                    <a href="/products/brand/<%= element.name %> ">
+                                        <%= element.name %> :
+                                            <%= element.cantidad %>
+                                    </a>
+                                    <% }) %>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropbtn" href="/category">Categorias</a>
+                            <div class="dropdown-content">
+                                <% productCat.forEach(element => { %>
+                                    <a href="/products/category/<%= element.name %> ">
+                                        <%= element.name %> :
+                                            <%= element.cantidad %>
+                                    </a>
+                                    <% }) %>
+                            </div>
+                        </li>
                     </ul>
                     <ul class="right-navbar">
                         <li><a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
