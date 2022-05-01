@@ -100,6 +100,7 @@ const productController = {
     },
 
     detailProduct: (req, res) => {
+
         db.Product.findByPk(req.params.id, {
                 include: [{ association: "productscategories" },
                     { association: "productscolors" },
@@ -107,6 +108,17 @@ const productController = {
                 ]
             })
             .then((product) => {
+
+                if (!req.cookies.cat1) {
+                    res.cookie("cat1", product.productscategories.id, { maxAge: 60 * 60 * 1000 })
+                } else if (req.cookies.cat1 && !req.cookies.cat2 && req.cookies.cat1 != product.productscategories.id) {
+                    res.cookie("cat2", product.productscategories.id, { maxAge: 60 * 60 * 1000 })
+                } else if (req.cookies.cat2 && req.cookies.cat1 != product.productscategories.id) {
+                    res.clearCookie('cat1');
+                    res.cookie("cat1", product.productscategories.id, { maxAge: 60 * 60 * 1000 })
+                } else {
+                    res.clearCookie('cat2');
+                }
 
                 res.render("products/productDetail", { product: product });
             }).catch(

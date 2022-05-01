@@ -7,6 +7,7 @@ const { body } = require("express-validator");
 const productValidator = require("../middlewares/productMiddle")
 const adminMiddleware = require('../middlewares/adminMiddleware')
 
+
 const fileStorageEngine = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, './public/img/product');
