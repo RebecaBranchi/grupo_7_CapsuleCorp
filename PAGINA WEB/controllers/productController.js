@@ -11,6 +11,9 @@ const productController = {
     listProducts: (req, res) => {
 
         let Product = db.Product.findAll({
+            order: [
+                ["discount", "DESC"]
+            ],
             include: [{ association: "productscategories" },
                 { association: "productscolors" },
                 { association: "productsbrands" }
@@ -68,6 +71,9 @@ const productController = {
                     }
                 ]
             },
+            order: [
+                ["discount", "DESC"]
+            ],
             include: [{ association: "productscategories" },
                 { association: "productscolors" },
                 { association: "productsbrands" }

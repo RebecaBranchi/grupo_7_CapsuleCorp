@@ -1,15 +1,19 @@
-<div class="contenedor">
-    <div class="titulodeseccion">
-        <h2>Basado en tu ultima visita</h2>
+<% if (pv1.length > 0 || pv2.length > 0) { %>
+
+
+
+    <div class="contenedor">
+        <div class="titulodeseccion">
+            <h2>Basado en tu ultima visita</h2>
+        </div>
     </div>
-</div>
-<div class="carrusel">
 
-    <% if (pv1) { %>
+    <div class="carrusel">
+        <% if (pv1.length > 0) { %>
 
-        <% pv1.forEach(product=> { %>
-            <div class="contenedor-foto-texto">
-                <a href="/products/detail/<%= product.id %> ">
+            <% pv1.forEach(product=> { %>
+                <div class="contenedor-foto-texto">
+                    <a href="/products/detail/<%= product.id %> ">
                         <img src="/img/product/<%= product.image %> " alt="<%= product.name %>" class="imagenes">
                     <div class="contenedor-texto-icono">
                         <div class="camionicon">
@@ -34,15 +38,15 @@
 
                 </a>
 
-            </div>
-            <% }) %>
-                <% } %>
+                </div>
+                <% }) %>
 
-                    <% if (pv2) { %>
+                    <% } %>
+                        <% if (pv2.length > 0) { %>
 
-                        <% pv2.forEach(product=> { %>
-                            <div class="contenedor-foto-texto">
-                                <a href="/products/detail/<%= product.id %> ">
+                            <% pv2.forEach(product=> { %>
+                                <div class="contenedor-foto-texto">
+                                    <a href="/products/detail/<%= product.id %> ">
                                     <img src="/img/product/<%= product.image %> " alt="<%= product.name %>" class="imagenes">
                                 <div class="contenedor-texto-icono">
                                     <div class="camionicon">
@@ -64,10 +68,10 @@
                                         <%= product.name %>
                                     </h3>
                                 </div>
-            
                             </a>
+                                </div>
+                                <% }) %>
 
-                            </div>
-                            <% }) %>
-                                <% } %>
-</div>
+                                    <% } %>
+    </div>
+    <% } %>
