@@ -88,10 +88,10 @@ const getHome = (req, res) => {
             .then(([products, categories, colors, brands]) => {
                 return res.render("users/index", { products, pv1: [], pv2: [], categories, colors, brands });
             }).catch(err => { console.log(err) })
-
     }
 }
+
 module.exports = {
     getHome,
-
+  
 }

@@ -162,6 +162,9 @@ const userController = {
     terms: (req, res) => {
         res.render('users/terms');
     },
+    help: (req, res) => {
+        res.render('users/help');
+    },
 }
 
 module.exports = userController

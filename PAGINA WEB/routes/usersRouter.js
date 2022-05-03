@@ -38,4 +38,5 @@ router.get("/logout", usersController.logout);
 // eliminar un usuario
 router.delete("/delete/:id", usersController.deleteUser);
 router.get("/terms",usersController.terms);
+router.get("/help", usersController.help);
 module.exports = router
