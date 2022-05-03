@@ -89,10 +89,10 @@ const getHome = (req, res) => {
                 console.log(products);
                 return res.render("users/index", { products, pv1: [], pv2: [], categories, colors, brands });
             }).catch(err => { console.log(err) })
-
     }
 }
+
 module.exports = {
     getHome,
-
+  
 }

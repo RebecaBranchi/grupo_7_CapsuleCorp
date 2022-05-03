@@ -7,5 +7,4 @@ const mainController = require("../controllers/mainController")
 router.get("/", mainController.getHome);
 
 
-
 module.exports = router
