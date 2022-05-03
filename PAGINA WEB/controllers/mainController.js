@@ -86,7 +86,6 @@ const getHome = (req, res) => {
         Promise
             .all([Product, Categ, Col, Bran])
             .then(([products, categories, colors, brands]) => {
-                console.log(products);
                 return res.render("users/index", { products, pv1: [], pv2: [], categories, colors, brands });
             }).catch(err => { console.log(err) })
     }
