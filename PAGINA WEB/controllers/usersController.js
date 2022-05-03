@@ -158,7 +158,10 @@ const userController = {
             }
         }).catch(err => { console.log(err) })
         res.redirect("/")
-    }
+    },
+    terms: (req, res) => {
+        res.render('users/terms');
+    },
 }
 
 module.exports = userController

@@ -9,9 +9,6 @@ const authMiddLeware = require('../middlewares/authMiddleware');
 const validationsLogin = require('../middlewares/userLoginMiddleware')
 const validationsPass = require('../middlewares/userPassMiddleware')
 
-
-
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, './public/img/users');
@@ -40,4 +37,5 @@ router.get("/profile", authMiddLeware, usersController.profile);
 router.get("/logout", usersController.logout);
 // eliminar un usuario
 router.delete("/delete/:id", usersController.deleteUser);
+router.get("/terms",usersController.terms);
 module.exports = router
