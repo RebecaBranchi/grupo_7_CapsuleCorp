@@ -597,11 +597,13 @@ li.dropdown {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    font-weight: 400;
     width: 90vw;
     margin: auto;
-    gap: 30px 20px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    gap: 10px 20px;
+    line-height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 20px;
     border-radius: 30px;
     box-shadow: inset 0 0 50px #fff, /* inner white */
@@ -619,6 +621,11 @@ li.dropdown {
     text-align: center;
 }
 
+.term h3{
+    font-weight: 500;
+    
+}
+
 .check {
     padding-top: 10px;
     text-align: center;
@@ -632,8 +639,8 @@ li.dropdown {
 .button input {
     display: block;
     margin: auto;
-    font-size: 0.8em;
-    width: 15%;
+    font-size: 1.5em;
+    width: 20%;
     height: 40px;
     color: #fff;
     font-weight: bold;
@@ -677,9 +684,6 @@ li.dropdown {
 }
 
 .help-option {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
     width: 90vw;
     margin: auto;
     gap: 30px 20px;
@@ -709,12 +713,51 @@ li.dropdown {
     background-color: #f1e2f1;
 }
 
+.compra-select{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.text-tarea{
+    display: flex;
+    width: 50vw;
+    margin: auto;
+}
+
+textarea {
+    resize: none;
+    border: none;
+  }
+  .help-button  button {
+    display: block;
+    margin: auto;
+    font-size: 1.4em;
+    width: 20%;
+    height: 40px;
+    color: #fff;
+    font-weight: bold;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    text-shadow: inset 0px 1px 0px #528ecc;
+    background-image: url("/img/unknown (1).png");
+    background-position: 80px;
+    margin-bottom: 15px;
+    text-align: left;
+    padding-left: 25px;
+}
+.help-button a{
+    color: #FFF;
+}
 
 /*-------FIN HELP-----*/
 
 
 /*----INICIO DE MARCAS Y CATEGORIAS PARCIALES*/
-
 .categoriaspopulares {
     font-size: 22px;
     width: 90%;
@@ -1246,62 +1289,88 @@ li.dropdown {
 
 /* --- INICIO DE REDES SOCIALES ----*/
 
-.redessociales {
-    width: 90%;
-    margin: auto;
-    text-align: center;
-    font-size: 20px;
-    color: #000;
-    font-weight: bolder;
-}
+
 
 .sociales {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     font-size: 30px;
+    gap: 20px 20px;
+    padding-top: 20px;
+}
+.sociales a{
+    color: #FFF;
+    font-size: 1.5em;
+}
+
+.redsocial:hover{
+    transform: scale(120%);
 }
 
 
 /* --- FIN DE REDES SOCIALES ----*/
 
 
-/*------INICIO DE FOOTER-----*/
 
+
+/*------INICIO DE FOOTER-----*/
+.footer{
+  
+    background-color: #000;
+}
 .contenedorfooter {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
+    align-items: flex-start;
     width: 90vw;
     text-align: center;
     margin: auto;
+    color: #FFF;
+
 }
 
 .nav-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 15px;
-    width: 100vw;
+    margin: auto;
+    padding-top: 20px;
+    width: 90vw;
+    text-align: center;
 }
 
 .iconofooter {
-    font-size: 2em;
     margin-bottom: 10px;
-    color: #03264C;
+    color: #fff;
 }
 
 #icono {
     font-size: 35px;
-    color: #03264C;
+    color: #fff;
     transition: all 10ms;
 }
 
-#icono:hover {
-    color: #5890f8;
-    font-size: 40px;
+.cajaFooter:hover {
+    transform: scale(120%);
 }
 
+.cajaFooter{
+    display: block;
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 10px;
+    width: 100%;
+    text-shadow: 0 0 15px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+}
+
+.copyright{
+    text-align: center;
+    font-weight: 500;
+    padding-top: 20px;
+    font-size: 0.8em;
+    color: #FFF;
+    background-color: #000;
+}
 
 /*------FIN DE FOOTER-----*/
 
@@ -1390,8 +1459,30 @@ li.dropdown {
     .imagenes2 {
         border-radius: 20px 0 0 20px;
     }
-}
 
+    .contenedorfooter {
+        display: flex;
+        margin: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100vw;
+        text-align: center;
+        margin: auto;
+    
+    }
+    
+    .nav-footer {
+        margin: auto;
+        margin-top: 15px;
+        width: 100vw;
+        text-align: center;
+    }
+
+    .cajaFooter{
+        width: 30%;
+    }
+
+}
 
 /* fin media ----------- 769px  desde este ancho hacia arriba*/
 
@@ -1414,7 +1505,7 @@ li.dropdown {
     .contenedorfooter {
         display: flex;
         flex-direction: row;
-        width: 100vw;
+        width: 90vw;
         justify-content: space-between;
         padding: 0 20px
     }
@@ -1428,6 +1519,5 @@ li.dropdown {
         display: none;
     }
 }
-
 
 /* fin media ----------- desde 1280px*/

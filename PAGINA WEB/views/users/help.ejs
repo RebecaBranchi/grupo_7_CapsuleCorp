@@ -1,8 +1,14 @@
 <%- include("../partials/head") %>
 <body>
     <%- include("../partials/userheader") %>
+   
+    <div class="contenedor">
+      <div class="titulodeseccion">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+  </div>
     <div class="helps">
-        <h1>Preguntas Frecuentes</h1>
+       
         <details>
               <summary>Realizar un pedido</summary>
             <p> 
@@ -72,18 +78,29 @@
     </p>
 </details>
     <div class="help-option">
-        <H3>Compra Capsule Corp te ayuda. ¿Cuál es tu consulta?</H3>
-        <select name="ayuda" >
-            <optgroup label="Elegi un motivo...">
-                <option value="">Consulta sobre un producto</option>
-                <option value="">Consulta general</option>
-                <option value="">Consulta sobre un pedido</option>
-                <option value="">Necesito ayuda para realizar una compra</option>
-                <option value="">consulta sobre subir un comprobante de pago</option>
-            </optgroup>
-        </select>        
-        <textarea name="text-help" id="" cols="30" rows="10" placeholder="Escribí tu pregunta"></textarea>
+      
+<div class="compra-select">
+  <H3>Compra Capsule Corp te ayuda. ¿Cuál es tu consulta?</H3>
+  <select name="ayuda" >
+    <optgroup >
+      <option value="">Elegi un motivo...</option>
+      <option value="">Consulta sobre un producto</option>
+      <option value="">Consulta general</option>
+      <option value="">Consulta sobre un pedido</option>
+      <option value="">Necesito ayuda para realizar una compra</option>
+      <option value="">consulta sobre subir un comprobante de pago</option>
+    </optgroup>
+  </select>        
+</div>
+      <div class="text-tarea" >
+        <textarea cols="100" rows="4"  name="text-help" id="" placeholder="Escribí tu pregunta" ></textarea>
+
+      </div>
     </div>
-    <div class="button"><a href="#"><input type="submit" value="Enviar consulta"></a></div>
+    <div class="help-button">
+     <button>
+       <a href="#">Enviar consulta</a>
+     </button>
+    </div>
 </body>
 </html>
