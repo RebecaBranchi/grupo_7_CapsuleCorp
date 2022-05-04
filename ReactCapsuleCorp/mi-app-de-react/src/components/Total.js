@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
-import CardsUsers from './CardsUsers';
+import CardsTotal from './CardsTotal';
 
-class Users extends Component {
-
+class Total extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      usersList: []
+      totalList: []
     }
   }
-
   componentDidMount() {
 
-    fetch('/api/users')
+    fetch('/api/total')
       .then(respuesta => {
         return respuesta.json()
       })
-      .then(users => {
-        this.setState({ usersList: users.data })
+      .then(total => {
+        this.setState({ totalList: total.data })
       })
       .catch(error => console.log(error))
   }
@@ -25,9 +23,9 @@ class Users extends Component {
     return (
       <div className='carrusel'> 
         {
-          this.state.usersList.map((user, index) => {
+          this.state.totalList.map((total, index) => {
             return ( 
-              <CardsUsers key={index} user={user}/>
+              <CardsTotal key={index} total={total}/>
             )
           })
         }
@@ -36,4 +34,4 @@ class Users extends Component {
   }
 
 }
-export default Users;
+export default Total;

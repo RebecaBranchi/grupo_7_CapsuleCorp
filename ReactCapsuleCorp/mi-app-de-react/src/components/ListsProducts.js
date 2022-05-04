@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import CardsProducts from './CardsProducts';
 
-class Products extends Component {
-
+class ListsProducts extends Component {
   constructor(props) {
     super(props)
     this.state = {
       productsList: []
     }
   }
-
   componentDidMount() {
 
     fetch('/api/products')
@@ -23,7 +21,7 @@ class Products extends Component {
   }
   render() {
     return (
-      <div className='carrusel'> 
+      <div className='carrusel1'> 
         {
           this.state.productsList.map((product, index) => {
             return ( 
@@ -36,4 +34,4 @@ class Products extends Component {
   }
 
 }
-export default Products;
+export default ListsProducts;
