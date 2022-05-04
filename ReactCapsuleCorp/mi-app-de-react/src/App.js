@@ -1,26 +1,16 @@
 import React from 'react';
 import './App.css';
-
 import NavBar from './components/NavBar';
-
-import Total from './components/Total';
-
-
-
+import { BrowserRouter} from "react-router-dom";
 function App() {
   return (
-    <body>
-   
-      <header>
-      <NavBar/>
-      </header>
-
+    
+    <BrowserRouter>
+    <NavBar/>
   
-      <main> 
-        <Total/>
-      </main>
+    </BrowserRouter>
 
-    </body>
+    
   );
 }
 

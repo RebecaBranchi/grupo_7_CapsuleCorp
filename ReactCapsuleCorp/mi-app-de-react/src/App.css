@@ -6,7 +6,6 @@
     
 }
 
-
 body{
   background-image: url("../src/assets/img/fondo2.webp");
   background-repeat: no-repeat;
@@ -51,16 +50,16 @@ ul {
       flex-direction: row;
       width: 80vw; 
       margin: auto;
-      margin-top: 20%;
+      margin-top: 5%;
       flex-wrap: wrap;
       gap: 10px 10px;
 
   }
-  .logo{
-    display: flex;
-    width: 80vw; 
-    flex-wrap: wrap;
-    
+  img{   
+    width: 20%; 
+    display: block;
+    margin: auto;
+    margin-top: 40px;
   }
   .cards{
       
