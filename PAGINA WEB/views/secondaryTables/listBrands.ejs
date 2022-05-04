@@ -29,9 +29,9 @@
                                         </div>
                                         <% if (locals.isLogged && locals.admin) { %>
                                             <div class="buttonCM">
-                                                <button class="edit"><a href="brand/edit/<%= brand.id %>">Editar</a></button>
+                                                <button class="edit"><a href="brand/edit/<%= brand.id %>"><i class="fi fi-rr-pencil"></i></a></button>
                                                 <form action="/brand/delete/<%= brand.id %>?_method=DELETE" method="POST">
-                                                    <button class="delete" type="submit">Eliminar</button>
+                                                    <button class="delete" type="submit"><i class="fi fi-rs-trash"></i></button>
                                                 </form>
                                             </div>
                                             <% } %>

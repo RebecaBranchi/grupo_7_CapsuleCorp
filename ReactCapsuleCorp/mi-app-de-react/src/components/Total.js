@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import CardsTotal from './CardsTotal';
-
+import logo  from '../assets/img/logo5.png';
 class Total extends Component {
   constructor(props) {
     super(props)
     this.state = {
       totalList: []
     }
+    
   }
+  
   componentDidMount() {
 
     fetch('/api/total')
@@ -20,8 +22,11 @@ class Total extends Component {
       .catch(error => console.log(error))
   }
   render() {
+    
     return (
+      <div className='logo'><img className="logo1" src={logo} width="100"/>
       <div className='carrusel'> 
+      
         {
           this.state.totalList.map((total, index) => {
             return ( 
@@ -29,6 +34,7 @@ class Total extends Component {
             )
           })
         }
+      </div>
       </div>
     );
   }

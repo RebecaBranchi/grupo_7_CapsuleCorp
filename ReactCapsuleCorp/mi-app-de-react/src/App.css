@@ -46,6 +46,7 @@ ul {
   }
 
   .carrusel{
+    
       display: flex;
       flex-direction: row;
       width: 80vw; 
@@ -55,8 +56,14 @@ ul {
       gap: 10px 10px;
 
   }
-
+  .logo{
+    display: flex;
+    width: 80vw; 
+    flex-wrap: wrap;
+    
+  }
   .cards{
+      
       margin: auto;
       width: 15vw;
       height: 15vh;
@@ -84,6 +91,7 @@ ul {
 }
 
 .cards1{
+  
   margin: auto;
   display: flex;
   background-color: #333;
