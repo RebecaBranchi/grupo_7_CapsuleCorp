@@ -18,7 +18,9 @@ const categoryRouter = require("./routes/categoryRouter");
 const brandRouter = require("./routes/brandRouter");
 const apiProductRouter = require("./routes/api/apiProductRouter");
 const apiUserRouter = require("./routes/api/apiUserRouter");
-const apiTotalRouter = require("./routes/api/apiTotalRouter")
+const apiTotalRouter = require("./routes/api/apiTotalRouter");
+const apiCategoriesRouter = require("./routes/api/apiCategoriesRouter");
+const apiBrandsRouter = require("./routes/api/apiBrandsRouter")
 
 //Middleware///
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
@@ -67,6 +69,8 @@ app.use("/brand", brandRouter);
 app.use("/api/products", apiProductRouter);
 app.use("/api/users", apiUserRouter);
 app.use("/api/total", apiTotalRouter);
+app.use("/api/categories", apiCategoriesRouter);
+app.use("/api/brands", apiBrandsRouter);
 
 
 app.use(userLoginMiddleware)

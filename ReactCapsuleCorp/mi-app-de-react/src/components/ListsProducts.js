@@ -9,7 +9,6 @@ class ListsProducts extends Component {
     }
   }
   componentDidMount() {
-
     fetch('/api/products')
       .then(respuesta => {
         return respuesta.json()
@@ -21,9 +20,7 @@ class ListsProducts extends Component {
   }
   render() {
     return (
-    
       <div className='carrusel2'> 
-      
         {
           this.state.productsList.map((product, index) => {
             return (                    
@@ -33,9 +30,7 @@ class ListsProducts extends Component {
           })
         }
       </div>
-      
     );
   }
-
 }
 export default ListsProducts;

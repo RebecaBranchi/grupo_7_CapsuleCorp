@@ -119,19 +119,21 @@ ul {
   flex-direction: row;
   flex-wrap: wrap;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 100px;
   gap: 10px 10px;
   align-items: flex-start;
+  justify-content: center;
+
 }
 
 .cards2{
 margin: auto;
-width: 160px;
-height: 160px;
+width: 200px;
+height: 200px;
 display: block;
 border-radius: 5px;
 padding: 3px;
-font-size: 0.4em;
+font-size: 0.5em;
 color: #fff;
 text-align: center;
 background: rgba( 0, 231, 255, 0.15 );
@@ -142,10 +144,50 @@ border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+.cards3{
+  margin: auto;
+  width: 120px;
+  height: 130px;
+  display: block;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 0.5em;
+  color: #fff;
+  text-align: center;
+  background: rgba( 0, 231, 255, 0.15 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 0px );
+  -webkit-backdrop-filter: blur( 0px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+
 .imgProd{
 margin: auto;
-width: 100px;
-height: 100px;
+width: 150px;
+height: 150px;
 display: block;
 border-radius: 10px;
 }
+
+.imgCat{
+  margin: auto;
+  width: 70px;
+  height: 70px;
+  display: block;
+  border-radius: 5px;
+  }
+
+.price-discount{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.discount{
+  color: rgb(71, 255, 101);
+}
+
+
+  
+
