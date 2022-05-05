@@ -11,15 +11,20 @@
                     <div class="titulodeseccion">
                         <h2>Todos los productos</h2>
                     </div>
+                    
 
                     <%  if (locals.isLogged && locals.admin) { %>
-                        <div>
+                        <div class="addProducts">
                             <form action="/products/id" method="GET">
                                 <input type="search" name="id" placeholder="Buscar por codigo" class="buscar">
                             </form>
                         </div>
                         <% } %>
+                        <form action="/products/create" method="GET">
+                            <button type="submit">Agregar</button>
+                        </form>
                 </div>
+                
                 <div class="carrusel">
                     <% products.forEach(product=> { %>
                         <div class="contenedor-foto-texto">

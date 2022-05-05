@@ -45,12 +45,12 @@
                                     <form action="/shopping/add/<%= product.id %> " method="POST">
                                         <label for="stock">Cantidad   </label>
                                         <select name="stock" id="stock" class="select" required>
-                                                                                    <% for( let i=1; i <=product.stock; i++ ) { %>
-                                                                        <option value="<%= i %>">
-                                                                            <%= i %>
-                                                                        </option>
-                                                                        <% } %>
-                                                                </select>
+                                           <% for( let i=1; i <=product.stock; i++ ) { %>
+                                                      <option value="<%= i %>">
+                                                           <%= i %>
+                                                     </option>
+                                                  <% } %>
+                                           </select>
                                         <button class="addCart" type="submit">Agregar a carrito</button>
                                     </form>
                                     <form action="#">
