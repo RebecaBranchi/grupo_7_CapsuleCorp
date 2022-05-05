@@ -19,40 +19,30 @@
                             <form action="/users/delete/<%=user.id%>?_method=DELETE" method="POST">
                                 <button class="delete" type="submit"><i class="fi fi-rs-trash"></i></button>
                             </form>
-                            <button class="edit" type="submit"> <a href="/users/edit/<%=user.id%>"><i class="fi fi-rr-pencil"></i></a></button>
+                            <button class="edit" type="submit"> <a href="/users/edit/<%=user.id%>"><i class="fi fi-rs-pencil"></i></a></button>
                         </div>
 
                     </div>
 
                     <div class="profilUser2">
-
-                        <h2>
-                             <label>Nombre: </label>   <%= user.first_name %>
-                             
+                        <h2>Nombre:
+                            <%= user.first_name %>
                         </h2>
-                        <h2><label>Apellido: </label> <%= user.last_name %></h2>
-                        <h2>
-                            <label >Email: </label><%= user.email %>
+                        <h2>Apellido:
+                            <%= user.last_name %>
                         </h2>
-                        <h2>
-                            <label >Dirección: </label><%= user.adress %>
+                        <h2>Email:
+                            <%= user.email %>
                         </h2>
-
-
+                        <h2>Dirección:
+                            <%= user.adress %>
+                        </h2>
                     </div>
 
-
-
                 </div>
-
-
-
-
-
-
             </main>
-           
-                <%- include ("../partials/footer")%>
+
+            <%- include ("../partials/footer")%>
     </body>
 
     </html>

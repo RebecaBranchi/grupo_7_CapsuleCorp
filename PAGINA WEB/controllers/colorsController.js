@@ -21,7 +21,14 @@ const colorsController = {
 
     create: (req, res) => {
 
-        return res.render("secondaryTables/createColors");
+        db.ProductColor.findAll()
+            .then(() => {
+                return res.render("secondaryTables/createColors");
+            }).catch(
+                err => { console.log(err) }
+            )
+
+
 
     },
 

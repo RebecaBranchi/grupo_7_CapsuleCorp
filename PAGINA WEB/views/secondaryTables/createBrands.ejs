@@ -4,6 +4,7 @@
         <%- include ("../partials/header",{productCat: locals.productXCat,productBrand: locals.productXBrand})%>
             <main>
                 <div class="sep"></div>
+                <br/>
                 <section class="form-registro">
                     <h4>Formulario de Crear Marcas</h4>
                     <form action="/brand/create" method="POST" enctype="multipart/form-data">
@@ -24,8 +25,8 @@
                     </form>
                 </section>
 
-
             </main>
+
             <%- include ("../partials/footer")%>
 
     </body>

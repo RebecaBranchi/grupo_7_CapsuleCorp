@@ -11,7 +11,6 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     width: 100vw;
-    overflow-x: hidden;
 }
 
 header,
@@ -60,7 +59,8 @@ header a {
 }
 
 header a:hover {
-    font-size: 1.4em;
+    transform: scale(110%);
+    /* font-size: 1.4em;*/
     color: #0012FF
 }
 
@@ -105,30 +105,22 @@ header a:hover {
 .logoimg {
     display: none;
     width: 25%;
-    border-radius: 100%;
-    transition: transform 0.5s, box-shadow 1.5s;
+    transition: transform 0.5s;
 }
 
 .logoimg:hover {
     transform: scale(110%);
-    box-shadow: 0px 0px 105px 4px rgba(28, 29, 29, 0.9);
-    -webkit-box-shadow: 0px 0px 105px 5px rgba(22, 24, 23, 0.9);
-    -moz-box-shadow: 0px 0px 105px 5px rgba(24, 26, 25, 0.9);
 }
 
 .logoImgUser {
     display: block;
     margin: auto;
     width: 8%;
-    border-radius: 50%;
-    transition: transform 0.5s, box-shadow 1.5s;
+    transition: transform 0.5s;
 }
 
 .logoImgUser:hover {
     transform: scale(110%);
-    box-shadow: 0px 0px 105px 45px rgba(31, 32, 32, 0.9);
-    -webkit-box-shadow: 0px 0px 105px 45px rgba(24, 26, 25, 0.9);
-    -moz-box-shadow: 0px 0px 105px 45px rgba(17, 19, 18, 0.9);
 }
 
 .busqueda {
@@ -143,11 +135,14 @@ header a:hover {
 }
 
 .buscar {
-    border-radius: 25px;
+    border-radius: 20px;
     text-align: center;
     width: 85%;
     border: 0;
     outline: none;
+    font-size: 1em;
+    line-height: 35px;
+    text-align: center;
 }
 
 .lupa {
@@ -511,6 +506,7 @@ li.dropdown {
 .form-registro button {
     display: block;
     margin: auto;
+    margin-top: 10px;
     font-size: 1.4em;
     width: 60%;
     height: 40px;
@@ -542,7 +538,7 @@ li.dropdown {
 }
 
 .form-check-input {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 #emailPass {
@@ -565,7 +561,6 @@ li.dropdown {
 }
 
 .form-registro p {
-    margin: 10px;
     text-align: center;
     font-size: 1em;
 }
@@ -574,7 +569,8 @@ li.dropdown {
     border: 2px solid black;
 }
 
-.text-danger {
+.text-danger,
+#errors {
     color: red;
 }
 
@@ -621,9 +617,8 @@ li.dropdown {
     text-align: center;
 }
 
-.term h3{
+.term h3 {
     font-weight: 500;
-    
 }
 
 .check {
@@ -713,7 +708,7 @@ li.dropdown {
     background-color: #f1e2f1;
 }
 
-.compra-select{
+.compra-select {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -721,7 +716,7 @@ li.dropdown {
     margin-bottom: 20px;
 }
 
-.text-tarea{
+.text-tarea {
     display: flex;
     width: 50vw;
     margin: auto;
@@ -730,8 +725,9 @@ li.dropdown {
 textarea {
     resize: none;
     border: none;
-  }
-  .help-button  button {
+}
+
+.help-button button {
     display: block;
     margin: auto;
     font-size: 1.4em;
@@ -750,14 +746,17 @@ textarea {
     text-align: left;
     padding-left: 25px;
 }
-.help-button a{
+
+.help-button a {
     color: #FFF;
 }
+
 
 /*-------FIN HELP-----*/
 
 
 /*----INICIO DE MARCAS Y CATEGORIAS PARCIALES*/
+
 .categoriaspopulares {
     font-size: 22px;
     width: 90%;
@@ -790,7 +789,7 @@ textarea {
 .subcategoria {
     display: flex;
     text-align: center;
-    border-radius: 3px;   
+    border-radius: 3px;
     position: relative;
     background-color: #fff;
     -webkit-animation-name: slideInLeft;
@@ -843,7 +842,7 @@ textarea {
     align-items: center;
     transition: all 2s;
     background-color: #000;
-    border-radius: 15px;
+    border-radius: 3px;
     -webkit-box-shadow: 0 0 15px 5px #f0f;
     box-shadow: 0 0 15px 5px #f0f;
 }
@@ -886,7 +885,7 @@ textarea {
 .categoriatexto:hover {
     opacity: 0.9;
     background-color: #000;
-    border-radius: 15px;
+    border-radius: 3px;
     -webkit-box-shadow: 0 0 15px 5px #f0f;
     box-shadow: 0 0 15px 5px #f0f;
 }
@@ -940,9 +939,14 @@ textarea {
     border: 1px solid #18ab29;
     display: inline-block;
     cursor: pointer;
-    color:#000;
+    color: #000;
     text-decoration: none;
     text-shadow: 0px 1px 0px #2f6627;
+}
+
+.buttonCM .edit a {
+    text-decoration: none;
+    color: #000;
 }
 
 .buttonCM .edit:hover {
@@ -954,18 +958,18 @@ textarea {
     top: 1px;
 }
 
-.fi-rs-pencil{
-    color:#18ab29;
+.fi-rs-pencil {
+    color: #18ab29;
 }
-.fi-rs-trash{
+
+.fi-rs-trash {
     color: #b43030;
 }
 
 .fi-rs-pencil:hover,
-.fi-rs-trash:hover{
-    color:#fff;
+.fi-rs-trash:hover {
+    color: #fff;
 }
-
 
 .buttonCM .delete {
     background-color: #f7f1f1;
@@ -980,12 +984,16 @@ textarea {
 
 .buttonCM .delete:hover {
     background-color: #eb675e;
-
 }
 
 .buttonCM .delete:active {
     position: relative;
     top: 1px;
+}
+
+.buttonCM .delete a {
+    text-decoration: none;
+    color: #000;
 }
 
 
@@ -1028,13 +1036,14 @@ textarea {
     margin-top: 10px;
     border-radius: 50%;
 }
+
 .profilUser2 label {
-  
     margin-left: 80px;
     text-align: center;
     border-radius: 50%;
     font-size: 0.9em;
 }
+
 .avatarProfile {
     width: 200px;
     height: 200px;
@@ -1054,7 +1063,6 @@ textarea {
     justify-content: center;
     font-size: 30px;
     gap: 20px 20px;
-
 }
 
 
@@ -1297,16 +1305,14 @@ textarea {
     font-size: 1.5em;
     color: #FFF;
 }
-.addProducts{
-    
-}
+
+.addProducts {}
+
 
 /*---- FIN CAJA PRODUCTOS Y LISTADOS DE CATEGORIAS Y MARCAS---*/
 
 
 /* --- INICIO DE REDES SOCIALES ----*/
-
-
 
 .sociales {
     display: flex;
@@ -1316,12 +1322,13 @@ textarea {
     gap: 20px 20px;
     padding-top: 20px;
 }
-.sociales a{
+
+.sociales a {
     color: #FFF;
     font-size: 1.5em;
 }
 
-.redsocial:hover{
+.redsocial:hover {
     transform: scale(120%);
 }
 
@@ -1329,13 +1336,12 @@ textarea {
 /* --- FIN DE REDES SOCIALES ----*/
 
 
-
-
 /*------INICIO DE FOOTER-----*/
-.footer{
-  
+
+.footer {
     background-color: #000;
 }
+
 .contenedorfooter {
     display: flex;
     flex-direction: column;
@@ -1346,7 +1352,6 @@ textarea {
     text-align: center;
     margin: auto;
     color: #FFF;
-
 }
 
 .nav-footer {
@@ -1371,7 +1376,7 @@ textarea {
     transform: scale(120%);
 }
 
-.cajaFooter{
+.cajaFooter {
     display: block;
     font-size: 0.9em;
     font-weight: 500;
@@ -1380,7 +1385,7 @@ textarea {
     text-shadow: 0 0 15px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
 }
 
-.copyright{
+.copyright {
     text-align: center;
     font-weight: 500;
     padding-top: 20px;
@@ -1388,6 +1393,7 @@ textarea {
     color: #FFF;
     background-color: #000;
 }
+
 
 /*------FIN DE FOOTER-----*/
 
@@ -1476,7 +1482,6 @@ textarea {
     .imagenes2 {
         border-radius: 20px 0 0 20px;
     }
-
     .contenedorfooter {
         display: flex;
         margin: auto;
@@ -1485,21 +1490,18 @@ textarea {
         width: 100vw;
         text-align: center;
         margin: auto;
-    
     }
-    
     .nav-footer {
         margin: auto;
         margin-top: 15px;
         width: 100vw;
         text-align: center;
     }
-
-    .cajaFooter{
+    .cajaFooter {
         width: 30%;
     }
-
 }
+
 
 /* fin media ----------- 769px  desde este ancho hacia arriba*/
 
@@ -1536,5 +1538,6 @@ textarea {
         display: none;
     }
 }
+
 
 /* fin media ----------- desde 1280px*/

@@ -24,7 +24,7 @@ const apiBrandsRouter = require("./routes/api/apiBrandsRouter")
 
 //Middleware///
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
-
+const userLoginMiddleware = require("./middlewares/userLoginMiddleware");
 const productCat = require("./middlewares/productCatMiddleware")
 const productBrand = require("./middlewares/productBrandMiddleware")
 
@@ -58,6 +58,7 @@ app.use(cookies());
 app.use(productCat);
 app.use(productBrand);
 app.use(userLoggedMiddleware);
+/*app.use(userLoginMiddleware);*/
 
 
 

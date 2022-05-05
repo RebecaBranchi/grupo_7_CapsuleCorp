@@ -4,6 +4,7 @@
         <%- include ("../partials/header",{productCat: locals.productXCat,productBrand: locals.productXBrand})%>
             <main>
                 <div class="sep"></div>
+                <br/>
                 <section class="form-registro">
                     <h4>Formulario de Crear Color</h4>
                     <form action="/color/create" method="POST">
@@ -13,8 +14,6 @@
                                 <%= errors.name.msg %>
                             </div>
                             <% } %>
-
-
                                 <button type="submit">Crear</button>
 
                     </form>

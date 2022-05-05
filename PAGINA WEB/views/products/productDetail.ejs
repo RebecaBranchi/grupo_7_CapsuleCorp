@@ -59,7 +59,7 @@
                                     <% } else if (locals.isLogged && locals.admin) { %>
 
                                         <div class="buttonCM">
-                                            <button class="edit" type="submit"> <a href="/products/edit/<%= product.id %>">EDITAR</a></button>
+                                            <button class="edit" type="submit"><a href="/products/edit/<%= product.id %>">EDITAR</a></button>
                                             <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
                                                 <button class="delete" type="submit">BORRAR</button>
                                             </form>
@@ -83,7 +83,7 @@
             </main>
 
 
-                <%- include ("../partials/footer")%>
+            <%- include ("../partials/footer")%>
 
 
     </body>

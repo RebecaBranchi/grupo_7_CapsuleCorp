@@ -18,6 +18,7 @@ const userController = {
             db.User.findOne({ where: { email: req.body.email } })
                 .then((userInDB) => {
                     if (userInDB) {
+
                         res.render('users/register', {
                             errors: {
                                 email: {
