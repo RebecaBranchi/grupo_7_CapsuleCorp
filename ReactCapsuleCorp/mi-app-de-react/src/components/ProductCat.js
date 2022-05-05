@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import CardsTotal from './CardsTotal';
+import CardsCat from './CardsCat';
 
-class Total extends Component {
+class ProductCat extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      totalList: []
+      prodCatList: []
     }
     
   }
@@ -16,8 +16,8 @@ class Total extends Component {
       .then(respuesta => {
         return respuesta.json()
       })
-      .then(total => {
-        this.setState({ totalList: total.data })
+      .then( prodXCat => {
+        this.setState({ prodCatList: prodXCat.productsCategories })
       })
       .catch(error => console.log(error))
   }
@@ -25,12 +25,12 @@ class Total extends Component {
     
     return (
      
-      <div className='carrusel'> 
+      <div className='carrusel1'> 
       
         {
-          this.state.totalList.map((total, index) => {
+          this.state.prodCatList.map((prodCat, index) => {
             return ( 
-              <CardsTotal key={index} total={total}/>
+              <CardsCat key={index} prodCat={prodCat}/>
             )
           })
         }
@@ -40,4 +40,4 @@ class Total extends Component {
   }
 
 }
-export default Total;
+export default ProductCat;

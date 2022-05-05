@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CardsProducts from './CardsProducts';
-import Logo from './Logo';
+
 class ListsProducts extends Component {
   constructor(props) {
     super(props)
@@ -21,8 +21,8 @@ class ListsProducts extends Component {
   }
   render() {
     return (
-      <div> <Logo/>  
-      <div className='carrusel1'> 
+    
+      <div className='carrusel2'> 
       
         {
           this.state.productsList.map((product, index) => {
@@ -33,7 +33,7 @@ class ListsProducts extends Component {
           })
         }
       </div>
-      </div>
+      
     );
   }
 

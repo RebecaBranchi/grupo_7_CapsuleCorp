@@ -1,7 +1,6 @@
 const db = require("../../database/models");
 const { Op } = require("sequelize");
 
-
 const TotalController = {
 listTotal: (req, res) => {
     let Product = db.Product.findAll({
@@ -10,18 +9,41 @@ listTotal: (req, res) => {
             { association: "productsbrands" }
         ]
     });
+    let User = db.User.findAll();
     let Categ = db.ProductCategory.findAll();
     let Col = db.ProductColor.findAll();
     let Bran = db.ProductBrand.findAll();
     Promise
-        .all([Product, Categ, Col, Bran])
-        .then(([products, categories, colors, brands]) => {
+        .all([Product, User,Categ, Col, Bran])
+        .then(([products,users, categories, colors, brands]) => {
+
             let productCategory = []
             products.forEach(product => {
-                productCategory.push(`${product.productscategories.name}`)
+                productCategory.push(product.productscategories.dataValues)
             });
-            let countCategory = productCategory.reduce((a, d) => (a[d] ? a[d] += 1 : a[d] = 1, a), {});
+    
+            function findOcc(arr, key) {
+                let arr2 = [];
+                arr.forEach((x) => {
+    
+                    if (arr2.some((val) => { return val[key] == x[key] })) {
+                        arr2.forEach((k) => {
+                            if (k[key] === x[key]) {
+                                k["cantidad"]++
+                            }
+                        })
+                    } else {
+                        let a = {}
+                        a[key] = x[key]
+                        a["cantidad"] = 1
+                        arr2.push(a);
+                    }
+                })
+                return arr2
+            }
 
+            let resultado = findOcc(productCategory, "name");
+    
                 return res.status(200).json({
                     data: [ 
                        {  name: "Products",
@@ -31,9 +53,11 @@ listTotal: (req, res) => {
                        { name: "Colors",
                            total: colors.length},
                        { name: "Brands",
-                           total: brands.length}
+                           total: brands.length},
+                        { name: "Users",
+                           total: users.length}
                     ],
-
+                    productsCategories:  resultado ,
                     status: 200
                 })
       
