@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from './Logo';
 import ProductCat from './ProductCat';
 import Total from './Total';
-import Users from './Users';
+import Users from './users';
 
 
 function ListsTotal() {

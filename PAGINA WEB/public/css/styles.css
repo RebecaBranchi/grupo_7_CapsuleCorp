@@ -12,13 +12,14 @@ body {
     font-weight: 800;
     width: 100vw;
 }
-
 header,
 main,
 footer {
     width: 100vw;
 }
-
+body a {
+    text-decoration: none;
+}
 
 /*-----FIN body main header genericos -----*/
 
