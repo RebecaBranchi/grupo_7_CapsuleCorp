@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 
@@ -15,7 +13,17 @@ const brandsController = {
     },
 
     create: (req, res) => {
-        return res.render("secondaryTables/createBrands");
+
+        db.ProductBrand.findAll()
+            .then(() => {
+                return res.render("secondaryTables/createBrands");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+
+
     },
 
     store: (req, res) => {

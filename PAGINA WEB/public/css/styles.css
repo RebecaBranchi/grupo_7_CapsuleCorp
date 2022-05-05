@@ -935,13 +935,12 @@ textarea {
 }
 
 .buttonCM .edit {
-  
     background-color: #f2f7f3;
     border-radius: 4px;
     border: 1px solid #18ab29;
     display: inline-block;
     cursor: pointer;
-    color:#0a0a0a;
+    color:#000;
     text-decoration: none;
     text-shadow: 0px 1px 0px #2f6627;
 }
@@ -955,20 +954,33 @@ textarea {
     top: 1px;
 }
 
-.buttonCM .delete {
+.fi-rs-pencil{
+    color:#18ab29;
+}
+.fi-rs-trash{
+    color: #b43030;
+}
 
+.fi-rs-pencil:hover,
+.fi-rs-trash:hover{
+    color:#fff;
+}
+
+
+.buttonCM .delete {
     background-color: #f7f1f1;
     border-radius: 4px;
     border: 1px solid #b43030;
     display: inline-block;
     cursor: pointer;
-    color: #0a0a0a;
+    color: #000;
     text-decoration: none;
     text-shadow: 0px 1px 0px #b23e35;
 }
 
 .buttonCM .delete:hover {
     background-color: #eb675e;
+
 }
 
 .buttonCM .delete:active {

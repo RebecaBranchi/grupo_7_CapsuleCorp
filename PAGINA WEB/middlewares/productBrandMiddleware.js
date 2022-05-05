@@ -1,6 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-const { validationResult } = require('express-validator');
 const db = require("../database/models");
 const { Op } = require("sequelize");
 
@@ -40,11 +37,8 @@ function productBrand(req, res, next) {
             return arr2
 
         }
-
         let resultado = findOcc(productBrands, "name");
-
         res.locals.productXBrand = resultado
-
     })
 
 

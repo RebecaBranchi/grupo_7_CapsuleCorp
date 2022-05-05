@@ -27,7 +27,7 @@
                                         </div>
                                         <% if (locals.isLogged && locals.admin) { %>
                                             <div class="buttonCM">
-                                                <button class="edit"><a href="color/edit/<%= color.id %>"><i class="fi fi-rr-pencil"></i></a></button>
+                                                <button class="edit"><a href="color/edit/<%= color.id %>"><i class="fi fi-rs-pencil"></i></a></button>
                                                 <form action="/color/delete/<%= color.id %>?_method=DELETE" method="POST">
                                                     <button class="delete" type="submit"><i class="fi fi-rs-trash"></i></button>
                                                 </form>

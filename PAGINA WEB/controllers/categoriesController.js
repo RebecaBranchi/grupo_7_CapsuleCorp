@@ -1,5 +1,3 @@
-const fs = require('fs');
-const path = require('path');
 const db = require("../database/models")
 const { validationResult } = require("express-validator");
 
@@ -14,8 +12,14 @@ const categoriesController = {
     },
 
     create: (req, res) => {
+        db.ProductCategory.findAll()
+            .then(() => {
+                return res.render("secondaryTables/createCategories");
+            }).catch(
+                err => { console.log(err) }
+            )
 
-        return res.render("secondaryTables/createCategories");
+
 
     },
 

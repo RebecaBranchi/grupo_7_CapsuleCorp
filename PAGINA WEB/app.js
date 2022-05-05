@@ -24,7 +24,7 @@ const apiBrandsRouter = require("./routes/api/apiBrandsRouter")
 
 //Middleware///
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
-const userLoginMiddleware = require('./middlewares/userLoginMiddleware');
+
 const productCat = require("./middlewares/productCatMiddleware")
 const productBrand = require("./middlewares/productBrandMiddleware")
 
@@ -55,7 +55,10 @@ app.use(session({
 app.use(cookies());
 
 
-app.use(productCat, productBrand, userLoggedMiddleware, userLoginMiddleware);
+app.use(productCat);
+app.use(productBrand);
+app.use(userLoggedMiddleware);
+
 
 
 ///Routes ///
@@ -73,7 +76,6 @@ app.use("/api/categories", apiCategoriesRouter);
 app.use("/api/brands", apiBrandsRouter);
 
 
-app.use(userLoginMiddleware)
 
 
 //Initial////

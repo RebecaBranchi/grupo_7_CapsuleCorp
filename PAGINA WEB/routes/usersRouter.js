@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-
 const multer = require('multer');
 const validationsRegister = require('../middlewares/userMiddle');
 const guesmiddleware = require('../middlewares/guesmiddleware');
@@ -28,7 +27,6 @@ router.get("/login", guesmiddleware, usersController.login);
 router.post("/login", validationsLogin, usersController.loginProcess);
 router.post("/pass", validationsPass, usersController.loginPass);
 
-
 // creacion del formulario
 router.get("/register", guesmiddleware, usersController.register);
 // procesamiento del formulario de creacion usuario
@@ -37,6 +35,6 @@ router.get("/profile", authMiddLeware, usersController.profile);
 router.get("/logout", usersController.logout);
 // eliminar un usuario
 router.delete("/delete/:id", usersController.deleteUser);
-router.get("/terms",usersController.terms);
+router.get("/terms", usersController.terms);
 router.get("/help", usersController.help);
 module.exports = router
