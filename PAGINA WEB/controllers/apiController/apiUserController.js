@@ -3,20 +3,28 @@ const path = require('path');
 const bcryptjs = require('bcryptjs');
 const db = require("../../database/models");
 const { Op } = require("sequelize");
+const moment = require("moment");
 
 let direccion = "http://localhost:3050/img/users/";
 
 const apiProductController = {
 
     listUsers: (req, res) => {
-        db.User.findAll()
+        db.User.findAll({
+            order: [
+                ['createdAt', 'DESC']],
+                limit: 1
+        })
             .then((users) => {
+                
                 users.forEach(user => {
                     delete user.dataValues.password;
                     delete user.dataValues.category_id;
                     delete user._previousDataValues.password;
                     delete user._previousDataValues.category_id;
-                    user.dataValues.avatar = direccion + user.dataValues.avatar
+                    user.dataValues.avatar = direccion + user.dataValues.avatar;
+                    user.dataValues.createdAt = moment(user.dataValues.createdAt).format('MMMM Do YYYY, HH:mm')
+    
 
                 });
 

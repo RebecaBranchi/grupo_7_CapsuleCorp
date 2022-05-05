@@ -23,7 +23,7 @@ class Users extends Component {
   }
   render() {
     return (
-      <div className='carrusel'> 
+      <div className='carrusel4'> 
         {
           this.state.usersList.map((user, index) => {
             return ( 
