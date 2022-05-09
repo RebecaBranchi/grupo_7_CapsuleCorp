@@ -56,43 +56,39 @@ const userController = {
     },
 
     login: (req, res) => {
-
         res.render('users/loginEmail')
     },
 
     loginProcess: (req, res) => {
-
         db.User.findOne({ where: { email: req.body.email } })
+            .then((userToLogin) => {
 
-        .then((userToLogin) => {
+                const resultValidation = validationResult(req);
 
-            const resultValidation = validationResult(req);
+                if (resultValidation.errors.length > 0) {
+                    res.render('users/loginEmail', {
+                        errors: resultValidation.mapped(),
+                        oldData: req.body
+                    });
+                } else if (!userToLogin) {
 
-            if (resultValidation.errors.length > 0) {
-                res.render('users/loginEmail', {
-                    errors: resultValidation.mapped(),
-                    oldData: req.body
-                });
-            } else if (!userToLogin) {
+                    return res.render('users/loginEmail', {
+                        errors: {
+                            email: {
+                                msg: 'El correo electronico no esta registrado'
+                            }
+                        },
 
-                return res.render('users/loginEmail', {
-                    errors: {
-                        email: {
-                            msg: 'El correo electronico no esta registrado'
-                        }
-                    },
-
-                })
-            } else {
-                res.render('users/loginPass', {
-                    oldData: req.body
-                })
-            }
-        }).catch(err => { console.log(err) })
+                    })
+                } else {
+                    res.render('users/loginPass', {
+                        oldData: req.body
+                    })
+                }
+            }).catch(err => { console.log(err) })
     },
 
     loginPass: (req, res) => {
-
         if (req.body.email) {
             db.User.findOne({ where: { email: req.body.email } })
                 .then((userToLogin) => {
@@ -133,14 +129,11 @@ const userController = {
 
     profile: (req, res) => {
         db.Product.findAll()
-
-        .then((products) => {
-
-            return res.render('users/profile', {
-                user: req.session.userLogged,
-
-            });
-        })
+            .then((products) => {
+                return res.render('users/profile', {
+                    user: req.session.userLogged,
+                });
+            })
     },
 
     logout: (req, res) => {

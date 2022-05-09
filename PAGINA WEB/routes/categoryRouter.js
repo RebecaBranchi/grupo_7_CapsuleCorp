@@ -27,7 +27,7 @@ router.get("/create", adminMiddleware, categoriesController.create);
 router.post("/create", adminMiddleware, upload.single('image'), categoryValidator, adminMiddleware, categoriesController.store);
 
 router.get("/edit/:id", adminMiddleware, categoriesController.editCategory);
-router.put("/update/:id", adminMiddleware, categoriesController.updateCategory);
+router.put("/update/:id", adminMiddleware,upload.single('image'),categoriesController.updateCategory);
 
 router.delete("/delete/:id", adminMiddleware, categoriesController.delete);
 

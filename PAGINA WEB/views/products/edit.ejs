@@ -6,7 +6,7 @@
                 <div class="sep"></div>
                 <section class="form-registro">
                     <h4>Formulario Editar</h4>
-                    <form action="/products/update/<%= product.id %>?_method=PUT" method="POST">
+                    <form action="/products/update/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                         <input class="control" type="text" name="name" id="name" value="<%=product.name %>">
                         <input class="control" type="text" name="description" id="description" value="<%=product.description%>">
                         <input class="control" type="file" name="image" id="image">
