@@ -27,7 +27,7 @@ router.get("/create", adminMiddleware, brandsController.create);
 router.post("/create", adminMiddleware, upload.single('image'), brandMiddle, brandsController.store);
 
 router.get("/edit/:id", adminMiddleware, brandsController.editBrand);
-router.put("/update/:id", adminMiddleware, brandsController.updateBrand);
+router.put("/update/:id", adminMiddleware, upload.single('image'), brandsController.updateBrand);
 
 router.delete("/delete/:id", adminMiddleware, brandsController.delete);
 

@@ -1,13 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-
 const db = require("../database/models")
-
 const { validationResult } = require("express-validator");
 
-
 const colorsController = {
-
     listColors: (req, res) => {
         db.ProductColor.findAll()
             .then((colors) => {
@@ -16,9 +10,6 @@ const colorsController = {
                 err => { console.log(err) }
             )
     },
-
-
-
     create: (req, res) => {
 
         db.ProductColor.findAll()
@@ -27,38 +18,24 @@ const colorsController = {
             }).catch(
                 err => { console.log(err) }
             )
-
-
-
     },
-
-
     store: (req, res) => {
-
         const resultValidation = validationResult(req);
-
         if (resultValidation.errors.length > 0) {
-
             res.render('secondaryTables/createColors', {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
-
             })
 
         } else {
-
-
             db.ProductColor.create({
-                name: req.body.name,
-
-            })
-            res.redirect("/color")
+                    name: req.body.name,
+                })
+                .then(() => {
+                    res.redirect("/color")
+                })
         }
     },
-
-
-
-
     editColor: (req, res) => {
         let id = req.params.id
         db.ProductColor.findByPk(id)
@@ -67,25 +44,24 @@ const colorsController = {
             }).catch(err => { console.log(err) })
 
     },
-
     updateColor: (req, res) => {
         db.ProductColor.update({
-            name: req.body.name,
-        }, { where: { id: req.params.id } })
-        res.redirect("/color")
+                name: req.body.name,
+            }, { where: { id: req.params.id } })
+            .then(() => {
+                res.redirect("/color")
+            })
+
     },
-
-
-
-
-
     delete: (req, res) => {
         db.ProductColor.destroy({
-            where: {
-                id: req.params.id
-            }
-        })
-        res.redirect("/color")
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                res.redirect("/color")
+            })
     }
 
 }

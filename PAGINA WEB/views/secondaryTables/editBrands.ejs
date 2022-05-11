@@ -9,8 +9,9 @@
 
                 <section class="form-registro">
                     <h4>Formulario Editar Marca</h4>
-                    <form action="/brand/update/<%=brand.id %>?_method=PUT" method="POST">
+                    <form action="/brand/update/<%=brand.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                         <input class="control" type="text" name="name" id="name" value="<%=brand.name %>">
+                        <input type="file" name="image" id="image" placeholder="Imagen" class="control">
                         <button type="submit">Editar</button>
                     </form>
 

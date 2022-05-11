@@ -22,27 +22,23 @@ const categoriesController = {
 
 
     },
-
     store: (req, res) => {
 
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
-
             res.render('secondaryTables/createCategories', {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
-
             })
 
         } else {
-
             db.ProductCategory.create({
                 name: req.body.name,
                 image: req.file.filename
-
+            }).then(() => {
+                res.redirect("/category")
             })
-            res.redirect("/category")
         }
     },
 
@@ -52,33 +48,35 @@ const categoriesController = {
             .then((category) => {
                 return res.render("secondaryTables/editCategories", { category });
             }).catch(err => { console.log(err) })
-
     },
 
     updateCategory: (req, res) => {
         if (req.file) {
-
             db.ProductCategory.update({
-                name: req.body.name,
-                image: req.file.filename
-            }, { where: { id: req.params.id } })
-            res.redirect("/category")
+                    name: req.body.name,
+                    image: req.file.filename
+                }, { where: { id: req.params.id } })
+                .then(() => {
+                    res.redirect("/category")
+                })
         } else {
             db.ProductCategory.update({
-                name: req.body.name,
-            }, { where: { id: req.params.id } })
-            res.redirect("/category")
-
+                    name: req.body.name,
+                }, { where: { id: req.params.id } })
+                .then(() => {
+                    res.redirect("/category")
+                })
         }
     },
-
     delete: (req, res) => {
         db.ProductCategory.destroy({
-            where: {
-                id: req.params.id
-            }
-        })
-        res.redirect("/category")
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                res.redirect("/category")
+            })
     }
 
 }

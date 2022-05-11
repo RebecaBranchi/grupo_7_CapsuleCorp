@@ -30,7 +30,7 @@ router.get("/create", adminMiddleware, productController.create);
 router.post("/create", adminMiddleware, upload.single('image'), productValidator, productController.store);
 
 router.get("/edit/:id", adminMiddleware, productController.editProduct);
-router.put("/update/:id", adminMiddleware, productController.updateProduct);
+router.put("/update/:id", adminMiddleware, upload.single('image'), productController.updateProduct);
 
 router.delete("/delete/:id", adminMiddleware, productController.delete);
 

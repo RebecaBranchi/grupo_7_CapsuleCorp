@@ -1,13 +1,10 @@
-const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 const db = require("../database/models");
 const { Op } = require("sequelize");
 
 const productController = {
-
     listProducts: (req, res) => {
-
         let Product = db.Product.findAll({
             order: [
                 ["discount", "DESC"]
@@ -96,13 +93,11 @@ const productController = {
                 ]
             })
             .then((product) => {
-
                 res.render("products/productDetail", { product: product });
             }).catch(
                 err => { console.log(err) }
             )
     },
-
     detailProduct: (req, res) => {
 
         db.Product.findByPk(req.params.id, {
@@ -224,11 +219,13 @@ const productController = {
     },
     delete: (req, res) => {
         db.Product.destroy({
-            where: {
-                id: req.params.id
-            }
-        })
-        res.redirect("/products")
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                res.redirect("/products")
+            })
     }
 
 }
